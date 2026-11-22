@@ -96,7 +96,7 @@ audits before a unified synthesis.
 
 ## Cross-Capability Guidance
 
-Review is downstream of implementation: run `/implement-fix` after a
+Review is downstream of implementation: run `/implement_fix` after a
 review to address findings, or use the `/review` output's remediation
 plan directly. Review's validators are the same machinery as
 `/validate` — the difference is scope (any artifact vs pre-publication

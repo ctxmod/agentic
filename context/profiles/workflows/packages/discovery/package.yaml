@@ -25,7 +25,7 @@ agents:
   discovery_objective:
     description: Gather information through systematic exploration and produce
       a comprehensive discovery report at a report path reserved just-in-time
-      via reserve_work_path(type="report").
+      with `ctxmod work new report`.
     agent_depth: objective
     skills:
     - discovery_objective

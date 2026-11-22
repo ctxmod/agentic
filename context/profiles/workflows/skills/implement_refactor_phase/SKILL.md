@@ -13,7 +13,7 @@ objective (`implementation_objective`) and procedure
 reference material they dispatch against.
 
 Refactor implementation is a **phase, not a workflow**. The main agent
-invokes it directly via the absorbed `/implement-refactor`
+invokes it directly via the absorbed `/implement_refactor`
 slash-command, the `/implement` router, or any other domain's workflow
 agent references this phase as a "implement refactor" sub-step.
 
@@ -63,8 +63,8 @@ Phase 4: Equivalence Verification│
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::discovery/reference/discovery_baseline.md" />
 
-- Reports: `{REPORTS_BASE}/{date}/{time}-{nn}-baseline-structure.md`,
-  `{REPORTS_BASE}/{date}/{time}-{nn}-baseline-consumers.md`
+- Reports: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-structure.md`,
+  `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-consumers.md`
 
 **Workflow-specific notes**:
 - Two read-only discovery dispatches: structure baseline, then consumer baseline. This phase agent modifies files in Phase 3 and is **not** granted `allow-parallel-agents: true`; run them one at a time unless your own agent-depth instructions says otherwise.
@@ -75,7 +75,7 @@ Phase 4: Equivalence Verification│
 
 `ctx:github.com/ctxmod/agentic/context::shared::planning_phase@workflows/reference/general.md`
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-refactor-plan.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-refactor-plan.md`
 
 **Workflow-specific notes**:
 - Plans transformation steps in safe sequence
@@ -87,7 +87,7 @@ Phase 4: Equivalence Verification│
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::implement_refactor_phase/reference/refactor.md" />
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-transformation.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-transformation.md`
 
 **Workflow-specific notes**:
 - Applies planned transformation only
@@ -99,7 +99,7 @@ Phase 4: Equivalence Verification│
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::validation/reference/validation_equivalence.md" />
 
-- Reports: `{REPORTS_BASE}/{date}/{time}-{nn}-verification-{structure,references,behavior}.md`
+- Reports: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-{structure,references,behavior}.md`
 
 **Workflow-specific notes**:
 - Three read-only verification dispatches: structure, references, behavior (if applicable). Run them one at a time, in the foreground, unless your own agent-depth instructions grants concurrent dispatch.
@@ -114,22 +114,22 @@ Phase 4: Equivalence Verification│
 ```
 Phase 1: Baseline Discovery (two dispatches)
 - Receives: {inherited}, scope
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-baseline-structure.md
-            {REPORTS_BASE}/{date}/{time}-{nn}-baseline-consumers.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-structure.md
+            {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-consumers.md
 
 Phase 2: Refactor Planning
 - Receives: {inherited}, Phase 1 outputs
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-refactor-plan.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-refactor-plan.md
 
 Phase 3: Transformation
 - Receives: {inherited}, Phase 2 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-transformation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-transformation.md
 
 Phase 4: Equivalence Verification (three dispatches)
 - Receives: {inherited}, transformed artifacts, Phase 1 baselines
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-verification-structure.md
-            {REPORTS_BASE}/{date}/{time}-{nn}-verification-references.md
-            {REPORTS_BASE}/{date}/{time}-{nn}-verification-behavior.md (conditional)
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-structure.md
+            {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-references.md
+            {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-behavior.md (conditional)
 ```
 
 Main agent passes report **paths** between phases, never report content.

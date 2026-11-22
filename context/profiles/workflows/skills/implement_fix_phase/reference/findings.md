@@ -73,19 +73,19 @@ Use findings implementation workflow when:
 ```
 Phase 1: Findings Resolution
 - Receives: {inherited}, validation report path
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-findings-resolution.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-findings-resolution.md
 
 Phase 2: Correction Planning
 - Receives: {inherited}, Phase 1 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-correction-plan.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-plan.md
 
 Phase 3: Correction Implementation
 - Receives: {inherited}, Phase 2 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-correction-implementation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-implementation.md
 
 Phase 4: Re-Validation
 - Receives: {inherited}, modified artifacts, original validation criteria
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-revalidation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-revalidation.md
 ```
 
 ## Workflow Variants

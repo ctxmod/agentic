@@ -10,7 +10,7 @@ Orchestrate academic tasks - write papers, correct documents, analyze sources, i
 Usage:
 
 ```text
-/work_academic [task-description] [flags]
+/scholarly_task [task-description] [flags]
 ```
 
 | Argument | Required | Description |
@@ -21,8 +21,8 @@ Usage:
 | `--document` | no | Path to existing document (for correction/revision) |
 | `--sources` | no | Paths to source documents (for analysis/integration) |
 | `--output` | no | Target output path |
-| `--epic` | no | Parent epic identifier for story creation (e.g., E01) |
-| `--story` | no | Existing story identifier for issue append (e.g., S03) |
+| `--epic` | no | Parent epic record id for story creation (e.g., vdwgsgzfrs) |
+| `--story` | no | Existing story record id for issue append (e.g., kpqrstbcdf) |
 
 Work-item context: optional.
 

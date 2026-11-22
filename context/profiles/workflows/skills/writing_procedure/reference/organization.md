@@ -10,6 +10,14 @@ Determine correct report placement in directory structure based on work context,
 
 ## Steps
 
+Inside the ctxmod work store, `ctxmod work new report "<title>" [--owner <item id>]`
+performs steps 1–4 itself: the owner decides the base path (the owning
+item's directory, or the store's top level), the store applies the
+month directory (`reports/<YYYY-MM>/`), builds the entry name
+(`<DD-HHMM>-<id>-<slug>.md`, slug derived from the title), and
+guarantees availability by minting a fresh id. The steps below
+describe the same decisions for reports kept outside the store.
+
 ### 1. Identify Base Path
 
 Determine root directory from work context:

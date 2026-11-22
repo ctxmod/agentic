@@ -95,7 +95,7 @@ Precommit workflow bridges precommit validation with story-based work item execu
 Phase 1: reports/<YYYY-MM>/<DD-HHMM>-<id>-01-precommit-discovery.md
 Phase 2: {STORY_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-02-planning.md (conditional)
          {STORY_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-02-creation.md (conditional)
-Phase 3: {ISSUE_PATH}/reports/<YYYY-MM>/{time}-*.md (per work item)
+Phase 3: {ISSUE_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-*.md (per work item)
 Phase 4: reports/<YYYY-MM>/<DD-HHMM>-<id>-04-final-validation.md
 ```
 

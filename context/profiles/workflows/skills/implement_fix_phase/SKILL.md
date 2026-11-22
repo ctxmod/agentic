@@ -13,7 +13,7 @@ objective (`implementation_objective`) and procedure
 reference material they dispatch against.
 
 Fix implementation is a **phase, not a workflow**. The main agent
-invokes it directly via the absorbed `/implement-fix` slash-command,
+invokes it directly via the absorbed `/implement_fix` slash-command,
 the `/implement` router, or any other domain's workflow agent
 references this phase as a "implement fix" sub-step.
 
@@ -56,7 +56,7 @@ Phase 4: Re-Validation                │
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::discovery/reference/discovery_findings_resolution.md" />
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-findings-resolution.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-findings-resolution.md`
 
 **Workflow-specific notes**:
 - Loads validation report specified by `--input` or most recent validation report
@@ -67,7 +67,7 @@ Phase 4: Re-Validation                │
 
 `ctx:github.com/ctxmod/agentic/context::shared::planning_phase@workflows/reference/correction.md`
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-correction-plan.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-plan.md`
 
 **Workflow-specific notes**:
 - Plans minimal corrections addressing each finding
@@ -78,7 +78,7 @@ Phase 4: Re-Validation                │
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::implement_fix_phase/reference/findings.md" />
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-correction-implementation.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-implementation.md`
 
 **Workflow-specific notes**:
 - Applies corrections according to plan
@@ -90,7 +90,7 @@ Phase 4: Re-Validation                │
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::validation/reference/validation_general.md" />
 `ctx:github.com/ctxmod/agentic/context::shared::remediation_phase@workflows/reference/targeted.md`
 
-- Report: `{REPORTS_BASE}/{date}/{time}-{nn}-revalidation.md`
+- Report: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-revalidation.md`
 
 **Workflow-specific notes**:
 - Validates using same criteria as original validation
@@ -104,19 +104,19 @@ Phase 4: Re-Validation                │
 ```
 Phase 1: Findings Resolution
 - Receives: {inherited}, validation report path
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-findings-resolution.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-findings-resolution.md
 
 Phase 2: Correction Planning
 - Receives: {inherited}, Phase 1 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-correction-plan.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-plan.md
 
 Phase 3: Correction Implementation
 - Receives: {inherited}, Phase 2 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-correction-implementation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-correction-implementation.md
 
 Phase 4: Re-Validation
 - Receives: {inherited}, modified artifacts, original validation criteria
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-revalidation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-revalidation.md
 ```
 
 Main agent passes report **paths** between phases, never report content.

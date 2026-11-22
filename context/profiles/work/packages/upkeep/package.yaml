@@ -1,0 +1,21 @@
+description: 'Work-store upkeep: memory cleanup and work archiving phases.'
+binds_to_depth: main...
+agents:
+  cleanup_memory_phase:
+    description: Analyze the work store's memory records, solidify durable
+      knowledge into the repository's context-module reference via the existing
+      context-writing/editing skills, retire superseded memories only after
+      verifiable capture. Memory cleanup is the most sensitive of the four
+      cleanup capabilities — a wrong judgment destroys knowledge rather than
+      relocating a finished record.
+    agent_depth: phase
+    skills:
+    - cleanup_memory_phase
+  archive_cleanup_phase:
+    description: Archive completed/stale work items and reports in the ctxmod
+      work store (`ctxmod work archive`). Wraps the CLI with the age-signal
+      hierarchy, the last-touch caveat, and the move-only/preview-first/no-implicit-deletion
+      safety model.
+    agent_depth: phase
+    skills:
+    - archive_cleanup_phase

@@ -93,7 +93,7 @@ The `--remediate` flag enables automatic correction through the
 validation loop pattern. Without this flag, validation is read-only
 and produces reports without modifications.
 
-Validation often follows implementation: run `/implement-fix` to
+Validation often follows implementation: run `/implement_fix` to
 correct findings, then re-validate to confirm the fix landed cleanly.
 
 ## Execution Pointers

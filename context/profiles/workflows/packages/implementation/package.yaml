@@ -13,7 +13,7 @@ agents:
   implementation_objective:
     description: Modify artifacts to achieve specific outcomes — read state,
       apply targeted changes, verify results — and produce the implementation
-      report at a report path reserved just-in-time via reserve_work_path(type="report").
+      report at a report path reserved just-in-time with `ctxmod work new report`.
     agent_depth: objective
     skills:
     - implementation_objective

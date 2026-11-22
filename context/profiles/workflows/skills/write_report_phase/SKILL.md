@@ -13,7 +13,7 @@ context, intent); they share the same methodology layer
 procedure (`writing_procedure`).
 
 Report writing is a **phase, not a workflow**. The main agent invokes it
-directly via the absorbed `/write-report` slash-command, the `/write`
+directly via the absorbed `/writing_report` slash-command, the `/write`
 router, or any other domain's workflow agent references this phase as a
 "write report" sub-step.
 
@@ -107,7 +107,7 @@ Plan the report structure.
 
 Produce the synthesis report.
 
-- Output: `{REPORTS_BASE}/{date}/{time}-{type}.md`
+- Output: `{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{type}.md`
 
 **Workflow-specific notes**:
 - Write report only
@@ -166,7 +166,7 @@ Phase 3: Planning
 
 Phase 4: Writing
 - Receives: Phase 3 output, available Phase 1/2 outputs
-- Produces: {REPORTS_BASE}/{date}/{time}-{type}.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{type}.md
 
 Phase 5: Validation (conditional)
 - Receives: Report path, planning output (criteria reference)

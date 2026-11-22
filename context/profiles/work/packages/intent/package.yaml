@@ -1,0 +1,10 @@
+description: Intent capture and intent writing over ctxmod work intent sources.
+binds_to_depth: main...
+agents:
+  intent_write:
+    description: Write intent documents — raw transcription and polished authoring
+      with structured sections, discovery synthesis, gap remediation, and
+      acceptance criteria.
+    agent_depth: phase
+    skills:
+    - intent_write

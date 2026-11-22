@@ -17,7 +17,7 @@ Main agents launch sub-agents using the Task tool. Sub-agents have no memory of 
 | File Type | Example |
 |-----------|---------|
 | Objectives | the `discovery_objective` skill |
-| Schemas | `ctx:github.com/ctxmod/agentic/context::shared::writing_objective@workflows/reference/structure_discovery.md` |
+| Schemas | `ctx:github.com/ctxmod/agentic/context::shared::reporting@workflows/reference/structure_discovery.md` |
 | Prior reports | `{REPORTS_BASE}/01-discovery.md` |
 | Project context | repo-local tool docs from the repository's own context module (not part of this module) |
 | Intent files | `@{INTENT_PATH}` |

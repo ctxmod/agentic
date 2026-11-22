@@ -18,7 +18,7 @@ that wires a flag, passes the unit test asserting the flag is threaded
 through, and reports "done" can still produce broken output because the
 unit test never exercised the actual render path.
 
-Concrete examples from rendx: MathJax not wired (flag defaulted to
+Concrete examples from a document renderer: MathJax not wired (flag defaulted to
 "off"), `--csl apa` treated as a file path by Kong's `type:"path"`,
 compute expressions not evaluated in non-PDF formats, columns stacked
 instead of side-by-side, TOC missing in non-PDF outputs, citations raw

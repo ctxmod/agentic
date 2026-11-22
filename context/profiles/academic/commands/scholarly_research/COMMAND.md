@@ -10,7 +10,7 @@ Research foundational concepts and theoretical foundations from academic sources
 Usage:
 
 ```text
-/research_academic [topic]
+/scholarly_research [topic]
 ```
 
 | Argument | Required | Description |

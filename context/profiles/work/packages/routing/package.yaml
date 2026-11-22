@@ -1,0 +1,23 @@
+description: 'The work router: the worker agent that orchestrates work-item
+  creation and execution, plus the spec and pre-commit work phases.'
+binds_to_depth: main...
+agents:
+  worker:
+    description: Orchestrate autonomous work item creation and execution through
+      phased workflows — discovery, planning, creation, validation, implementation,
+      and completion.
+    agent_depth: workflow
+    skills:
+    - worker
+  precommit_phase:
+    description: Run precommit validation, create or append to story with
+      issues, execute to completion.
+    agent_depth: phase
+    skills:
+    - precommit_phase
+  spec_phase:
+    description: Validate technical specifications, research questionable
+      approaches, create story with issues, apply corrections.
+    agent_depth: phase
+    skills:
+    - spec_phase

@@ -69,14 +69,14 @@ reuse).
 
 | Capability phase | Absorbs | Slash-commands |
 |------------------|---------|----------------|
-| `write_report_phase` | Report writing workflow | `/write-report` |
+| `write_report_phase` | Report writing workflow | `/writing_report` |
 | `write_item_phase` | Work item writing workflow (4 variants) | `/write-epic`, `/write-story`, `/write-issue`, `/write-task` |
 | `write_context_phase` | Context content writing workflow (5 variants) | `/write-reference`, `/write-rule`, `/write-skills`, `/write-agent`, `/write-command` |
 
 Intent writing moved out of the writing domain to its own `intent`
 domain. The `intent_write` phase skill (at the `intent_write` skill)
 absorbs the former `write-intent-phase` workflow and is launched
-either standalone via `/write-intent` or end-to-end through the
+either standalone via `/write_intent` or end-to-end through the
 `capture_intent` orchestrator skill (at
 the `capture_intent` skill).
 

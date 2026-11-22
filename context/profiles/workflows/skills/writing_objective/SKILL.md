@@ -218,7 +218,7 @@ Intent files moved out of the writing domain to the `intent` domain.
 The `intent_write` phase skill (at the `intent_write` skill)
 now absorbs the intent-writing workflow and dispatches this
 objective for composition sub-steps; it is launched either
-standalone via `/write-intent` or end-to-end through the
+standalone via `/write_intent` or end-to-end through the
 `capture_intent` orchestrator skill.
 
 Ad-hoc objective-depth agents may also load this skill for general

@@ -1,5 +1,5 @@
 ---
-description: "Modify artifacts to achieve specific outcomes — read state, apply targeted changes, verify results — and produce the implementation report at a report path reserved just-in-time via reserve_work_path(type=\"report\")."
+description: "Modify artifacts to achieve specific outcomes — read state, apply targeted changes, verify results — and produce the implementation report at a report path reserved just-in-time with `ctxmod work new report`."
 binds_to_depth: objective
 ---
 

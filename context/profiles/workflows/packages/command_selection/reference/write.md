@@ -25,8 +25,8 @@ capability phase skills based on the artifact-type argument.
 | `/write agent ...` | `/write-agent` | `write_context_phase` |
 | `/write command ...` | `/write-command` | `write_context_phase` |
 | `/write docs ...` | `/write-docs` | `write_context_phase` |
-| `/write report ...` | `/write-report` | `write_report_phase` |
-| `/write intent ...` | `/write-intent` | `intent_write` |
+| `/write report ...` | `/writing_report` | `write_report_phase` |
+| `/write intent ...` | `/write_intent` | `intent_write` |
 
 ## Work Item Context by Artifact Type
 
@@ -57,8 +57,8 @@ capability phase skills based on the artifact-type argument.
 | `/write-skills` | Creating capability aggregation |
 | `/write-agent` | Creating sub-agent template |
 | `/write-command` | Creating command file with workflow design |
-| `/write-report` | Creating synthesis document |
-| `/write-intent` | Creating intent file |
+| `/writing_report` | Creating synthesis document |
+| `/write_intent` | Creating intent file |
 
 ## Capability-Specific Variations
 
@@ -92,8 +92,8 @@ conversion.
 
 - `/write-epic|story|issue|task` → launch `write_item_phase` agent
 - `/write-reference|rule|skill|agent|command|docs` → launch `write_context_phase` agent
-- `/write-report` → launch `write_report_phase` agent
-- `/write-intent` → launch `intent_write` agent (or `capture_intent`
+- `/writing_report` → launch `write_report_phase` agent
+- `/write_intent` → launch `intent_write` agent (or `capture_intent`
   orchestrator for end-to-end capture)
 
 Each capability phase agent has its skill preloaded and links the

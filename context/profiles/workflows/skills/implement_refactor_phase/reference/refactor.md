@@ -80,22 +80,22 @@ Use refactor implementation workflow when:
 ```
 Phase 1: Baseline Discovery (parallel)
 - Receives: {inherited}, scope
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-baseline-structure.md
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-baseline-consumers.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-structure.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-baseline-consumers.md
 
 Phase 2: Refactor Planning
 - Receives: {inherited}, Phase 1 outputs
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-refactor-plan.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-refactor-plan.md
 
 Phase 3: Transformation
 - Receives: {inherited}, Phase 2 output
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-transformation.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-transformation.md
 
 Phase 4: Equivalence Verification (parallel)
 - Receives: {inherited}, transformed artifacts, Phase 1 baselines
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-verification-structure.md
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-verification-references.md
-- Produces: {REPORTS_BASE}/{date}/{time}-{nn}-verification-behavior.md (conditional)
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-structure.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-references.md
+- Produces: {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification-behavior.md (conditional)
 ```
 
 ## Workflow Variants

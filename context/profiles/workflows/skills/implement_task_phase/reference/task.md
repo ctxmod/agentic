@@ -90,24 +90,24 @@ Use task implementation workflow when:
 ```
 Phase 1: Task Resolution
 - Receives: TASK_PATH
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-task-resolution.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-task-resolution.md
 
 Phase 2: State Discovery
 - Receives: TASK_PATH, Phase 1 output
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-state-discovery.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-state-discovery.md
 
 Phase 3: Change Planning
 - Receives: TASK_PATH, Phase 1 output, Phase 2 output
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation-plan.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation-plan.md
 
 Phase 4: Implementation
 - Receives: TASK_PATH, Phase 3 output
 - Available: Phase 2 output (context reference)
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation.md
 
 Phase 5: Verification
 - Receives: TASK_PATH, modified artifacts, Phase 1 output (criteria)
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-verification.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification.md
 ```
 
 ## Workflow Variants

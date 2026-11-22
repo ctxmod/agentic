@@ -1,0 +1,31 @@
+description: 'Work-item lifecycle phases: start, block, status, and complete.'
+binds_to_depth: main...
+agents:
+  lifecycle_block_phase:
+    description: Lifecycle block phase — mark a work item as blocked with
+      documented reason through context resolution, transition verification,
+      blocker documentation, and impact analysis.
+    agent_depth: phase
+    skills:
+    - lifecycle_block_phase
+  lifecycle_complete_phase:
+    description: Lifecycle complete phase — verify acceptance criteria and
+      transition work item to terminal completed state through context resolution,
+      parallel completion verification, synthesis analysis, and status transition.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - lifecycle_complete_phase
+  lifecycle_start_phase:
+    description: Lifecycle start phase — begin work on a work item through
+      context resolution, transition verification, and status transition to
+      active.
+    agent_depth: phase
+    skills:
+    - lifecycle_start_phase
+  lifecycle_status_phase:
+    description: Lifecycle status phase — read-only work item status discovery
+      through context resolution, status gathering, and hierarchy mapping.
+    agent_depth: phase
+    skills:
+    - lifecycle_status_phase

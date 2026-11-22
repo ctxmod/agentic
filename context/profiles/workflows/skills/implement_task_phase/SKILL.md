@@ -13,7 +13,7 @@ layers and differ only in the workflow reference material they
 dispatch against.
 
 Task implementation is a **phase, not a workflow**. The main agent
-invokes it directly via the absorbed `/implement-task` slash-command,
+invokes it directly via the absorbed `/implement_task` slash-command,
 the `/implement` router, or any other domain's workflow agent
 references this phase as a "implement task" sub-step.
 
@@ -59,7 +59,7 @@ Phase 5: Verification           │
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::discovery/reference/discovery_task_resolution.md" />
 
-- Report: `{TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-task-resolution.md`
+- Report: `{TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-task-resolution.md`
 
 **Workflow-specific notes**:
 - Loads task definition from work item
@@ -71,7 +71,7 @@ Phase 5: Verification           │
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::discovery/reference/discovery_general.md" />
 
-- Report: `{TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-state-discovery.md`
+- Report: `{TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-state-discovery.md`
 
 **Workflow-specific notes**:
 - Discovers current state of artifacts identified in task
@@ -84,7 +84,7 @@ Phase 5: Verification           │
 `ctx:github.com/ctxmod/agentic/context::shared::analyze_gap_phase@workflows/reference/gap.md`
 `ctx:github.com/ctxmod/agentic/context::shared::planning_phase@workflows/reference/general.md`
 
-- Report: `{TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation-plan.md`
+- Report: `{TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation-plan.md`
 
 **Workflow-specific notes**:
 - Gap analysis identifies what must change (current vs. task requirements)
@@ -96,7 +96,7 @@ Phase 5: Verification           │
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::implement_task_phase/reference/task.md" />
 
-- Report: `{TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation.md`
+- Report: `{TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation.md`
 
 **Workflow-specific notes**:
 - Applies planned changes according to plan
@@ -109,7 +109,7 @@ Phase 5: Verification           │
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::validation/reference/validation_general.md" />
 `ctx:github.com/ctxmod/agentic/context::shared::remediation_phase@workflows/reference/general.md`
 
-- Report: `{TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-verification.md`
+- Report: `{TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification.md`
 
 **Workflow-specific notes**:
 - Verifies implementation satisfies task acceptance criteria
@@ -124,24 +124,24 @@ Phase 5: Verification           │
 ```
 Phase 1: Task Resolution
 - Receives: TASK_PATH
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-task-resolution.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-task-resolution.md
 
 Phase 2: State Discovery
 - Receives: TASK_PATH, Phase 1 output
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-state-discovery.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-state-discovery.md
 
 Phase 3: Change Planning
 - Receives: TASK_PATH, Phase 1 output, Phase 2 output
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation-plan.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation-plan.md
 
 Phase 4: Implementation
 - Receives: TASK_PATH, Phase 3 output
 - Available: Phase 2 output (context reference)
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-implementation.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-implementation.md
 
 Phase 5: Verification
 - Receives: TASK_PATH, modified artifacts, Phase 1 output (criteria)
-- Produces: {TASK_PATH}/reports/<YYYY-MM>/{time}-{nn}-verification.md
+- Produces: {TASK_PATH}/reports/<YYYY-MM>/<DD-HHMM>-<id>-{nn}-verification.md
 ```
 
 Main agent passes report **paths** between phases, never report content.

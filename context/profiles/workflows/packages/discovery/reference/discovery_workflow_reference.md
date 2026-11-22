@@ -49,7 +49,7 @@ Report discovery:
 - Search for recent reports that inform the current task
 - Include only informational reports: execution, analysis, discovery, research reports
 - Exclude process reports: validation reports, remediation reports, verification reports, correction plans, execution plans
-- Report paths follow the pattern {REPORTS_BASE}/{date}/{time}-{slug}.md
+- Report paths follow the pattern {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{slug}.md
 
 Work item discovery:
 - Preferred: `ctxmod work list [--parent <parent-id>]` for inventory and statuses. Fall back to file search when the work store is unavailable.
@@ -116,7 +116,7 @@ Compulsory reads:
 - ...
 
 Reports:
-- \{REPORTS_BASE}/{date}/{time}-\{slug}.md (execution/analysis/discovery/research/novel info only)
+- \{REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-\{slug}.md (execution/analysis/discovery/research/novel info only)
 - ...
 
 Work items:

@@ -1,5 +1,5 @@
 ---
-description: "Gather information through systematic exploration and produce a comprehensive discovery report at a report path reserved just-in-time via reserve_work_path(type=\"report\")."
+description: "Gather information through systematic exploration and produce a comprehensive discovery report at a report path reserved just-in-time with `ctxmod work new report`."
 binds_to_depth: objective
 ---
 

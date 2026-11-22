@@ -16,9 +16,9 @@ sibling capability phase skills based on the variant argument.
 
 | Input | Routes To | Phase Skill |
 |-------|-----------|-------------|
-| `/implement task` | `/implement-task` | `implement_task_phase` |
-| `/implement fix ...` | `/implement-fix` | `implement_fix_phase` |
-| `/implement refactor ...` | `/implement-refactor` | `implement_refactor_phase` |
+| `/implement task` | `/implement_task` | `implement_task_phase` |
+| `/implement fix ...` | `/implement_fix` | `implement_fix_phase` |
+| `/implement refactor ...` | `/implement_refactor` | `implement_refactor_phase` |
 
 ## Variant Characteristics
 
@@ -28,7 +28,7 @@ Execute work defined in a task work item.
 
 | Aspect | Value |
 |--------|-------|
-| Command | `/implement-task` |
+| Command | `/implement_task` |
 | Phase skill | `implement_task_phase` |
 | Work Item Context | Required (task) |
 | Input | Task acceptance criteria |
@@ -40,7 +40,7 @@ Apply corrections from validation findings.
 
 | Aspect | Value |
 |--------|-------|
-| Command | `/implement-fix` |
+| Command | `/implement_fix` |
 | Phase skill | `implement_fix_phase` |
 | Work Item Context | Optional |
 | Input | Validation report or artifact path |
@@ -52,7 +52,7 @@ Reorganize artifacts without behavior change.
 
 | Aspect | Value |
 |--------|-------|
-| Command | `/implement-refactor` |
+| Command | `/implement_refactor` |
 | Phase skill | `implement_refactor_phase` |
 | Work Item Context | Required (issue or story) |
 | Input | Scope and refactor type |
@@ -79,9 +79,9 @@ Reorganize artifacts without behavior change.
 | Command | When to Use |
 |---------|-------------|
 | `/implement` | General entry point, routing based on context |
-| `/implement-task` | Executing defined task work |
-| `/implement-fix` | Applying validation corrections |
-| `/implement-refactor` | Reorganizing without behavior change |
+| `/implement_task` | Executing defined task work |
+| `/implement_fix` | Applying validation corrections |
+| `/implement_refactor` | Reorganizing without behavior change |
 
 ## Common Characteristics
 
