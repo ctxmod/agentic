@@ -137,7 +137,7 @@ mechanics under
 Brief template for the `remediation_procedure` agent — Execute <remediation-step> within remediation phase:
 
 ```text
-<ctxmod_activate skill="remediation_procedure" />
+<ctxmod_activate skill="agentic_workflows_remediation_procedure" />
 Step: <remediation-step>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

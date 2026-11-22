@@ -160,7 +160,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `analysis_objective` agent — Execute <phase-name> within quality analysis:
 
 ```text
-<ctxmod_activate skill="analysis_objective" />
+<ctxmod_activate skill="agentic_workflows_analysis_objective" />
 Variant: synthesis
 Phase-specific instructions:
   <phase-specific parameters>
@@ -186,7 +186,7 @@ agent from any workflow that needs quality assessment.
 Brief template for the `analyze_quality_phase` agent — Execute quality analysis phase:
 
 ```text
-<ctxmod_activate skill="analyze_quality_phase" />
+<ctxmod_activate skill="agentic_workflows_analyze_quality_phase" />
 Execute the full discovery → assessment → synthesis → remediation chain.
 ```
 

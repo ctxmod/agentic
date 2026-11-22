@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `discover_patterns_phase` agent with the command arguments in a brief that grants the `discover_patterns_phase` skill:
 
 ```text
-<ctxmod_activate skill="discover_patterns_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_patterns_phase" />
 <command arguments>
 ```

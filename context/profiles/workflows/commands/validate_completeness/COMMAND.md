@@ -23,6 +23,6 @@ Work-item context: story | issue.
 Launch the `validate_completeness_phase` agent with the command arguments in a brief that grants the `validate_completeness_phase` skill:
 
 ```text
-<ctxmod_activate skill="validate_completeness_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_completeness_phase" />
 <command arguments>
 ```

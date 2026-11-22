@@ -8,8 +8,8 @@ Brief template for a sub-agent:
 Create {work-item-type} from planning output.
 
 Compulsory reads:
-- `skills/writing/objective/reference/work-items/{work-item-type}.md`
-- `skills/writing/objective/reference/work-structure/{work-item-type}.md`
+- `ctx:github.com/ctxmod/agentic/context::shared::items@work/reference/work_items_{work-item-type}.md`
+- `ctx:github.com/ctxmod/agentic/context::shared::items@work/reference/work_structure_{work-item-type}.md`
 - `ctx:github.com/ctxmod/writing_context/context::shared::basics@core/reference/clarity.md`
 - `ctx:github.com/ctxmod/writing_context/context::shared::basics@core/reference/anti_patterns.md`
 - `{planning report path}`

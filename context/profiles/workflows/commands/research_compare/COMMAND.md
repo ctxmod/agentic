@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `research_compare_phase` agent with the command arguments in a brief that grants the `research_compare_phase` skill:
 
 ```text
-<ctxmod_activate skill="research_compare_phase" />
+<ctxmod_activate skill="agentic_workflows_research_compare_phase" />
 <command arguments>
 ```

@@ -169,7 +169,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `git_commit_objective` agent — Execute <variant> within git-commit safe phase:
 
 ```text
-<ctxmod_activate skill="git_commit_objective" />
+<ctxmod_activate skill="agentic_workflows_git_commit_objective" />
 Variant: <suggest-commits|make-commits>
 Phase-specific instructions:
   - VALIDATION_MODE=blocking
@@ -198,7 +198,7 @@ Other domains' workflow agents may reference this phase directly to
 Brief template for the `git_commit_safe_phase` agent — Execute git commit safe phase:
 
 ```text
-<ctxmod_activate skill="git_commit_safe_phase" />
+<ctxmod_activate skill="agentic_workflows_git_commit_safe_phase" />
 Execute the suggest → approve → validate (blocking) → execute chain.
 ```
 

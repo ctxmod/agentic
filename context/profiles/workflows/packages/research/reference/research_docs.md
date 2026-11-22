@@ -40,5 +40,5 @@ Notes:
 ## Related
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::research/reference/research_general.md" />
-- `reference/orchestration/phases/writing/docs.md`
+- `ctx:github.com/ctxmod/agentic/context::shared::writing_phase@workflows/reference/docs.md`
 - `ctx:github.com/ctxmod/writing/context::shared::procedures@documentation/PACKAGE.md`

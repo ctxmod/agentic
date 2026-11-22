@@ -173,7 +173,7 @@ report creation).
 Brief template for the `validation_objective` agent — Execute <phase-name> within structure validation:
 
 ```text
-<ctxmod_activate skill="validation_objective" />
+<ctxmod_activate skill="agentic_workflows_validation_objective" />
 Variant: structural
 Phase-specific instructions:
   <phase-specific parameters>
@@ -199,7 +199,7 @@ selects this dimension for schema-compliance assessment.
 Brief template for the `validate_structure_phase` agent — Execute structure validation phase:
 
 ```text
-<ctxmod_activate skill="validate_structure_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_structure_phase" />
 Execute the full resolution -> validation -> synthesis chain.
 ```
 

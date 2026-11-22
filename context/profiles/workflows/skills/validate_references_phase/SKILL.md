@@ -175,7 +175,7 @@ report creation).
 Brief template for the `validation_objective` agent — Execute <phase-name> within references validation:
 
 ```text
-<ctxmod_activate skill="validation_objective" />
+<ctxmod_activate skill="agentic_workflows_validation_objective" />
 Variant: references
 Phase-specific instructions:
   <phase-specific parameters>
@@ -201,7 +201,7 @@ selects this dimension for cross-reference integrity assessment.
 Brief template for the `validate_references_phase` agent — Execute references validation phase:
 
 ```text
-<ctxmod_activate skill="validate_references_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_references_phase" />
 Execute the full discovery -> validation -> synthesis chain.
 ```
 

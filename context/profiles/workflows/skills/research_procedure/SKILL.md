@@ -26,11 +26,11 @@ extras wastes context.
 
 | Assigned task | Read |
 |---------------|------|
-| Construct search queries | `reference/query-formulation.md` |
-| Select sources matching question types | `reference/source-selection.md` |
-| Extract atomic findings with attribution | `reference/evidence-extraction.md` |
-| Assess source quality and credibility | `reference/source-evaluation.md` |
-| Detect bias in sources | `reference/bias-detection.md` |
+| Construct search queries | `reference/query_formulation.md` |
+| Select sources matching question types | `reference/source_selection.md` |
+| Extract atomic findings with attribution | `reference/evidence_extraction.md` |
+| Assess source quality and credibility | `reference/source_evaluation.md` |
+| Detect bias in sources | `reference/bias_detection.md` |
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::research_procedure/reference/bias_detection.md" />
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::research_procedure/reference/evidence_extraction.md" />
@@ -107,11 +107,11 @@ For web and vendor bias detection, see:
 
 | Upstream phase | Procedure to dispatch |
 |----------------|-----------------------|
-| `research_compare_phase` (Phase 1 criteria definition) | `reference/query-formulation.md` |
-| `research_compare_phase` (Phase 2 alternative research) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
-| `research_practices_phase` (Phase 1 query formulation) | `reference/query-formulation.md` |
-| `research_practices_phase` (Phase 2 search) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
-| `research_practices_phase` (Phase 3 synthesis prep) | `reference/source-evaluation.md` + `reference/bias-detection.md` |
+| `research_compare_phase` (Phase 1 criteria definition) | `reference/query_formulation.md` |
+| `research_compare_phase` (Phase 2 alternative research) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
+| `research_practices_phase` (Phase 1 query formulation) | `reference/query_formulation.md` |
+| `research_practices_phase` (Phase 2 search) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
+| `research_practices_phase` (Phase 3 synthesis prep) | `reference/source_evaluation.md` + `reference/bias_detection.md` |
 
 For academic procedures (peer-reviewed sources, formal citation
 standards, methodology evaluation), dispatch the sibling

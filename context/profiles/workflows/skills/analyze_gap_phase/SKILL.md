@@ -153,7 +153,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `analysis_objective` agent — Execute <phase-name> within gap analysis:
 
 ```text
-<ctxmod_activate skill="analysis_objective" />
+<ctxmod_activate skill="agentic_workflows_analysis_objective" />
 Variant: gap
 Phase-specific instructions:
   <phase-specific parameters>
@@ -179,7 +179,7 @@ from any workflow that needs gap assessment.
 Brief template for the `analyze_gap_phase` agent — Execute gap analysis phase:
 
 ```text
-<ctxmod_activate skill="analyze_gap_phase" />
+<ctxmod_activate skill="agentic_workflows_analyze_gap_phase" />
 Execute the full discovery → target → gap → prioritization chain.
 ```
 

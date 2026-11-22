@@ -98,7 +98,7 @@ Main agent performs preflight analysis directly:
 3. **Discover context**: Invoke workflow reference discovery agent
 4. **Prepare parameters**: Assemble parameters for all phases
 
-See `reference/orchestration/main-agent-mantra.md` (preflight phase).
+See <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::delegation/reference/main_agent_mantra.md" /> (preflight phase).
 
 The full workflow combines work item creation (Phases 0-6) with work
 item execution (Phases 7-17), connected by a handoff gate.

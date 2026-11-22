@@ -18,11 +18,11 @@ context.
 
 | Assigned task | Read |
 |---------------|------|
-| Select optimal execution approach from alternatives | `reference/approach-selection.md` |
-| Map execution order and identify critical paths | `reference/dependency-analysis.md` |
-| Define verification points with rollback triggers | `reference/checkpoint-definition.md` |
-| Evaluate probability/impact, define mitigations | `reference/risk-assessment.md` |
-| Define feasible solution space within boundaries | `reference/constraint-mapping.md` |
+| Select optimal execution approach from alternatives | `reference/approach_selection.md` |
+| Map execution order and identify critical paths | `reference/dependency_analysis.md` |
+| Define verification points with rollback triggers | `reference/checkpoint_definition.md` |
+| Evaluate probability/impact, define mitigations | `reference/risk_assessment.md` |
+| Define feasible solution space within boundaries | `reference/constraint_mapping.md` |
 
 ### Approach Selection
 

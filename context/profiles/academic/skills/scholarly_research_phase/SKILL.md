@@ -147,7 +147,7 @@ bias detection, broad scan, academic pipeline).
 Brief template for the `scholarly_research_procedure` agent — Execute <phase-name> within academic research:
 
 ```text
-<ctxmod_activate skill="scholarly_research_procedure" />
+<ctxmod_activate skill="agentic_academic_scholarly_research_procedure" />
 Procedure: <procedure-name>
 Phase-specific instructions:
   <phase-specific parameters>
@@ -158,11 +158,11 @@ Dispatch procedures per phase position:
 
 | Phase | Procedure |
 |-------|-----------|
-| Phase 1 (query formulation) | `reference/query-formulation-academic.md` |
-| Phase 2 (papers) | `reference/source-selection-academic.md` + `reference/evidence-extraction-academic.md` |
-| Phase 2 (specifications) | `reference/source-selection-academic.md` + `reference/evidence-extraction-academic.md` |
-| Phase 2 (surveys) | `reference/source-selection-academic.md` + `reference/evidence-extraction-academic.md` |
-| Phase 3 (synthesis) | `reference/source-evaluation-academic.md` + `reference/bias-detection-academic.md` |
+| Phase 1 (query formulation) | `reference/query_formulation_academic.md` |
+| Phase 2 (papers) | `reference/source_selection_academic.md` + `reference/evidence_extraction_academic.md` |
+| Phase 2 (specifications) | `reference/source_selection_academic.md` + `reference/evidence_extraction_academic.md` |
+| Phase 2 (surveys) | `reference/source_selection_academic.md` + `reference/evidence_extraction_academic.md` |
+| Phase 3 (synthesis) | `reference/source_evaluation_academic.md` + `reference/bias_detection_academic.md` |
 
 ## Cross-Workflow Reference
 
@@ -174,7 +174,7 @@ theoretical grounding or formal validation.
 Brief template for the `scholarly_research_phase` agent — Execute academic research phase:
 
 ```text
-<ctxmod_activate skill="scholarly_research_phase" />
+<ctxmod_activate skill="agentic_academic_scholarly_research_phase" />
 Execute the full query → parallel search → synthesis chain.
 ```
 

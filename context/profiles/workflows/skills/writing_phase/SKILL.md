@@ -51,7 +51,7 @@ is independently applicable.
 | Documentation | Creating/updating documentation; uses documentation procedures | `reference/docs.md` |
 | Academic | Papers, literature reviews, scholarly text with citation conventions | `reference/academic.md` |
 | Report | Reports synthesizing findings from input sources (no Opus override) | `reference/report.md` |
-| Work item | Work items requiring schema structure and quality prose | `reference/work-item.md` |
+| Work item | Work items requiring schema structure and quality prose | `reference/work_item.md` |
 
 ### Capability Phase Skills (Shared-Methodology Decision)
 
@@ -173,16 +173,15 @@ Key standards:
 
 ## Source-Path Note
 
-The phase files in this skill's `reference/` directory were migrated
-from `reference/orchestration/phases/writing/` (5 files) plus the
-sibling index `reference/orchestration/phases/writing.md` (folded
-into this SKILL.md body). The original directory shape (one file per
-variant) is preserved; only the in-domain `objectives/writing*`
-links were retargeted to new `skills/writing/objective/...` paths.
-Cross-domain consumers of `phases/writing/*` are enumerated for the
-S116-I1039 horizontal sweep.
+The phase files in this skill's `reference/` directory derive from the
+legacy writing-phase corpus (5 files, one per variant) plus its sibling
+index (folded into this SKILL.md body). The original directory shape
+(one file per variant) is preserved; in-domain objective links point
+at the `writing_objective` skill and the `reporting` package.
+Cross-domain consumers of the writing phase files were enumerated for a
+later horizontal sweep.
 
-**Q1 divergence note:** Writing's phase content stands as its own
+**Divergence note:** Writing's phase content stands as its own
 skill (Option A) rather than collapsing into the workflow skill
 (Option B) because the 5 phase variant files are consumed by **three
 sibling workflows** — the writing, academic work, and work-item
@@ -224,7 +223,7 @@ schema and creation methodology under
 Brief template for the `writing_objective` agent — Produce <artifact-type> within writing phase:
 
 ```text
-<ctxmod_activate skill="writing_objective" />
+<ctxmod_activate skill="agentic_workflows_writing_objective" />
 Artifact: <artifact-type>
 <objective-specific instructions>
 Write to {OUTPUT_PATH}.

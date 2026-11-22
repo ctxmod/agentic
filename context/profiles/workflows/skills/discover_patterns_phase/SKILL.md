@@ -146,7 +146,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `discovery_objective` agent — Execute <phase-name> within pattern discovery:
 
 ```text
-<ctxmod_activate skill="discovery_objective" />
+<ctxmod_activate skill="agentic_workflows_discovery_objective" />
 Variant: patterns
 Phase-specific instructions:
   <phase-specific parameters>
@@ -172,7 +172,7 @@ identification.
 Brief template for the `discover_patterns_phase` agent — Execute pattern discovery phase:
 
 ```text
-<ctxmod_activate skill="discover_patterns_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_patterns_phase" />
 Execute the full inventory → extract → synthesis chain.
 ```
 

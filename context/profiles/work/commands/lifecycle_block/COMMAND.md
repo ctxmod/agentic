@@ -23,6 +23,6 @@ Work-item context: required.
 Launch the `lifecycle_block_phase` agent with the command arguments in a brief that grants the `lifecycle_block_phase` skill:
 
 ```text
-<ctxmod_activate skill="lifecycle_block_phase" />
+<ctxmod_activate skill="agentic_work_lifecycle_block_phase" />
 <command arguments>
 ```

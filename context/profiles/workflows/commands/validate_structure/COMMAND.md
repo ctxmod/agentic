@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `validate_structure_phase` agent with the command arguments in a brief that grants the `validate_structure_phase` skill:
 
 ```text
-<ctxmod_activate skill="validate_structure_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_structure_phase" />
 <command arguments>
 ```

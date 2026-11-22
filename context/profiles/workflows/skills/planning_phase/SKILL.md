@@ -36,10 +36,10 @@ each is independently applicable and reading extras wastes context.
 |-------------------|------|
 | Single recommended approach, standard execution | `reference/general.md` |
 | Implementing fixes based on validation findings | `reference/correction.md` |
-| Multiple viable approaches require explicit comparison | `reference/multi-option.md` |
-| Story and issue organization from analysis findings | `reference/work-item.md` |
+| Multiple viable approaches require explicit comparison | `reference/multi_option.md` |
+| Story and issue organization from analysis findings | `reference/work_item.md` |
 | Phased transition between states with rollback | `reference/migration.md` |
-| Recommendations or options requiring human judgment | `reference/human-approval.md` |
+| Recommendations or options requiring human judgment | `reference/human_approval.md` |
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::planning_phase/reference/correction.md" />
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::planning_phase/reference/general.md" />
@@ -137,7 +137,7 @@ methodology under
 Brief template for the `planning_objective` agent — Produce <planning-scenario> plan within planning phase:
 
 ```text
-<ctxmod_activate skill="planning_objective" />
+<ctxmod_activate skill="agentic_workflows_planning_objective" />
 Scenario: <planning-scenario>
 <objective-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

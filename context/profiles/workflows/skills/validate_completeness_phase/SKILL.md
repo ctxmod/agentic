@@ -191,7 +191,7 @@ report creation).
 Brief template for the `validation_objective` agent — Execute <phase-name> within completeness validation:
 
 ```text
-<ctxmod_activate skill="validation_objective" />
+<ctxmod_activate skill="agentic_workflows_validation_objective" />
 Variant: completeness
 Phase-specific instructions:
   <phase-specific parameters>
@@ -218,7 +218,7 @@ selects this dimension for coverage assessment.
 Brief template for the `validate_completeness_phase` agent — Execute completeness validation phase:
 
 ```text
-<ctxmod_activate skill="validate_completeness_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_completeness_phase" />
 Execute the full discovery -> validation -> coverage -> synthesis chain.
 ```
 

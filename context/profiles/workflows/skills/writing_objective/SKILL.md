@@ -188,7 +188,7 @@ mechanics under
 Brief template for the `writing_procedure` agent — Execute <procedure-name> within writing objective:
 
 ```text
-<ctxmod_activate skill="writing_procedure" />
+<ctxmod_activate skill="agentic_workflows_writing_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Write to {OUTPUT_PATH} or a report path reserved just-in-time (`ctxmod work new report "<title>"`).

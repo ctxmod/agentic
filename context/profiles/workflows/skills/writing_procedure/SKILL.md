@@ -45,10 +45,10 @@ Pick the row whose "When" column matches.
 |------|------|
 | General report — determine output path and filename | `reference/organization.md` |
 | General report — frontmatter, sections, attribution | `reference/creation.md` |
-| Cross-report synthesis (any domain) | `reference/summary-production.md` |
-| Academic / scholarly report — output organization (atomic notes, cross-refs) | `reference/academic/organization.md` |
-| Academic / scholarly report — citation practice, Sources section | `reference/academic/creation.md` |
-| Academic / scholarly report — paper summaries, concept notes, meeting notes | `reference/academic/note-templates.md` |
+| Cross-report synthesis (any domain) | `reference/summary_production.md` |
+| Academic / scholarly report — output organization (atomic notes, cross-refs) | `reference/academic_organization.md` |
+| Academic / scholarly report — citation practice, Sources section | `reference/academic_creation.md` |
+| Academic / scholarly report — paper summaries, concept notes, meeting notes | `reference/academic_note_templates.md` |
 
 The `academic/` variants and flat variants are **not additive** —
 pick one family based on citation convention. The summary-production
@@ -61,9 +61,9 @@ variant when the artifact is a synthesis.
    the discriminator); determine whether the artifact is a synthesis
    (read `summary-production.md` additively).
 2. **Resolve path** — read `reference/organization.md` (or
-   `reference/academic/organization.md`) for path construction rules.
+   `reference/academic_organization.md`) for path construction rules.
 3. **Author content** — read `reference/creation.md` (or
-   `reference/academic/creation.md`) for frontmatter, sections, and
+   `reference/academic_creation.md`) for frontmatter, sections, and
    attribution requirements.
 4. **Apply schema** — read the matching structure variant under
    
@@ -154,7 +154,7 @@ chains.
 
 ## Source-Path Note
 
-This skill consolidates `reference/procedures/reports/**` (6 files)
-into its `reference/` subtree, shape-preserving. The originals stay
-on disk until I1032 (deletion issue). Cross-domain consumers
-enumerated in the I1030 report residual log; S116-I1039 rewires them.
+This skill consolidates the legacy report procedures corpus (6 files)
+into its `reference/` subtree, shape-preserving. Cross-domain
+consumers were enumerated in the consolidation's residual log and
+rewired to this skill.

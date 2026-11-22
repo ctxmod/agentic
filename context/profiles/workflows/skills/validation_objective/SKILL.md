@@ -115,10 +115,10 @@ validation capability, one per capability variant:
 
 | Phase skill | Variant typically dispatched | Reference material |
 |-------------|------------------------------|--------------------|
-| `validate_completeness_phase` | completeness | `skills/validate-completeness-phase/reference/*.md` |
-| `validate_consistency_phase` | consistency | `skills/validate-consistency-phase/reference/*.md` |
-| `validate_references_phase` | references | `skills/validate-references-phase/reference/*.md` |
-| `validate_structure_phase` | structural | `skills/validate-structure-phase/reference/*.md` |
+| `validate_completeness_phase` | completeness | `skills/validate_completeness_phase/reference/*.md` |
+| `validate_consistency_phase` | consistency | `skills/validate_consistency_phase/reference/*.md` |
+| `validate_references_phase` | references | `skills/validate_references_phase/reference/*.md` |
+| `validate_structure_phase` | structural | `skills/validate_structure_phase/reference/*.md` |
 
 Ad-hoc objective-depth agents may also load this skill for general
 validation work outside any of the four capability phase chains.
@@ -245,7 +245,7 @@ mechanics under
 Brief template for the `validation_procedure` agent — Execute <procedure-name> within validation objective:
 
 ```text
-<ctxmod_activate skill="validation_procedure" />
+<ctxmod_activate skill="agentic_workflows_validation_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

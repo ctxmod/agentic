@@ -13,7 +13,7 @@ Compulsory reads:
 - the `writing_objective` skill
 - `ctx:github.com/ctxmod/writing_context/context::shared::basics@core/reference/clarity.md`
 - `ctx:github.com/ctxmod/writing_context/context::shared::basics@core/reference/anti_patterns.md`
-- `reference/procedures/docs/**/*.md`
+- `ctx:github.com/ctxmod/writing/context::shared::procedures@documentation/reference/*.md` (and, for specifications, `ctx:github.com/ctxmod/writing/context::shared::procedures@specification/reference/*.md`)
 - `{discovery/analysis report}`
 
 Read if relevant:
@@ -32,7 +32,7 @@ Delimitations:
 - Use general examples unless path-scoped
 
 Notes:
-- Documentation procedures live in `reference/procedures/docs/`
+- Documentation procedures live in the writing module's `documentation` profile (`procedures` package) and its `specification` profile (`procedures` package)
 - Select procedure based on DOC_TYPE: general/ for all docs, technical/ for code docs, specification/ for formal specs
 - Post-writing validation available via validation/docs phase
 ```
@@ -40,6 +40,6 @@ Notes:
 ## Related
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::writing_phase/reference/general.md" />
-- `reference/orchestration/phases/validation/docs.md`
-- `reference/orchestration/phases/research/docs.md`
+- <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::validation/reference/validation_docs.md" />
+- <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::research/reference/research_docs.md" />
 - `ctx:github.com/ctxmod/writing/context::shared::procedures@documentation/PACKAGE.md`

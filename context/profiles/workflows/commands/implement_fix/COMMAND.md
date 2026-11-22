@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `implement_fix_phase` agent with the command arguments in a brief that grants the `implement_fix_phase` skill:
 
 ```text
-<ctxmod_activate skill="implement_fix_phase" />
+<ctxmod_activate skill="agentic_workflows_implement_fix_phase" />
 <command arguments>
 ```

@@ -203,7 +203,7 @@ the structure in `ctx:github.com/ctxmod/agentic/context::shared::intent_write@wo
 Brief template for the `intent_write` agent — <raw-write | final-write> within intent capture (Phase 1 or 5):
 
 ```text
-<ctxmod_activate skill="intent_write" />
+<ctxmod_activate skill="agentic_work_intent_write" />
 Mode: <raw | final>
 Intent path: {INTENT_PATH}
 User input: {USER_INPUT}
@@ -216,7 +216,7 @@ User input: {USER_INPUT}
 Brief template for the `discover_architecture_phase` agent — Discovery for intent capture (Phase 2):
 
 ```text
-<ctxmod_activate skill="discover_architecture_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_architecture_phase" />
 Scope: {scope derived from user input}
 Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 ```
@@ -224,7 +224,7 @@ Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 Brief template for the `discover_consumers_phase` agent — Discovery for intent capture (Phase 2):
 
 ```text
-<ctxmod_activate skill="discover_consumers_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_consumers_phase" />
 Scope: {scope derived from user input}
 Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 ```
@@ -232,7 +232,7 @@ Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 Brief template for the `discover_dependencies_phase` agent — Discovery for intent capture (Phase 2):
 
 ```text
-<ctxmod_activate skill="discover_dependencies_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_dependencies_phase" />
 Scope: {scope derived from user input}
 Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 ```
@@ -240,7 +240,7 @@ Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 Brief template for the `discover_patterns_phase` agent — Discovery for intent capture (Phase 2):
 
 ```text
-<ctxmod_activate skill="discover_patterns_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_patterns_phase" />
 Scope: {scope derived from user input}
 Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 ```
@@ -248,7 +248,7 @@ Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-02-discovery-<variant>.md
 Brief template for the `analyze_gap_phase` agent — Gap analysis for intent capture (Phase 3):
 
 ```text
-<ctxmod_activate skill="analyze_gap_phase" />
+<ctxmod_activate skill="agentic_workflows_analyze_gap_phase" />
 Input: {INTENT_PATH} (raw)
 Context reports: {Phase 2 returned report paths}
 Report to: {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-03-gap-analysis.md

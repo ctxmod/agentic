@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `write_report_phase` agent with the command arguments in a brief that grants the `write_report_phase` skill:
 
 ```text
-<ctxmod_activate skill="write_report_phase" />
+<ctxmod_activate skill="agentic_workflows_write_report_phase" />
 <command arguments>
 ```

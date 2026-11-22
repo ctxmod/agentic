@@ -117,7 +117,7 @@ Each consumer entry includes file:line with reference context.
 
 ## Examples
 
-**Reference File Consumers**: Target `reference/principles/ssot.md`. Search for path references, `name: ssot` inline tags, and "single source of truth" mentions. Find 12 consumers: 4 rules (hard), 5 skills (soft), 3 agents (soft).
+**Reference File Consumers**: Target `ctx:github.com/ctxmod/engineering/context::shared::design@principles/reference/ssot.md`. Search for path references, `name: ssot` inline tags, and "single source of truth" mentions. Find 12 consumers: 4 rules (hard), 5 skills (soft), 3 agents (soft).
 
 **Agent File Consumers**: Target `agents/discovery/discovery-source.md`. Search for `agent:discovery-source` invocations, skill references, command orchestrations. Find 8 consumers across commands and skills with 3 cascading dependencies.
 

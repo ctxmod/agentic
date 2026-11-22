@@ -22,6 +22,6 @@ Work-item context: required.
 Launch the `implement_task_phase` agent with the command arguments in a brief that grants the `implement_task_phase` skill:
 
 ```text
-<ctxmod_activate skill="implement_task_phase" />
+<ctxmod_activate skill="agentic_workflows_implement_task_phase" />
 <command arguments>
 ```

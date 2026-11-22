@@ -23,6 +23,6 @@ Work-item context: optional.
 Launch the `discover_dependencies_phase` agent with the command arguments in a brief that grants the `discover_dependencies_phase` skill:
 
 ```text
-<ctxmod_activate skill="discover_dependencies_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_dependencies_phase" />
 <command arguments>
 ```

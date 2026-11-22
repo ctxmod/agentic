@@ -5,7 +5,7 @@ orchestrating autonomous work item creation and execution in a
 single uninterrupted workflow. This document captures work-item-type
 creation behavior, parent resolution, and the context-transition
 that distinguishes `/work` from `/run`. Execution lives in the full
-workflow (`reference/orchestration/workflows/full.md`).
+workflow (<ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::framework/reference/workflow_full.md" />).
 
 ## Distinction from `/run`
 

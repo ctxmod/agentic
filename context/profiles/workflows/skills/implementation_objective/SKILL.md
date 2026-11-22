@@ -171,7 +171,7 @@ per-procedure mechanics under
 Brief template for the `implementation_procedure` agent — Execute <procedure-name> within implementation objective:
 
 ```text
-<ctxmod_activate skill="implementation_procedure" />
+<ctxmod_activate skill="agentic_workflows_implementation_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

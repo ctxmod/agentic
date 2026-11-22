@@ -160,7 +160,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `analysis_objective` agent — Execute <phase-name> within comparative analysis:
 
 ```text
-<ctxmod_activate skill="analysis_objective" />
+<ctxmod_activate skill="agentic_workflows_analysis_objective" />
 Variant: comparative
 Phase-specific instructions:
   <phase-specific parameters>
@@ -187,7 +187,7 @@ decision support.
 Brief template for the `analyze_compare_phase` agent — Execute comparative analysis phase:
 
 ```text
-<ctxmod_activate skill="analyze_compare_phase" />
+<ctxmod_activate skill="agentic_workflows_analyze_compare_phase" />
 Execute the full discovery → criteria → evaluation → synthesis chain.
 ```
 

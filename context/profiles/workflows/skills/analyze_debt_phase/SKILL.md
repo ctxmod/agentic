@@ -160,7 +160,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `analysis_objective` agent — Execute <phase-name> within debt analysis:
 
 ```text
-<ctxmod_activate skill="analysis_objective" />
+<ctxmod_activate skill="agentic_workflows_analysis_objective" />
 Variant: synthesis
 Phase-specific instructions:
   <phase-specific parameters>
@@ -187,7 +187,7 @@ assessment.
 Brief template for the `analyze_debt_phase` agent — Execute technical debt analysis phase:
 
 ```text
-<ctxmod_activate skill="analyze_debt_phase" />
+<ctxmod_activate skill="agentic_workflows_analyze_debt_phase" />
 Execute the full discovery → impact → prioritization → roadmap chain.
 ```
 

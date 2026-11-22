@@ -31,9 +31,9 @@ methodology to this base objective and is additive, not a replacement.
 | Single recommended approach, standard execution | `reference/general.md` |
 | Multi-phase execution with gates and handoffs | `reference/phased.md` |
 | Iterative cycles with adaptation points | `reference/incremental.md` |
-| Elevated uncertainty or high-impact failures | `reference/risk-aware.md` |
-| Tight resource, time, or capability boundaries | `reference/constraint-based.md` |
-| Oversized, decision-fogged effort spanning many sessions | `reference/decision-map.md` |
+| Elevated uncertainty or high-impact failures | `reference/risk_aware.md` |
+| Tight resource, time, or capability boundaries | `reference/constraint_based.md` |
+| Oversized, decision-fogged effort spanning many sessions | `reference/decision_map.md` |
 
 ## Core Behavior
 
@@ -177,7 +177,7 @@ mechanics under
 Brief template for the `planning_procedure` agent — Execute <procedure-name> within planning objective:
 
 ```text
-<ctxmod_activate skill="planning_procedure" />
+<ctxmod_activate skill="agentic_workflows_planning_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

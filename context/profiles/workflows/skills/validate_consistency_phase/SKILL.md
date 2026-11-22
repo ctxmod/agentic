@@ -189,7 +189,7 @@ report creation).
 Brief template for the `validation_objective` agent — Execute <phase-name> within consistency validation:
 
 ```text
-<ctxmod_activate skill="validation_objective" />
+<ctxmod_activate skill="agentic_workflows_validation_objective" />
 Variant: consistency
 Phase-specific instructions:
   <phase-specific parameters>
@@ -216,7 +216,7 @@ selects this dimension for cross-artifact alignment assessment.
 Brief template for the `validate_consistency_phase` agent — Execute consistency validation phase:
 
 ```text
-<ctxmod_activate skill="validate_consistency_phase" />
+<ctxmod_activate skill="agentic_workflows_validate_consistency_phase" />
 Execute the full discovery -> validation -> alignment -> synthesis chain.
 ```
 

@@ -22,10 +22,10 @@ four discovery capability phases that dispatch this objective.
 | `discover_consumers_phase` | consumers | `reference/consumers.md` |
 | `discover_dependencies_phase` | dependencies | `reference/dependencies.md` |
 | `discover_patterns_phase` | patterns | `reference/patterns.md` |
-| (ad-hoc, any phase) | repo-source | `reference/repo-source.md` |
-| (ad-hoc, any phase) | repo-docs | `reference/repo-docs.md` |
-| (ad-hoc, any phase) | work-items | `reference/work-items.md` |
-| (ad-hoc, any phase) | any-work-items | `reference/any-work-items.md` |
+| (ad-hoc, any phase) | repo-source | `reference/repo_source.md` |
+| (ad-hoc, any phase) | repo-docs | `reference/repo_docs.md` |
+| (ad-hoc, any phase) | work-items | `reference/work_items.md` |
+| (ad-hoc, any phase) | any-work-items | `reference/any_work_items.md` |
 | (ad-hoc, any phase) | external | `reference/external.md` |
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::discovery_objective/reference/any_work_items.md" />
@@ -159,7 +159,7 @@ mechanics under
 Brief template for the `discovery_procedure` agent — Execute <procedure-name> within discovery objective:
 
 ```text
-<ctxmod_activate skill="discovery_procedure" />
+<ctxmod_activate skill="agentic_workflows_discovery_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.
@@ -185,10 +185,10 @@ discovery capability, one per capability variant:
 
 | Phase skill | Variant typically dispatched | Reference material |
 |-------------|------------------------------|--------------------|
-| `discover_architecture_phase` | architecture | `skills/discover-architecture-phase/reference/*.md` |
-| `discover_consumers_phase` | consumers | `skills/discover-consumers-phase/reference/*.md` |
-| `discover_dependencies_phase` | dependencies | `skills/discover-dependencies-phase/reference/*.md` |
-| `discover_patterns_phase` | patterns | `skills/discover-patterns-phase/reference/*.md` |
+| `discover_architecture_phase` | architecture | `skills/discover_architecture_phase/reference/*.md` |
+| `discover_consumers_phase` | consumers | `skills/discover_consumers_phase/reference/*.md` |
+| `discover_dependencies_phase` | dependencies | `skills/discover_dependencies_phase/reference/*.md` |
+| `discover_patterns_phase` | patterns | `skills/discover_patterns_phase/reference/*.md` |
 
 Ad-hoc objective-depth agents may also load this skill for general
 discovery work outside any of the four capability phase chains.

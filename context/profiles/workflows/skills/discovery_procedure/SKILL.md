@@ -17,13 +17,13 @@ each is independently applicable and reading extras wastes context.
 
 | Assigned task | Read |
 |---------------|------|
-| Inventory a directory tree; categorize and count files before deeper work | `reference/broad-scan.md` |
-| Find every file that references, imports, or depends on a target | `reference/consumer-search.md` |
-| Identify the public interfaces external consumers or runtimes invoke | `reference/entry-point-detection.md` |
-| Extract import/dependency statements from source files | `reference/import-extraction.md` |
-| Build a directed graph from extracted import relationships | `reference/graph-construction.md` |
-| Detect recurring structures via frequency and similarity analysis | `reference/pattern-detection.md` |
-| Verify dependency direction and layer-boundary compliance | `reference/boundary-validation.md` |
+| Inventory a directory tree; categorize and count files before deeper work | `reference/broad_scan.md` |
+| Find every file that references, imports, or depends on a target | `reference/consumer_search.md` |
+| Identify the public interfaces external consumers or runtimes invoke | `reference/entry_point_detection.md` |
+| Extract import/dependency statements from source files | `reference/import_extraction.md` |
+| Build a directed graph from extracted import relationships | `reference/graph_construction.md` |
+| Detect recurring structures via frequency and similarity analysis | `reference/pattern_detection.md` |
+| Verify dependency direction and layer-boundary compliance | `reference/boundary_validation.md` |
 
 ### Broad Scan
 

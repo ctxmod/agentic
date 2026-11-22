@@ -336,7 +336,7 @@ Phase 2 (one dispatch per target, sequential by default):
 Brief template for the `cleanup_code_debt_analyze_objective` agent — Analyze code-debt target <target-id>:
 
 ```text
-<ctxmod_activate skill="cleanup_code_debt_analyze_objective" />
+<ctxmod_activate skill="agentic_workflows_cleanup_code_debt_analyze_objective" />
 Variant: analyze
 Input: {discovery-report-path or target descriptor}, target-id <target-id>
 Enumerate every reference via the symbol index (definition-level code
@@ -359,7 +359,7 @@ agent from any workflow that needs code-debt removal capability.
 Brief template for the `cleanup_code_debt_phase` agent — Execute the code-debt cleanup phase:
 
 ```text
-<ctxmod_activate skill="cleanup_code_debt_phase" />
+<ctxmod_activate skill="agentic_workflows_cleanup_code_debt_phase" />
 Execute the full discover → analyze → apply chain with the
 verify-before-remove gate enforced at every removal. Target:
 <target or repo-root>. Do not remove any code until every

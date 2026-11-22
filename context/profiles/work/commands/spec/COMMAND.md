@@ -24,6 +24,6 @@ Work-item context: optional.
 Launch the `spec_phase` agent with the command arguments in a brief that grants the `spec_phase` skill:
 
 ```text
-<ctxmod_activate skill="spec_phase" />
+<ctxmod_activate skill="agentic_work_spec_phase" />
 <command arguments>
 ```

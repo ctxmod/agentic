@@ -22,6 +22,6 @@ Work-item context: required.
 Launch the `lifecycle_complete_phase` agent with the command arguments in a brief that grants the `lifecycle_complete_phase` skill:
 
 ```text
-<ctxmod_activate skill="lifecycle_complete_phase" />
+<ctxmod_activate skill="agentic_work_lifecycle_complete_phase" />
 <command arguments>
 ```

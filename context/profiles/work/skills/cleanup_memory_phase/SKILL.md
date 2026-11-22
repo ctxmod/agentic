@@ -327,7 +327,7 @@ launch the `cleanup_memory_phase` agent directly:
 Brief template for the `cleanup_memory_phase` agent — Execute the memory cleanup phase:
 
 ```text
-<ctxmod_activate skill="cleanup_memory_phase" />
+<ctxmod_activate skill="agentic_work_cleanup_memory_phase" />
 Analyze the work store's memories with the operator's filter, classify
 each memory, solidify durable knowledge into the context module's
 reference via the writing and context-editing skills, and retire

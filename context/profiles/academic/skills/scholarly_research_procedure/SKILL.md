@@ -27,12 +27,12 @@ wastes context.
 
 | Assigned task | Read |
 |---------------|------|
-| Construct academic sub-queries across scholarly databases | `reference/query-formulation-academic.md` |
-| Select academic sources matching question types | `reference/source-selection-academic.md` |
-| Extract atomic findings with formal academic citations | `reference/evidence-extraction-academic.md` |
-| Assess academic source quality (study design, methodology) | `reference/source-evaluation-academic.md` |
-| Detect academic publication and methodology bias | `reference/bias-detection-academic.md` |
-| Scan broad landscape of a topic across scholarly databases | `reference/broad-scan.md` |
+| Construct academic sub-queries across scholarly databases | `reference/query_formulation_academic.md` |
+| Select academic sources matching question types | `reference/source_selection_academic.md` |
+| Extract atomic findings with formal academic citations | `reference/evidence_extraction_academic.md` |
+| Assess academic source quality (study design, methodology) | `reference/source_evaluation_academic.md` |
+| Detect academic publication and methodology bias | `reference/bias_detection_academic.md` |
+| Scan broad landscape of a topic across scholarly databases | `reference/broad_scan.md` |
 | Enforce academic pipeline quality gates between phases | `reference/pipeline.md` |
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::scholarly_research_procedure/reference/bias_detection_academic.md" />
@@ -136,10 +136,10 @@ coverage criteria that must be met before proceeding between phases.
 
 | Upstream phase | Procedure to dispatch |
 |----------------|-----------------------|
-| `scholarly_research_phase` (Phase 1 query formulation) | `reference/query-formulation-academic.md` |
-| `scholarly_research_phase` (Phase 2 academic search) | `reference/source-selection-academic.md` + `reference/evidence-extraction-academic.md` |
-| `scholarly_research_phase` (Phase 3 synthesis prep) | `reference/source-evaluation-academic.md` + `reference/bias-detection-academic.md` |
-| ad-hoc academic pipeline execution | `reference/broad-scan.md` + `reference/pipeline.md` |
+| `scholarly_research_phase` (Phase 1 query formulation) | `reference/query_formulation_academic.md` |
+| `scholarly_research_phase` (Phase 2 academic search) | `reference/source_selection_academic.md` + `reference/evidence_extraction_academic.md` |
+| `scholarly_research_phase` (Phase 3 synthesis prep) | `reference/source_evaluation_academic.md` + `reference/bias_detection_academic.md` |
+| ad-hoc academic pipeline execution | `reference/broad_scan.md` + `reference/pipeline.md` |
 
 ## Cross-Cutting Reference
 

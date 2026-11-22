@@ -344,7 +344,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `writing_objective` agent — Execute <phase-name> within work item writing:
 
 ```text
-<ctxmod_activate skill="writing_objective" />
+<ctxmod_activate skill="agentic_workflows_writing_objective" />
 Artifact category: work-item
 Variant: <epic|story|issue|task>
 Phase-specific instructions:

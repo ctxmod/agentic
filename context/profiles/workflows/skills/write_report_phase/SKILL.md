@@ -144,10 +144,10 @@ If validating, apply the validation loop (max 3 remediation iterations).
 
 | Type | Purpose | Schema reference |
 |------|---------|------------------|
-| `discovery` | Catalog findings from exploration | `skills/writing/objective/reference/structure/discovery.md` |
-| `analysis` | Synthesize insights from data | `skills/writing/objective/reference/structure/analysis.md` |
-| `validation` | Document verification results | `skills/writing/objective/reference/structure/validation.md` |
-| `summary` | Executive overview of work | `skills/writing/objective/reference/structure/summary.md` |
+| `discovery` | Catalog findings from exploration | <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_discovery.md" /> |
+| `analysis` | Synthesize insights from data | <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_analysis.md" /> |
+| `validation` | Document verification results | <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_validation.md" /> |
+| `summary` | Executive overview of work | <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_summary.md" /> |
 
 ## Information Flow
 
@@ -251,7 +251,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `writing_objective` agent — Execute <phase-name> within report writing:
 
 ```text
-<ctxmod_activate skill="writing_objective" />
+<ctxmod_activate skill="agentic_workflows_writing_objective" />
 Artifact category: report
 Variant: <report-type>
 Phase-specific instructions:

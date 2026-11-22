@@ -143,7 +143,7 @@ bias detection).
 Brief template for the `research_procedure` agent — Execute <phase-name> within best practices research:
 
 ```text
-<ctxmod_activate skill="research_procedure" />
+<ctxmod_activate skill="agentic_workflows_research_procedure" />
 Procedure: <procedure-name>
 Phase-specific instructions:
   <phase-specific parameters>
@@ -154,11 +154,11 @@ Dispatch procedures per phase position:
 
 | Phase | Procedure |
 |-------|-----------|
-| Phase 1 (query formulation) | `reference/query-formulation.md` |
-| Phase 2 (web sources) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
-| Phase 2 (community sources) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
-| Phase 2 (github sources) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
-| Phase 3 (synthesis) | `reference/source-evaluation.md` + `reference/bias-detection.md` |
+| Phase 1 (query formulation) | `reference/query_formulation.md` |
+| Phase 2 (web sources) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
+| Phase 2 (community sources) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
+| Phase 2 (github sources) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
+| Phase 3 (synthesis) | `reference/source_evaluation.md` + `reference/bias_detection.md` |
 
 ## Cross-Workflow Reference
 
@@ -170,7 +170,7 @@ industry-practice evidence.
 Brief template for the `research_practices_phase` agent — Execute best practices research phase:
 
 ```text
-<ctxmod_activate skill="research_practices_phase" />
+<ctxmod_activate skill="agentic_workflows_research_practices_phase" />
 Execute the full query → parallel search → synthesis chain.
 ```
 

@@ -19,14 +19,14 @@ wastes context.
 
 | Assigned task | Read (general) | Read (academic) |
 |---------------|----------------|-----------------|
-| Ingest findings from input reports | `reference/report-ingestion.md` | — |
-| Identify themes across multiple sources | `reference/pattern-aggregation.md` | `reference/pattern-aggregation-academic.md` |
-| Resolve conflicts between sources | `reference/contradiction-resolution.md` | `reference/contradiction-resolution-academic.md` |
-| Assess confidence levels for findings | `reference/confidence-assessment.md` | `reference/confidence-assessment-academic.md` |
-| Weight evaluation criteria | `reference/criteria-weighting.md` | — |
-| Score impact by business value, risk, frequency | `reference/impact-scoring.md` | — |
+| Ingest findings from input reports | `reference/report_ingestion.md` | — |
+| Identify themes across multiple sources | `reference/pattern_aggregation.md` | `reference/pattern_aggregation_academic.md` |
+| Resolve conflicts between sources | `reference/contradiction_resolution.md` | `reference/contradiction_resolution_academic.md` |
+| Assess confidence levels for findings | `reference/confidence_assessment.md` | `reference/confidence_assessment_academic.md` |
+| Weight evaluation criteria | `reference/criteria_weighting.md` | — |
+| Score impact by business value, risk, frequency | `reference/impact_scoring.md` | — |
 | Apply impact/effort matrix for prioritization | `reference/prioritization.md` | — |
-| Assess individual sources through structured frameworks | — | `reference/critical-analysis.md` |
+| Assess individual sources through structured frameworks | — | `reference/critical_analysis.md` |
 
 ### Report Ingestion
 

@@ -17,10 +17,10 @@ each is independently applicable and reading extras wastes context.
 
 | Assigned task | Read |
 |---------------|------|
-| Sequence modifications, map dependencies, define rollback strategy | `reference/change-planning.md` |
-| Confirm context is sufficient before modifying; identify gaps | `reference/context-assessment.md` |
-| Execute planned modifications with checkpoint verification | `reference/execution-checkpoints.md` |
-| Produce the completion report summarizing what was done | `reference/completion-reporting.md` |
+| Sequence modifications, map dependencies, define rollback strategy | `reference/change_planning.md` |
+| Confirm context is sufficient before modifying; identify gaps | `reference/context_assessment.md` |
+| Execute planned modifications with checkpoint verification | `reference/execution_checkpoints.md` |
+| Produce the completion report summarizing what was done | `reference/completion_reporting.md` |
 
 ### Change Planning
 

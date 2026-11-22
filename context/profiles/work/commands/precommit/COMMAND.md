@@ -24,6 +24,6 @@ Work-item context: dynamic.
 Launch the `precommit_phase` agent with the command arguments in a brief that grants the `precommit_phase` skill:
 
 ```text
-<ctxmod_activate skill="precommit_phase" />
+<ctxmod_activate skill="agentic_work_precommit_phase" />
 <command arguments>
 ```

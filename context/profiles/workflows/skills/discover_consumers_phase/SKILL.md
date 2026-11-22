@@ -159,7 +159,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `discovery_objective` agent — Execute <phase-name> within consumer discovery:
 
 ```text
-<ctxmod_activate skill="discovery_objective" />
+<ctxmod_activate skill="agentic_workflows_discovery_objective" />
 Variant: consumers
 Phase-specific instructions:
   <phase-specific parameters>
@@ -186,7 +186,7 @@ impact analysis.
 Brief template for the `discover_consumers_phase` agent — Execute consumer discovery phase:
 
 ```text
-<ctxmod_activate skill="discover_consumers_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_consumers_phase" />
 Execute the full target → search → classify → synthesis chain.
 ```
 

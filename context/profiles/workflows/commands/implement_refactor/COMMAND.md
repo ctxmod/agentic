@@ -23,6 +23,6 @@ Work-item context: required.
 Launch the `implement_refactor_phase` agent with the command arguments in a brief that grants the `implement_refactor_phase` skill:
 
 ```text
-<ctxmod_activate skill="implement_refactor_phase" />
+<ctxmod_activate skill="agentic_workflows_implement_refactor_phase" />
 <command arguments>
 ```

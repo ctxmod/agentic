@@ -157,7 +157,7 @@ bias detection).
 Brief template for the `research_procedure` agent — Execute <phase-name> within comparative research:
 
 ```text
-<ctxmod_activate skill="research_procedure" />
+<ctxmod_activate skill="agentic_workflows_research_procedure" />
 Procedure: <procedure-name>
 Phase-specific instructions:
   <phase-specific parameters>
@@ -168,8 +168,8 @@ Dispatch procedures per phase position:
 
 | Phase | Procedure |
 |-------|-----------|
-| Phase 1 (criteria definition) | `reference/query-formulation.md` (general) |
-| Phase 2 (alternative research) | `reference/source-selection.md` + `reference/evidence-extraction.md` |
+| Phase 1 (criteria definition) | `reference/query_formulation.md` (general) |
+| Phase 2 (alternative research) | `reference/source_selection.md` + `reference/evidence_extraction.md` |
 | Phase 3 (comparative analysis) | (analysis-domain procedures) |
 | Phase 4 (recommendation) | (analysis-domain procedures) |
 
@@ -183,7 +183,7 @@ evidence-based comparison.
 Brief template for the `research_compare_phase` agent — Execute comparative research phase:
 
 ```text
-<ctxmod_activate skill="research_compare_phase" />
+<ctxmod_activate skill="agentic_workflows_research_compare_phase" />
 Execute the full criteria → research → analysis → recommendation chain.
 ```
 

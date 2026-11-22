@@ -8,7 +8,7 @@ Discover the specific reports, work item files, documentation, and compulsory-re
 
 Additionally, when an intent file exists for the current session, the preflight agent identifies files especially relevant to that intent and provides augmentations.
 
-The main agent typically references only general phase files (e.g., `skills/discovery/shared/reference/_index.md`). This agent examines variant phase files (e.g., `skills/discovery/shared/reference/scan.md`, `skills/discovery/shared/reference/architecture-synthesis.md`) and related phase categories (e.g., `research/*.md` variants relate to discovery phases) to recommend which `subagent_type` values and variants best fit each phase—without returning the specialized phase files themselves. The main agent receives better orchestration context this way.
+The main agent typically references only general phase files (e.g., the `discovery_phase_selection` reference of the `discovery` package). This agent examines variant phase files (e.g., the `discovery_*` variant references and the phase skills' own `reference/` variants such as `discover_architecture_phase`'s `scan.md` and `architecture_synthesis.md`) and related phase categories (e.g., `research_*` variants relate to discovery phases) to recommend which `subagent_type` values and variants best fit each phase—without returning the specialized phase files themselves. The main agent receives better orchestration context this way.
 
 Use this preflight phase to:
 
@@ -54,7 +54,7 @@ Report discovery:
 Work item discovery:
 - Preferred: `ctxmod work list [--parent <parent-id>]` for inventory and statuses. Fall back to file search when the work store is unavailable.
 - `work_store_first` in the ctxmod builtin `work_discipline` profile
-- Find related work item files (ISSUE.md, EPIC.md, STORY.md, TASK.md) and note their completion status
+- Find related work item bodies (`ITEM.md` of epics, stories, issues, tasks) and note their completion status (`ctxmod work show`)
 - Include work items that provide context for the current workflow objective
 
 Documentation discovery:
@@ -64,11 +64,11 @@ Documentation discovery:
 Reference file discovery (compulsory reads per sub-agent):
 - Identify relevant objectives, procedures, principles, and report schemas for each sub-agent type
 - Do NOT return phase files or workflow files as compulsory reads
-- Return files that sub-agents should read: objectives (reference/objectives/), procedures (reference/procedures/), principles (reference/principles/), schemas (skills/writing/objective/reference/structure/)
+- Return files that sub-agents should read: objective-skill references (`skills/<cap>_objective/reference/`), procedure-skill references (`skills/<cap>_procedure/reference/`), principles (the engineering module's `principles` profile and the writing_context module's `core` profile), schemas (the `reporting` package's `structure_*.md`)
 
 Variant and subagent_type recommendations:
-- Parse all agent-template blocks in the provided general phase files
-- Examine variant phase files in subdirectories of each referenced phase (e.g., discovery/*.md, research/*.md, analysis/*.md)
+- Parse all brief-template blocks (fenced briefs carrying `<ctxmod_activate skill="…" />`) in the provided general phase files
+- Examine variant phase files of each referenced phase (e.g., the `discovery_*`, `research_*`, `analysis_*` package references and phase skills' `reference/` variants)
 - Also examine related phase categories (research variants relate to discovery; analysis variants relate to planning)
 - Recommend preferred subagent_type values and variants for each phase instead of returning the specialized phase file paths
 - The main agent uses these recommendations to select the right agent type per launch
@@ -109,10 +109,10 @@ Main agent appends these to intent file before launching sub-agents.
 #### `subagent_type: \{type}` (variant: \{variant-name if applicable})
 
 Compulsory reads:
-- reference/objectives/\{...}/\{specific}.md
-- reference/procedures/\{...}/\{specific}.md
-- reference/principles/\{...}/\{specific}.md
-- skills/writing/objective/reference/structure/\{type}.md
+- skills/\{cap}_objective/reference/\{specific}.md
+- skills/\{cap}_procedure/reference/\{specific}.md
+- \{principles module}/\{package}/reference/\{specific}.md
+- packages/reporting/reference/structure_\{type}.md
 - ...
 
 Reports:
@@ -120,8 +120,8 @@ Reports:
 - ...
 
 Work items:
-- \{path}/ISSUE.md (status: \{status})
-- \{path}/STORY.md (status: \{status})
+- \{issue item dir}/ITEM.md (status: \{status})
+- \{story item dir}/ITEM.md (status: \{status})
 - ...
 
 Documentation:
@@ -172,17 +172,17 @@ Identify files that each sub-agent should receive as compulsory reads. These are
 
 | Include | Exclude |
 |---------|---------|
-| Objectives (`reference/objectives/`) | Phase files (`reference/orchestration/phases/`) |
-| Procedures (`reference/procedures/`) | Workflow files (`reference/orchestration/workflows/`) |
-| Principles (`reference/principles/`) | Other orchestration files |
-| Report schemas (`skills/writing/objective/reference/structure/`) | |
+| Objective-skill references (`skills/<cap>_objective/reference/`) | Phase files (phase skills and `<cap>_phase_selection` references) |
+| Procedure-skill references (`skills/<cap>_procedure/reference/`) | Workflow files (the `framework` package's `workflow_*.md`) |
+| Principles (engineering `principles`, writing_context `core`) | Other orchestration files |
+| Report schemas (the `reporting` package's `structure_*.md`) | |
 
 ## Variant Recommendation Process
 
 The main agent references general phase files. This agent examines the variant subdirectories and related phase categories to recommend better-fit agent types:
 
-1. **Parse general phase files**: Extract agent-template blocks from provided phase files
-2. **Examine variant files**: Read variant phase files in subdirectories (e.g., `discovery/scan.md`, `analysis/gap.md`)
+1. **Parse general phase files**: Extract brief-template blocks from provided phase files
+2. **Examine variant files**: Read variant phase files (e.g., `discover_architecture_phase`'s `scan.md`, `analyze_gap_phase`'s `gap.md`)
 3. **Cross-reference related categories**: Research variants relate to discovery; analysis variants relate to planning; remediation variants relate to validation
 4. **Recommend subagent_types**: For each phase, recommend the variant that best fits the current task—return the recommended `subagent_type` and rationale, not the variant file path
 5. **Preserve main agent abstraction**: The main agent does not need to know about specialized phase files; it needs to know which agent type to launch

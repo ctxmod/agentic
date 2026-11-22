@@ -198,7 +198,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `git_commit_objective` agent — Execute <variant> within git-commit default phase:
 
 ```text
-<ctxmod_activate skill="git_commit_objective" />
+<ctxmod_activate skill="agentic_workflows_git_commit_objective" />
 Variant: <suggest-commits|make-commits>
 Phase-specific instructions:
   - VALIDATION_MODE=blocking
@@ -224,7 +224,7 @@ agent from any workflow that needs blocking-validation commits.
 Brief template for the `git_commit_default_phase` agent — Execute git commit default phase:
 
 ```text
-<ctxmod_activate skill="git_commit_default_phase" />
+<ctxmod_activate skill="agentic_workflows_git_commit_default_phase" />
 Execute the full suggest → validate (blocking) → execute chain.
 Story completion does not route here — it belongs to the
 story-completion validator.

@@ -68,11 +68,11 @@ analysis capability, one per capability variant:
 
 | Phase skill | Variant typically dispatched | Reference material |
 |-------------|------------------------------|--------------------|
-| `analyze_compare_phase` | comparative | `skills/analyze-compare-phase/reference/*.md` |
-| `analyze_debt_phase` | synthesis | `skills/analyze-debt-phase/reference/*.md` |
-| `analyze_gap_phase` | gap | `skills/analyze-gap-phase/reference/*.md` |
-| `analyze_quality_phase` | synthesis | `skills/analyze-quality-phase/reference/*.md` |
-| `analyze_comprehensive_phase` | synthesis | `skills/analyze-comprehensive-phase/reference/*.md` |
+| `analyze_compare_phase` | comparative | `skills/analyze_compare_phase/reference/*.md` |
+| `analyze_debt_phase` | synthesis | `skills/analyze_debt_phase/reference/*.md` |
+| `analyze_gap_phase` | gap | `skills/analyze_gap_phase/reference/*.md` |
+| `analyze_quality_phase` | synthesis | `skills/analyze_quality_phase/reference/*.md` |
+| `analyze_comprehensive_phase` | synthesis | `skills/analyze_comprehensive_phase/reference/*.md` |
 
 Ad-hoc objective-depth agents may also load this skill for general
 analysis work outside any of the five capability phase chains.
@@ -189,7 +189,7 @@ mechanics under
 Brief template for the `analysis_procedure` agent — Execute <procedure-name> within analysis objective:
 
 ```text
-<ctxmod_activate skill="analysis_procedure" />
+<ctxmod_activate skill="agentic_workflows_analysis_procedure" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.

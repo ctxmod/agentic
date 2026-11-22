@@ -23,8 +23,8 @@ recommendations; make-commits produces commit hashes.
 
 | Assigned task | Read |
 |---------------|------|
-| Analyze changes and recommend commit strategies | `reference/suggest-commits.md` |
-| Execute commits based on a recommendation report | `reference/make-commits.md` |
+| Analyze changes and recommend commit strategies | `reference/suggest_commits.md` |
+| Execute commits based on a recommendation report | `reference/make_commits.md` |
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::git_commit_objective/reference/make_commits.md" />
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::git_commit_objective/reference/suggest_commits.md" />

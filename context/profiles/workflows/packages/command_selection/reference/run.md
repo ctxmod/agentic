@@ -4,7 +4,7 @@ Selection guidance for the `/run` command — the entry point for
 orchestrating complete work item execution from current state to
 done. This document captures work-item-type adaptations, conditional
 phase logic, and error-recovery guidance. Execution lives in the run
-workflow (`reference/orchestration/workflows/run.md`) and the
+workflow (<ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::framework/reference/workflow_run.md" />) and the
 lifecycle phase skills.
 
 ## Work Item Type Adaptations

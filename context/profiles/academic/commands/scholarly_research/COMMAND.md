@@ -22,6 +22,6 @@ Work-item context: optional.
 Launch the `scholarly_research_phase` agent with the command arguments in a brief that grants the `scholarly_research_phase` skill:
 
 ```text
-<ctxmod_activate skill="scholarly_research_phase" />
+<ctxmod_activate skill="agentic_academic_scholarly_research_phase" />
 <command arguments>
 ```

@@ -22,6 +22,6 @@ Work-item context: optional.
 Launch the `review_audit_phase` agent with the command arguments in a brief that grants the `review_audit_phase` skill:
 
 ```text
-<ctxmod_activate skill="review_audit_phase" />
+<ctxmod_activate skill="agentic_workflows_review_audit_phase" />
 <command arguments>
 ```

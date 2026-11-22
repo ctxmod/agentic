@@ -22,10 +22,10 @@ context.
 
 | Assigned task | Read |
 |---------------|------|
-| Transform validation findings into actionable understanding | `reference/issue-analysis.md` |
-| Convert issue analysis into an executable correction plan | `reference/correction-planning.md` |
-| Execute correction plan systematically with verification and rollback | `reference/correction-execution.md` |
-| Systematic multi-pass revision of an academic document | `reference/academic-revision.md` |
+| Transform validation findings into actionable understanding | `reference/issue_analysis.md` |
+| Convert issue analysis into an executable correction plan | `reference/correction_planning.md` |
+| Execute correction plan systematically with verification and rollback | `reference/correction_execution.md` |
+| Systematic multi-pass revision of an academic document | `reference/academic_revision.md` |
 
 ### Issue Analysis
 

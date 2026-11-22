@@ -22,11 +22,11 @@ wastes context.
 | Verify required element presence and coverage | `reference/completeness.md` | — |
 | Verify cross-artifact alignment and terminology uniformity | `reference/consistency.md` | — |
 | Verify cross-reference resolution and link integrity | `reference/references.md` | — |
-| Assign severity levels to validation findings | `reference/severity-classification.md` | — |
+| Assign severity levels to validation findings | `reference/severity_classification.md` | — |
 | Verify convention, style, and best-practice adherence | `reference/standards.md` | — |
 | Verify schema compliance and format requirements | `reference/structural.md` | — |
-| Cross-check findings against independent evidence | — | `reference/cross-validation.md` |
-| Apply structured checklists at source/citation/finalization decision points | — | `reference/quality-assurance.md` |
+| Cross-check findings against independent evidence | — | `reference/cross_validation.md` |
+| Apply structured checklists at source/citation/finalization decision points | — | `reference/quality_assurance.md` |
 
 ### Completeness Validation
 

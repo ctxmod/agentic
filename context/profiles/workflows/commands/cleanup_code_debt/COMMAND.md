@@ -22,6 +22,6 @@ Work-item context: optional.
 Launch the `cleanup_code_debt_phase` agent with the command arguments in a brief that grants the `cleanup_code_debt_phase` skill:
 
 ```text
-<ctxmod_activate skill="cleanup_code_debt_phase" />
+<ctxmod_activate skill="agentic_workflows_cleanup_code_debt_phase" />
 <command arguments>
 ```

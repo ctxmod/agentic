@@ -22,6 +22,6 @@ Work-item context: optional.
 Launch the `research_practices_phase` agent with the command arguments in a brief that grants the `research_practices_phase` skill:
 
 ```text
-<ctxmod_activate skill="research_practices_phase" />
+<ctxmod_activate skill="agentic_workflows_research_practices_phase" />
 <command arguments>
 ```

@@ -168,7 +168,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `git_commit_objective` agent — Execute <variant> within git-commit unsafe phase:
 
 ```text
-<ctxmod_activate skill="git_commit_objective" />
+<ctxmod_activate skill="agentic_workflows_git_commit_objective" />
 Variant: <suggest-commits|make-commits>
 Phase-specific instructions:
   - VALIDATION_MODE=informational
@@ -198,7 +198,7 @@ validation findings.
 Brief template for the `git_commit_unsafe_phase` agent — Execute git commit unsafe phase:
 
 ```text
-<ctxmod_activate skill="git_commit_unsafe_phase" />
+<ctxmod_activate skill="agentic_workflows_git_commit_unsafe_phase" />
 Execute the suggest → validate (informational) → execute (unsafe) chain.
 ```
 

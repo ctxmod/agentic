@@ -310,6 +310,6 @@ Cancellation during shutdown requires timeout-bounded cleanup. Sources agree on 
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_discovery.md" />
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::reporting/reference/structure_analysis.md" />
-- `reference/procedures/research/query-formulation.md`
-- `reference/procedures/research/source-evaluation.md`
+- `ctx:github.com/ctxmod/agentic/context::shared::research_procedure@workflows/reference/query_formulation.md`
+- `ctx:github.com/ctxmod/agentic/context::shared::research_procedure@workflows/reference/source_evaluation.md`
 - `ctx:github.com/ctxmod/agentic/context::shared::writing_procedure@workflows/reference/creation.md`

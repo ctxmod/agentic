@@ -10,6 +10,6 @@ Stage and commit with full validation; abort on any issue.
 Launch the `git_commit_safe_phase` agent with the command arguments in a brief that grants the `git_commit_safe_phase` skill:
 
 ```text
-<ctxmod_activate skill="git_commit_safe_phase" />
+<ctxmod_activate skill="agentic_workflows_git_commit_safe_phase" />
 <command arguments>
 ```

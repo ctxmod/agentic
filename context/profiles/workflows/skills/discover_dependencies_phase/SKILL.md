@@ -164,7 +164,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `discovery_objective` agent — Execute <phase-name> within dependency discovery:
 
 ```text
-<ctxmod_activate skill="discovery_objective" />
+<ctxmod_activate skill="agentic_workflows_discovery_objective" />
 Variant: dependencies
 Phase-specific instructions:
   <phase-specific parameters>
@@ -191,7 +191,7 @@ dependency mapping.
 Brief template for the `discover_dependencies_phase` agent — Execute dependency discovery phase:
 
 ```text
-<ctxmod_activate skill="discover_dependencies_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_dependencies_phase" />
 Execute the full components → extract → graph → synthesis chain.
 ```
 

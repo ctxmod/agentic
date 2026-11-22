@@ -154,7 +154,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `discovery_objective` agent — Execute <phase-name> within architecture discovery:
 
 ```text
-<ctxmod_activate skill="discovery_objective" />
+<ctxmod_activate skill="agentic_workflows_discovery_objective" />
 Variant: architecture
 Phase-specific instructions:
   <phase-specific parameters>
@@ -181,7 +181,7 @@ structural context.
 Brief template for the `discover_architecture_phase` agent — Execute architecture discovery phase:
 
 ```text
-<ctxmod_activate skill="discover_architecture_phase" />
+<ctxmod_activate skill="agentic_workflows_discover_architecture_phase" />
 Execute the full scan → boundaries → layers → synthesis chain.
 ```
 

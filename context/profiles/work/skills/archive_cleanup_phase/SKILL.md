@@ -228,7 +228,7 @@ launch the `archive_cleanup_phase` agent directly:
 Brief template for the `archive_cleanup_phase` agent — Execute the work-archive cleanup phase:
 
 ```text
-<ctxmod_activate skill="archive_cleanup_phase" />
+<ctxmod_activate skill="agentic_work_archive_cleanup_phase" />
 Preview the sweep with the operator's filters, present the plan,
 await confirmation, then execute the move-only archive. Never delete.
 ```

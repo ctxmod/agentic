@@ -249,7 +249,7 @@ When this phase requires objective-depth execution, launch the
 Brief template for the `implementation_objective` agent — Execute <phase-name> within refactor implementation:
 
 ```text
-<ctxmod_activate skill="implementation_objective" />
+<ctxmod_activate skill="agentic_workflows_implementation_objective" />
 Variant: refactor
 Phase-specific instructions:
   <phase-specific parameters>

@@ -230,7 +230,7 @@ Phase 1:
 Brief template for the `cleanup_tests_discover_objective` agent — Discover and partition test files into ≤30-file groups:
 
 ```text
-<ctxmod_activate skill="cleanup_tests_discover_objective" />
+<ctxmod_activate skill="agentic_workflows_cleanup_tests_discover_objective" />
 Variant: discover
 Scope: <scope or repo-root>
 Report to {REPORTS_BASE}/{date}/<DD-HHMM>-<id>-01-discovery.md.
@@ -241,7 +241,7 @@ Phase 2 (one dispatch per group, sequential by default):
 Brief template for the `cleanup_tests_analyze_objective` agent — Analyze test group <group-id>:
 
 ```text
-<ctxmod_activate skill="cleanup_tests_analyze_objective" />
+<ctxmod_activate skill="agentic_workflows_cleanup_tests_analyze_objective" />
 Variant: analyze
 Input: {discovery-report-path}, group-id <group-id>
 Bound: ≤30 files (halt if violated)
@@ -263,7 +263,7 @@ sweep capability.
 Brief template for the `cleanup_tests_phase` agent — Execute the tests cleanup phase:
 
 ```text
-<ctxmod_activate skill="cleanup_tests_phase" />
+<ctxmod_activate skill="agentic_workflows_cleanup_tests_phase" />
 Execute the full discover → analyze → apply chain.
 Scope: <scope or repo-root>
 ```
