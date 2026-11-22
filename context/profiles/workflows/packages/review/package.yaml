@@ -1,0 +1,16 @@
+description: 'Review capability: the smell baseline and the agents that run
+  the pull-request and audit review phases.'
+binds_to_depth: main...
+agents:
+  review_audit_phase:
+    description: Comprehensive quality audit through multi-criteria parallel
+      validation and findings synthesis. May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - review_audit_phase
+  review_pr_phase:
+    description: Pull request review with change discovery, multi-criteria
+      validation, and approval recommendation. May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - review_pr_phase

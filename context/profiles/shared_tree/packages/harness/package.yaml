@@ -1,0 +1,3 @@
+description: 'Agent-harness hazards on a shared tree: harness traps, the detached
+  gate-runner pattern, and the edit-verification protocol.'
+binds_to_depth: main...

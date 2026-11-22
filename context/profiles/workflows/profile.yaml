@@ -1,7 +1,22 @@
 title: Agentic Workflows
-description: >-
-  Workflow skills for agentic work: discovery, analysis, planning,
-  implementation, validation, remediation, research, review, reporting,
-  git, and cleanup. Extends the core profile.
+description: Depth-layered workflow skills (phase, objective, procedure) for
+  discovery, analysis, planning, implementation, validation, remediation,
+  research, review, reporting, git commits, and cleanup, with the phase/workflow
+  framework and command selection guidance. Extends the core profile.
 extends:
-  - github.com/ctxmod/agentic/context/profiles/core
+- github.com/ctxmod/agentic/context/profiles/core
+packages:
+  add:
+  - analysis
+  - cleanup
+  - command_selection
+  - discovery
+  - framework
+  - git
+  - implementation
+  - planning
+  - remediation
+  - reporting
+  - research
+  - review
+  - validation

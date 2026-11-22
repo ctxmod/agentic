@@ -1,6 +1,10 @@
 title: Agentic Academic Work
-description: >-
-  Agentic doctrine for academic work: literature scans, source
-  handling, and academic writing workflows. Extends the core profile.
+description: 'Academic research and academic work phases: scholarly source
+  selection, evaluation, extraction, and bias detection. Citation style comes
+  from the writing_academic module. Extends the workflows profile.'
 extends:
-  - github.com/ctxmod/agentic/context/profiles/core
+- github.com/ctxmod/agentic/context/profiles/workflows
+packages:
+  add:
+  - papers
+  - scholarship

@@ -1,0 +1,52 @@
+description: 'Analysis capability: phase selection, synthesis and prioritization
+  variants, and the agents that run the analysis phase, objective, and procedure
+  skills.'
+binds_to_depth: main...
+agents:
+  analyze_compare_phase:
+    description: Comparative analysis phase — parallel discovery per alternative,
+      criteria definition, parallel evaluation, synthesis with recommendation.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - analyze_compare_phase
+  analyze_comprehensive_phase:
+    description: Comprehensive multi-dimensional analysis phase — scope resolution,
+      parallel discovery, parallel assessment, aggregation, Opus synthesis.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - analyze_comprehensive_phase
+  analyze_debt_phase:
+    description: Technical debt analysis phase — parallel discovery per category,
+      impact assessment, prioritization, roadmap planning. May launch parallel
+      sub-agents.
+    agent_depth: phase
+    skills:
+    - analyze_debt_phase
+  analyze_gap_phase:
+    description: Gap analysis phase — discovery (conditional), target resolution,
+      gap comparison, prioritization.
+    agent_depth: phase
+    skills:
+    - analyze_gap_phase
+  analysis_objective:
+    description: Interpret discovery and research findings to produce decision-ready
+      analysis reports with insights, recommendations, and confidence assessments.
+    agent_depth: objective
+    skills:
+    - analysis_objective
+  analysis_procedure:
+    description: 'Step-level analysis mechanics — report ingestion, pattern
+      aggregation, contradiction resolution, confidence assessment, criteria
+      weighting, impact scoring, prioritization, and academic critical analysis.
+      Runs alone: launches no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - analysis_procedure
+  analyze_quality_phase:
+    description: Quality analysis phase — discovery, parallel dimension assessment,
+      synthesis, remediation planning. May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - analyze_quality_phase

@@ -1,0 +1,4 @@
+description: 'Coordination patterns for multi-agent work: fan-out/fan-in,
+  parallel, sequential, validation loop, parallelization, planning, and validation
+  before execution.'
+binds_to_depth: main...

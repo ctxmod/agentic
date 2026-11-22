@@ -1,0 +1,26 @@
+description: 'Research capability (non-academic): phase selection, research
+  variants, and the agents that run the research phase and procedure skills.'
+binds_to_depth: main...
+agents:
+  research_compare_phase:
+    description: Comparative research phase — criteria definition, parallel
+      per-alternative research, comparative analysis, recommendation. May
+      launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - research_compare_phase
+  research_practices_phase:
+    description: Best practices research phase — parallel search across web,
+      community, and GitHub sources, synthesis of current industry practices.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - research_practices_phase
+  research_procedure:
+    description: 'Step-level research mechanics — query formulation, source
+      selection, evidence extraction, source evaluation, and bias detection
+      for web, documentation, and community sources. Runs alone: launches
+      no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - research_procedure

@@ -1,0 +1,45 @@
+description: 'Cleanup capability: the agents that run the code-debt and test
+  cleanup phases and objectives.'
+binds_to_depth: main...
+agents:
+  cleanup_code_debt_analyze_objective:
+    description: Analyze a single code-debt target (compat shim, reference-preserving
+      duplicate, or DRY/SSOT violation). Enumerate every reference via the symbol index
+      and lexical search, classify the category, emit a removal + reference-update
+      plan. Does not modify code — the acting phase applies findings after
+      the verify-before-remove gate passes.
+    agent_depth: objective
+    skills:
+    - cleanup_code_debt_analyze_objective
+  cleanup_code_debt_phase:
+    description: Acting phase for the code-debt cleanup capability. Fans out
+      the analysis objective per target, enforces the verify-before-remove
+      gate (no removal until every reference is enumerated and updated), applies
+      removals and reference updates sequentially, runs behavior-preservation
+      checks. Code-debt mutates shipping code — deeper verification than tests
+      cleanup.
+    agent_depth: phase
+    skills:
+    - cleanup_code_debt_phase
+  cleanup_tests_analyze_objective:
+    description: Judge a single ≤30-file test group against four criteria
+      (redundancy, implementation-pinning, flakiness, cost-vs-value) and emit
+      per-file keep/delete/refactor findings.
+    agent_depth: objective
+    skills:
+    - cleanup_tests_analyze_objective
+  cleanup_tests_discover_objective:
+    description: Enumerate test files via the repository file index's tag scoping and partition
+      them into ≤30-file groups for downstream per-group analysis.
+    agent_depth: objective
+    skills:
+    - cleanup_tests_discover_objective
+  cleanup_tests_phase:
+    description: Acting phase for the tests cleanup capability — runs discovery,
+      fans out per-group analysis objectives, and applies findings as an overlapped
+      pipeline (analyzing group N+1 while applying group N), one validation-gated
+      commit per group, with a cumulative corpus-safety gate and borderline
+      cases flagged for human review.
+    agent_depth: phase
+    skills:
+    - cleanup_tests_phase

@@ -1,6 +1,13 @@
 title: Agentic Work Store
-description: >-
-  Doctrine for planning and tracking agentic work on the ctxmod work
-  store. Extends the core profile.
+description: 'Work-item orchestration over the ctxmod work store: the work
+  router, intent capture and writing, work-item lifecycle, work-item authoring
+  templates, and store upkeep. Extends the workflows profile.'
 extends:
-  - github.com/ctxmod/agentic/context/profiles/core
+- github.com/ctxmod/agentic/context/profiles/workflows
+packages:
+  add:
+  - intent
+  - items
+  - lifecycle
+  - routing
+  - upkeep

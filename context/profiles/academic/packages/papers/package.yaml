@@ -1,0 +1,11 @@
+description: 'Academic tasks (papers, document corrections, source analysis):
+  the agent that runs the academic work phase.'
+binds_to_depth: main...
+agents:
+  scholarly_task_phase:
+    description: Orchestrate academic tasks — write papers, correct documents,
+      analyze sources, integrate findings. Classifies task type and executes
+      the appropriate workflow phases.
+    agent_depth: phase
+    skills:
+    - scholarly_task_phase

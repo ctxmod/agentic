@@ -1,0 +1,4 @@
+description: 'Verification evidence doctrine: deliberate verification, the
+  findings channel, story validation, negative controls, clean-HEAD baselines,
+  end-to-end validation, and evidence integrity.'
+binds_to_depth: main...

@@ -1,0 +1,11 @@
+description: 'Work-item authoring: epic, story, issue, and task templates
+  and structures, and the write-work-item phase agent.'
+binds_to_depth: main...
+agents:
+  write_item_phase:
+    description: Work item writing phase — produce tracked work units (epic,
+      story, issue, task variants) through discovery, planning, and writing
+      with conditional validation.
+    agent_depth: phase
+    skills:
+    - write_item_phase

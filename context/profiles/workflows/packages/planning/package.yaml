@@ -1,0 +1,25 @@
+description: 'Planning capability: the agents that run the planning phase,
+  objective, and procedure skills.'
+binds_to_depth: main...
+agents:
+  planning_objective:
+    description: Translate analysis findings into executable change plans
+      — approach selection, sequencing, dependency mapping, success criteria,
+      and risk mitigation producing structured planning reports.
+    agent_depth: objective
+    skills:
+    - planning_objective
+  planning_phase:
+    description: Structure the approach for subsequent phases based on discovery
+      and analysis findings, transforming understanding into actionable strategy
+      with defined steps, dependencies, and success criteria.
+    agent_depth: phase
+    skills:
+    - planning_phase
+  planning_procedure:
+    description: 'Step-level planning mechanics — approach selection, dependency
+      analysis, checkpoint definition, risk assessment, and constraint mapping
+      procedures. Runs alone: launches no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - planning_procedure
