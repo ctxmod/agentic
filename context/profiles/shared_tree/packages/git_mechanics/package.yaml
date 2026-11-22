@@ -1,0 +1,3 @@
+description: 'Git mechanics for several agents sharing one working tree: pathspec
+  commits, commit --only, index locks, stash hazards, and stale tracking refs.'
+binds_to_depth: main...

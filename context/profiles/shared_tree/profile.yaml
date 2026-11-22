@@ -1,0 +1,10 @@
+title: Agentic Shared Tree
+description: 'Hazards and mechanics of several agents sharing one working
+  tree: git mechanics, harness traps, the gate-runner pattern, and edit verification.
+  Extends the core profile.'
+extends:
+- github.com/ctxmod/agentic/context/profiles/core
+packages:
+  add:
+  - harness
+  - git_mechanics

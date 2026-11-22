@@ -1,4 +1,10 @@
 title: Agentic Core
-description: >-
-  Base doctrine for agentic work: verification and evidence,
-  orchestration of multi-agent work, and delegation to subagents.
+description: 'Base doctrine for agentic work: delegation and the main-agent
+  and sub-agent mantras, coordination patterns, verification rules, and verification-evidence
+  discipline.'
+packages:
+  defaults:
+  - delegation
+  - evidence
+  - patterns
+  - verification
