@@ -1,0 +1,14 @@
+title: Agentic
+description: >-
+  Doctrine for agentic work: verification, orchestration, and
+  delegation (core); workflow skills for discovery, analysis, planning,
+  implementation, validation, remediation, research, review, reporting,
+  git, and cleanup (workflows); working on the ctxmod work store (work);
+  and agentic academic and teaching work (academic, teaching).
+path: github.com/ctxmod/agentic/context
+requires:
+  - github.com/ctxmod/writing/context
+  - github.com/ctxmod/writing_context/context
+  - github.com/ctxmod/engineering/context
+default_profiles:
+  - core

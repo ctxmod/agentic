@@ -1,0 +1,6 @@
+title: Agentic Work Store
+description: >-
+  Doctrine for planning and tracking agentic work on the ctxmod work
+  store. Extends the core profile.
+extends:
+  - github.com/ctxmod/agentic/context/profiles/core

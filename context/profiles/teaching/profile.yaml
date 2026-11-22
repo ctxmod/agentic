@@ -1,0 +1,6 @@
+title: Agentic Teaching
+description: >-
+  Agentic doctrine for teaching work: course material, exercises, and
+  assessment. Extends the core profile.
+extends:
+  - github.com/ctxmod/agentic/context/profiles/core

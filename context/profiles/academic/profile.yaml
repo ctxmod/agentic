@@ -1,0 +1,6 @@
+title: Agentic Academic Work
+description: >-
+  Agentic doctrine for academic work: literature scans, source
+  handling, and academic writing workflows. Extends the core profile.
+extends:
+  - github.com/ctxmod/agentic/context/profiles/core
