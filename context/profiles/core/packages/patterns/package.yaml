@@ -1,4 +1,5 @@
 description: 'Coordination patterns for multi-agent work: fan-out/fan-in,
   parallel, sequential, validation loop, parallelization, planning, and validation
-  before execution.'
+  before execution; when not to go multi-agent, the vendor pattern vocabulary
+  map, and long-running sessions across context windows.'
 binds_to_depth: main...
