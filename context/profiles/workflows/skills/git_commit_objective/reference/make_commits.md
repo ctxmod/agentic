@@ -30,7 +30,7 @@ Brief template for a procedure-depth agent (launched from objective depth):
 
 ```text
 Run precommit validation against the recommended files, applying auto-fixes and documenting blocking failures.
-`precommit` in the ctxmod builtin `commit_discipline` profile
+`precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 ```
 
 Validate before committing:
@@ -52,7 +52,7 @@ Brief template for a procedure-depth agent (launched from objective depth):
 
 ```text
 Stage files and create commits following the recommended strategy and its dependency ordering.
-`commits` in the ctxmod builtin `commit_discipline` profile
+`commits` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 ```
 
 Apply the recommended strategy:
@@ -117,7 +117,7 @@ Write completion report documenting what was committed:
 
 **Recommendation asks for selection**: If the report presents 2-3 strategies without a clear recommendation, use the first strategy marked as "recommended" or the first strategy if none marked.
 
-**Isolation**: Worktrees are banned in this repo. If the commit work needs isolation from concurrent writers, it happens in a clean-HEAD clone or archive+init snapshot (see `worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile); commits inside it affect only that checkout's branch, and merge-back is a separate, operator-visible step.
+**Isolation**: Worktrees are banned in this repo. If the commit work needs isolation from concurrent writers, it happens in a clean-HEAD clone or archive+init snapshot (see `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile); commits inside it affect only that checkout's branch, and merge-back is a separate, operator-visible step.
 
 **Unexpected state**: If repository state differs from recommendation (e.g., files changed, conflicts found), document deviation in completion report and stop. Do not commit in unexpected states.
 

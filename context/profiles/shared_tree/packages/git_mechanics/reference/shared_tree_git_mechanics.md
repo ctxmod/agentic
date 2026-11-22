@@ -83,7 +83,7 @@ verb.
   tracked edits do not). To baseline: `git diff <path>`, `git show
   HEAD:<path>`, a clean-HEAD clone or archive+init snapshot baseline
   (see
-  `worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile),
+  `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile),
   or just compare output counts in notes. The cost of stash (potential
   total work loss) always exceeds the benefit (a one-shot comparison).
 - **A command guard that blocks stash typically matches the literal substring `git stash`**,
@@ -155,7 +155,7 @@ repository's ctxmod work store (a separate clone anchors its own
 `context.local/work/`), so records created there do not propagate.
 A checkout that is not at the intended base voids the work built on
 it
-(`worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile).
+(`isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile).
 Mid-run strategy reversals kill
 in-flight agents and strand WIP — pick the model at planning time. In a
 shared-tree relay, never satisfy a compile dependency by materializing
@@ -276,7 +276,7 @@ cwd scan, lock check, <12h mtime check), `rm -rf` the directories,
 then hand `git worktree prune` to the validator/operator as a one-line
 residue instead of improvising around the guard. The worktree ban and
 baseline doctrine:
-`worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile;
+`isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile;
 the work-reference ID-token veto and the multi-`-m` trailer-split traps
 hit during the same round belong to the repository's own commit
 workflow.

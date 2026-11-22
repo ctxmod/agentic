@@ -8,7 +8,7 @@ Brief template for a sub-agent:
 Run precommit validation against all repository files.
 
 Compulsory reads:
-- `precommit` in the ctxmod builtin `commit_discipline` profile
+- `precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 - the `discovery_objective` skill
 - `ctx:github.com/ctxmod/agentic/context::shared::reporting@workflows/reference/structure_discovery.md`
 

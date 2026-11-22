@@ -95,12 +95,12 @@ order (dependencies before dependents).
 Git commit procedures carry the step-level mechanics for each task.
 Link conditionally on what the assigned objective requires:
 
-the `git_commit_procedure` skill of the ctxmod builtin `commit_discipline` profile
+the `git_procedures` skill of the ctxmod builtin `commit_discipline` profile
 
 | Objective | Primary procedure |
 |-----------|-------------------|
-| suggest-commits | `commit_recommendations` in the ctxmod builtin `commit_discipline` profile |
-| make-commits | `commits` in the ctxmod builtin `commit_discipline` profile + `precommit` in the ctxmod builtin `commit_discipline` profile |
+| suggest-commits | `commit_recommendations` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile |
+| make-commits | `commits` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile + `precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile |
 
 ## Conditional-Link Dispatch Table
 
@@ -205,15 +205,15 @@ Do not return the full report content. The report file is the deliverable.
 When this objective requires step-level execution, launch the
 `git-commit-procedure` agent. Procedure agents carry the per-procedure
 mechanics under 
-- `commit_recommendations` in the ctxmod builtin `commit_discipline` profile
-- `commits` in the ctxmod builtin `commit_discipline` profile
-- `precommit` in the ctxmod builtin `commit_discipline` profile
+- `commit_recommendations` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
+- `commits` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
+- `precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 .
 
-Brief template for the `git_commit_procedure` agent — Execute <procedure-name> within git commit objective:
+Brief template for a procedure-depth agent running the builtin `git_procedures` skill — Execute <procedure-name> within git commit objective:
 
 ```text
-<ctxmod_activate skill="git_commit_procedure" />
+<ctxmod_activate skill="git_procedures" />
 Procedure: <procedure-name>
 <procedure-specific instructions>
 Create your report record just-in-time — `ctxmod work new report "<title>" --owner <owning work item, if any>` immediately before writing; write to the `file` it prints and return the record id and path.
@@ -221,8 +221,8 @@ Create your report record just-in-time — `ctxmod work new report "<title>" --o
 
 Available procedure agents in the git commit capability: dispatch
 against the procedure variants in 
-- `commit_recommendations` in the ctxmod builtin `commit_discipline` profile
-- `commits` in the ctxmod builtin `commit_discipline` profile
-- `precommit` in the ctxmod builtin `commit_discipline` profile
+- `commit_recommendations` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
+- `commits` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
+- `precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 
 (commit-recommendations, commits, precommit).

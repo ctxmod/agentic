@@ -75,7 +75,7 @@ third_party) dependency by dependency.
 - **Where worktrees are banned for agents** and `git worktree add` is
   guard-blocked (same block list as `git reset`/`git stash`), the two
   recipes above are the vehicles;
-  `worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile
+  `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile
   carries the ban and the same supersession.
 - Historical recipe note: when `.golangci.yml`, `go.sum`, and `embed.go`
   were gitignored, a baseline tree needed copies of all three or the
@@ -179,4 +179,4 @@ comparison is cache-tilted.
 ## Related
 
 - <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::evidence/reference/negative_controls.md" />
-- `worktree_baselines_and_isolation` in the ctxmod builtin `worktree_hygiene` profile
+- `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile

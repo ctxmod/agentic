@@ -88,7 +88,7 @@ Brief template for a procedure-depth agent (launched from objective depth):
 
 ```text
 Classify changed files, build atomic commit groupings, and generate commit messages following repository patterns.
-`commit_recommendations` in the ctxmod builtin `commit_discipline` profile
+`commit_recommendations` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 ```
 
 Apply the commit recommendations procedure to:
@@ -172,7 +172,7 @@ Brief template for a procedure-depth agent (launched from objective depth):
 
 ```text
 Run precommit validation separately from commit recommendation generation so the two can proceed in parallel.
-`precommit` in the ctxmod builtin `commit_discipline` profile
+`precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 ```
 
 Separation enables parallelization: commit recommendations generate while precommit validation runs independently.
@@ -218,6 +218,6 @@ Rationale: Strategy 1 preserves atomicity. Strategy 2 groups by commit count but
 
 ## Related
 
-`commits` in the ctxmod builtin `commit_discipline` profile
+`commits` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::git_commit_objective/reference/make_commits.md" />

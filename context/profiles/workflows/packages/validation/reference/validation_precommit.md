@@ -8,7 +8,7 @@ Brief template for a sub-agent:
 Verify precommit validation passes after all work items complete.
 
 Compulsory reads:
-- `precommit` in the ctxmod builtin `commit_discipline` profile
+- `precommit` of the `git_procedures` skill in the ctxmod builtin `commit_discipline` profile
 - the `validation_objective` skill
 - `ctx:github.com/ctxmod/agentic/context::shared::reporting@workflows/reference/structure_validation.md`
 
