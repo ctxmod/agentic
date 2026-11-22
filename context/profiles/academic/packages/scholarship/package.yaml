@@ -1,0 +1,20 @@
+description: 'Academic research: the objective-level academic research reference
+  and the agents that run the academic research phase and procedure skills.'
+binds_to_depth: main...
+agents:
+  scholarly_research_phase:
+    description: Academic research phase — peer-reviewed source discovery,
+      citation analysis, evidence synthesis across scholarly databases. May
+      launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - scholarly_research_phase
+  scholarly_research_procedure:
+    description: 'Step-level academic research mechanics — academic query
+      formulation, scholarly source selection, academic evidence extraction
+      with formal citation, peer-review source evaluation, academic publication
+      bias detection, broad landscape scanning, and academic pipeline quality-gate
+      enforcement. Runs alone: launches no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - scholarly_research_procedure
