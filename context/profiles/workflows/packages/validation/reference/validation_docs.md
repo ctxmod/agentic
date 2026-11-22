@@ -21,7 +21,7 @@ Read if relevant:
 - `ctx:github.com/ctxmod/writing/context::shared::procedures@specification/reference/template_compliance.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-validation-docs" --owner <work item, if any>` immediately before writing; returns the path
 - DOC_PATH={documentation to validate}
 - VALIDATION_TYPE={structure|completeness|standards|comprehensive}
 

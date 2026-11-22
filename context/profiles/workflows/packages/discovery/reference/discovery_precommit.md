@@ -13,7 +13,7 @@ Compulsory reads:
 - `ctx:github.com/ctxmod/agentic/context::shared::reporting@workflows/reference/structure_discovery.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-discovery-precommit" --owner <work item, if any>` immediately before writing; returns the path
 
 Delimitations:
 - Run precommit hooks only; do not create work items

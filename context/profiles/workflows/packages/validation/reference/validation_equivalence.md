@@ -14,7 +14,7 @@ Compulsory reads:
 - `{transformation report path}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-verification-structure" --owner <work item, if any>` immediately before writing; returns the path
 - ARTIFACT_PATHS={transformed artifacts}
 
 Delimitations:
@@ -39,7 +39,7 @@ Compulsory reads:
 - `{transformation report path}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-verification-references" --owner <work item, if any>` immediately before writing; returns the path
 - ARTIFACT_PATHS={transformed artifacts and consumers}
 
 Delimitations:
@@ -63,7 +63,7 @@ Compulsory reads:
 - `{transformation report path}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-verification-behavior" --owner <work item, if any>` immediately before writing; returns the path
 - SCOPE={transformation scope}
 
 Delimitations:

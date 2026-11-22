@@ -16,7 +16,7 @@ Compulsory reads:
 
 Parameters:
 - {TYPE}_PATH={work_item_path}
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "creation" --owner <work item, if any>` immediately before writing; returns the path
 - PARENT_ID={parent_id}
 
 Delimitations:

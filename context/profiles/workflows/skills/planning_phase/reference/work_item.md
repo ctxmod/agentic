@@ -20,7 +20,7 @@ Compulsory reads:
 - `{analysis report path}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-planning-work-item" --owner <work item, if any>` immediately before writing; returns the path
 - STORY_PATH={story_path}
 - EPIC_ID={epic_id_if_provided_else_null}
 - STORY_ID={story_id}

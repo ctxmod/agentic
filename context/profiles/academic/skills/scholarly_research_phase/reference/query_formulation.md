@@ -16,7 +16,7 @@ Compulsory reads:
 - `ctx:github.com/ctxmod/engineering/context::shared::practice@principles/reference/research_first.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "01-query-formulation" --owner <work item, if any>` immediately before writing; returns the path
 
 Delimitations:
 - Query formulation only; do not execute searches

@@ -14,7 +14,7 @@ Compulsory reads:
 - `{CHILDREN_REPORT}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "completion-analysis" --owner <work item, if any>` immediately before writing; returns the path
 - CRITERIA_REPORT={criteria verification report path}
 - CHILDREN_REPORT={children verification report path}
 - WORK_ITEM_PATH={work item directory}

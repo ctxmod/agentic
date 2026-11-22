@@ -13,7 +13,7 @@ Compulsory reads:
 - `{STATUS_REPORT}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "hierarchy" --owner <work item, if any>` immediately before writing; returns the path
 - STATUS_REPORT={status gathering report path}
 
 Delimitations:

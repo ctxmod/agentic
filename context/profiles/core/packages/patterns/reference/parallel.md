@@ -67,7 +67,7 @@ Each parallel agent reserves its own report path just-in-time (`ctxmod work new 
 
 ```
 Agent N Parameters:
-  Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+  Report: sub-agent reserves just-in-time via `ctxmod work new report "agent-n" --owner <work item, if any>` immediately before writing; returns the path
   SCOPE={scope-n}
   [Work item context parameters]
 ```

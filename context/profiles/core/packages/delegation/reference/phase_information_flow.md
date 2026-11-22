@@ -52,8 +52,8 @@ Main agents launch sub-agents using the Task tool. Sub-agents have no memory of 
 **Direct assignment** -- phase-specific parameters change each launch:
 
 ```
-Phase 1: Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path, SCOPE="..."
-Phase 2: Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path, INPUT_REPORT={Phase 1 output}
+Phase 1: Report: sub-agent reserves just-in-time via `ctxmod work new report "01-discovery" --owner <work item, if any>` immediately before writing; returns the path, SCOPE="..."
+Phase 2: Report: sub-agent reserves just-in-time via `ctxmod work new report "02-analysis" --owner <work item, if any>` immediately before writing; returns the path, INPUT_REPORT={Phase 1 output}
 ```
 
 **Inheritance** -- work context parameters (EPIC_PATH, STORY_PATH, ISSUE_PATH, project conventions, quality standards) remain constant across all sub-agent launches. Main agents include them automatically without sub-agents requesting them.

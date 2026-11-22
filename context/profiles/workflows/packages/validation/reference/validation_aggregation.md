@@ -13,7 +13,7 @@ Compulsory reads:
 - `{paths to validation reports from all dimensions}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-aggregation" --owner <work item, if any>` immediately before writing; returns the path
 - VALIDATION_REPORTS={comma-separated list of validation report paths}
 
 Delimitations:

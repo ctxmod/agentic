@@ -10,7 +10,7 @@ Brief template for a sub-agent (model: sonnet):
 Verify acceptance criteria are satisfied for {WORK_ITEM_ID}.
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "completion-criteria" --owner <work item, if any>` immediately before writing; returns the path
 - WORK_ITEM_PATH={work item directory}
 - WORK_ITEM_TYPE={epic|story|issue|task}
 

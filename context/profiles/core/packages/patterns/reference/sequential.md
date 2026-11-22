@@ -49,7 +49,7 @@ Each phase reserves its report path just-in-time (`ctxmod work new report "<titl
 
 ```
 Phase N Parameters:
-  Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+  Report: sub-agent reserves just-in-time via `ctxmod work new report "{NN}-{phase-name}" --owner <work item, if any>` immediately before writing; returns the path
   INPUT_REPORT={Phase N-1 returned report path}
   [Work item context parameters]
 ```

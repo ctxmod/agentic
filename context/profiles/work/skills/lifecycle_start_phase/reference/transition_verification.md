@@ -19,7 +19,7 @@ Brief template for a sub-agent (model: haiku):
 Verify {work item} eligibility for {transition type} transition.
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{transition}-verification" --owner <work item, if any>` immediately before writing; returns the path
 - WORK_ITEM_PATH={work item directory}
 - WORK_ITEM_TYPE={epic|story|issue|task}
 - TRANSITION_TYPE={draft-to-active|blocked-to-active|active-to-blocked|active-to-completed|any-to-cancelled}

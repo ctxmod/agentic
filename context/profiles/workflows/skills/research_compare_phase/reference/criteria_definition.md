@@ -14,7 +14,7 @@ Compulsory reads:
 - `ctx:github.com/ctxmod/engineering/context::shared::practice@principles/reference/research_first.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-criteria-definition" --owner <work item, if any>` immediately before writing; returns the path
 
 Delimitations:
 - Criteria definition only; do not research alternatives yet

@@ -14,7 +14,7 @@ Compulsory reads:
 - `{relevant context files}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-remediation" --owner <work item, if any>` immediately before writing; returns the path
 - INPUT_REPORT={validation report path}
 - ARTIFACT_PATHS={paths}
 

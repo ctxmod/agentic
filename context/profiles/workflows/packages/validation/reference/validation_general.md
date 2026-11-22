@@ -24,7 +24,7 @@ Read if relevant:
 - `ctx:github.com/ctxmod/agentic/context::shared::validation_procedure@workflows/reference/structural.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-validation" --owner <work item, if any>` immediately before writing; returns the path
 - ARTIFACT_PATHS={paths to validate}
 - CRITERIA={validation criteria reference}
 

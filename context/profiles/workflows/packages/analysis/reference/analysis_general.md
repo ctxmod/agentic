@@ -13,7 +13,7 @@ Compulsory reads:
 - `{INPUT_REPORT from discovery phase}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-analysis" --owner <work item, if any>` immediately before writing; returns the path
 - INPUT_REPORT={prior phase report path}
 
 Delimitations:

@@ -14,7 +14,7 @@ Compulsory reads:
 - `{components report path}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-dependencies" --owner <work item, if any>` immediately before writing; returns the path
 
 Delimitations:
 - Synthesize findings only; do not recommend changes

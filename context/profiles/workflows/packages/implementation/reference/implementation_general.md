@@ -13,7 +13,7 @@ Compulsory reads:
 - `{INPUT_REPORT from planning phase}`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-implementation" --owner <work item, if any>` immediately before writing; returns the path
 - INPUT_REPORT={planning report path}
 - TARGET_PATHS={artifacts to modify or create}
 

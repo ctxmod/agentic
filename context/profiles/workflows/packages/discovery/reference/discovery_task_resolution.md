@@ -12,7 +12,7 @@ Compulsory reads:
 - `{TASK_PATH}/TASK.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-task-resolution" --owner <work item, if any>` immediately before writing; returns the path
 - TASK_PATH={resolved task path}
 
 Delimitations:

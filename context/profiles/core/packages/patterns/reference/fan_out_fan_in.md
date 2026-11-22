@@ -69,7 +69,7 @@ Fan-out agents work on independent, non-overlapping scopes. Each agent may use d
 
 ```
 Agent N Parameters:
-  Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+  Report: sub-agent reserves just-in-time via `ctxmod work new report "fanout-agent-n" --owner <work item, if any>` immediately before writing; returns the path
   SCOPE={scope-n}
   [Work item context parameters]
 ```
@@ -78,7 +78,7 @@ Agent N Parameters:
 
 ```
 Synthesis Parameters:
-  Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+  Report: sub-agent reserves just-in-time via `ctxmod work new report "synthesis" --owner <work item, if any>` immediately before writing; returns the path
   INPUT_REPORTS={fan-out agents' returned report paths}
   SYNTHESIS_TYPE={unified|comparative|aggregative}
   [Work item context parameters]

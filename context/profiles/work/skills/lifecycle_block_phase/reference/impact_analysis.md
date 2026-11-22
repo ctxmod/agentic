@@ -21,7 +21,7 @@ Brief template for a sub-agent (model: haiku):
 Analyze {transition type} impact on related work items for {WORK_ITEM_ID}.
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{transition}-impact" --owner <work item, if any>` immediately before writing; returns the path
 - WORK_ITEM_PATH={work item directory}
 - WORK_ITEM_TYPE={epic|story|issue|task}
 - TRANSITION_TYPE={active-to-blocked|active-to-completed|any-to-cancelled}

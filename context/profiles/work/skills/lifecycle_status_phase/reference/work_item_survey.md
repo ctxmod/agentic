@@ -10,7 +10,7 @@ Brief template for a sub-agent (model: haiku):
 Survey active work items across the project.
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "work-item-survey" --owner <work item, if any>` immediately before writing; returns the path
 - SCOPE=the store's item bodies (`<store>/items/*/*/ITEM.md`; `ctxmod state show` names the store)
 
 Delimitations:

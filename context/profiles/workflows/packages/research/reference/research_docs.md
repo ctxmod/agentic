@@ -20,7 +20,7 @@ Read if relevant:
 - `ctx:github.com/ctxmod/agentic/context::shared::research_procedure@workflows/reference/source_evaluation.md`
 
 Parameters:
-- Report: sub-agent reserves just-in-time via `ctxmod work new report "<title>" --owner <work item, if any>` immediately before writing; returns the path
+- Report: sub-agent reserves just-in-time via `ctxmod work new report "{nn}-research-docs" --owner <work item, if any>` immediately before writing; returns the path
 - RESEARCH_TOPIC={specific documentation topic}
 - SOURCES={web|academic|standards|all}
 
