@@ -1,0 +1,25 @@
+description: 'Reporting capability: the agents that run the writing objective,
+  writing procedure, and report-writing phase skills.'
+binds_to_depth: main...
+agents:
+  writing_objective:
+    description: Create structured artifacts following defined schemas — reports,
+      work items, context content (reference/rule/skill/agent), intent, docs.
+    agent_depth: objective
+    skills:
+    - writing_objective
+  writing_procedure:
+    description: 'Execute artifact creation — produce the document at the
+      designated path following the organization, creation, and summary-production
+      procedures for the report or work-item variant. Runs alone: launches
+      no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - writing_procedure
+  write_report_phase:
+    description: Report writing phase — produce synthesis reports combining
+      findings from multiple prior sources through discovery, analysis, planning,
+      writing, and conditional validation.
+    agent_depth: phase
+    skills:
+    - write_report_phase

@@ -1,0 +1,45 @@
+description: 'Discovery capability: phase selection, variant dispatch templates,
+  and the agents that run the discovery phase, objective, and procedure skills.'
+binds_to_depth: main...
+agents:
+  discover_architecture_phase:
+    description: Architecture discovery phase — scan structure, identify boundaries,
+      map layers, synthesize architectural findings. May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - discover_architecture_phase
+  discover_consumers_phase:
+    description: Consumer discovery phase — resolve target, search references
+      in parallel, classify consumers, synthesize consumer findings. May launch
+      parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - discover_consumers_phase
+  discover_dependencies_phase:
+    description: Dependency discovery phase — identify components, extract
+      dependencies in parallel, construct graph, synthesize dependency findings.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - discover_dependencies_phase
+  discovery_objective:
+    description: Gather information through systematic exploration and produce
+      a comprehensive discovery report at a report path reserved just-in-time
+      via reserve_work_path(type="report").
+    agent_depth: objective
+    skills:
+    - discovery_objective
+  discover_patterns_phase:
+    description: Pattern discovery phase — inventory artifacts, extract patterns
+      in parallel, synthesize pattern findings. May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - discover_patterns_phase
+  discovery_procedure:
+    description: 'Step-level discovery mechanics — broad scanning, consumer
+      search, entry-point detection, import extraction, graph construction,
+      pattern detection, and boundary validation. Runs alone: launches no
+      sub-agents.'
+    agent_depth: procedure
+    skills:
+    - discovery_procedure

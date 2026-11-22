@@ -1,0 +1,4 @@
+description: 'The phase/workflow framework: phases, orchestration parameters,
+  and the full, migration, review, run, work-item, academic, pre-commit, and
+  spec workflows over the ctxmod work store.'
+binds_to_depth: main...

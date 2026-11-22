@@ -1,0 +1,30 @@
+description: 'Git commit capability: the agents that run the default, safe,
+  and unsafe commit phases and the commit objective.'
+binds_to_depth: main...
+agents:
+  git_commit_default_phase:
+    description: Default git-commit phase — suggest commits, run blocking
+      precommit validation, execute only when validation passes.
+    agent_depth: phase
+    skills:
+    - git_commit_default_phase
+  git_commit_objective:
+    description: Produce commit-suggestion reports and commit-execution reports
+      — atomic, repository-convention-aligned git commit strategies with work-item
+      context.
+    agent_depth: objective
+    skills:
+    - git_commit_objective
+  git_commit_safe_phase:
+    description: Two-gate git-commit phase — suggest commits, present for
+      human approval, run blocking validation, execute only approved commits;
+      re-confirm after auto-fixes.
+    agent_depth: phase
+    skills:
+    - git_commit_safe_phase
+  git_commit_unsafe_phase:
+    description: Emergency git-commit phase — suggest commits, run informational
+      validation, execute regardless of findings with risk-acceptance documentation.
+    agent_depth: phase
+    skills:
+    - git_commit_unsafe_phase

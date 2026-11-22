@@ -1,0 +1,40 @@
+description: 'Implementation capability: phase selection, implementation variants,
+  and the agents that run the implementation phase, objective, and procedure
+  skills.'
+binds_to_depth: main...
+agents:
+  implement_fix_phase:
+    description: Findings (fix) implementation phase — apply corrections identified
+      by validation reports through findings resolution, correction planning,
+      correction implementation, and re-validation with embedded remediation.
+    agent_depth: phase
+    skills:
+    - implement_fix_phase
+  implementation_objective:
+    description: Modify artifacts to achieve specific outcomes — read state,
+      apply targeted changes, verify results — and produce the implementation
+      report at a report path reserved just-in-time via reserve_work_path(type="report").
+    agent_depth: objective
+    skills:
+    - implementation_objective
+  implementation_procedure:
+    description: 'Step-level implementation mechanics — change planning, execution
+      checkpoints, completion reporting, context assessment. Runs alone: launches
+      no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - implementation_procedure
+  implement_refactor_phase:
+    description: Refactor implementation phase — reorganize artifacts while
+      preserving behavior through baseline discovery, refactor planning, transformation,
+      and equivalence verification with embedded remediation.
+    agent_depth: phase
+    skills:
+    - implement_refactor_phase
+  implement_task_phase:
+    description: Task implementation phase — execute work defined in a task
+      work item through discovery, planning, modification, and verification
+      with embedded remediation.
+    agent_depth: phase
+    skills:
+    - implement_task_phase

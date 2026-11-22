@@ -1,0 +1,47 @@
+description: 'Validation capability: phase selection, validation variants,
+  and the agents that run the validation phase, objective, and procedure skills.'
+binds_to_depth: main...
+agents:
+  validate_completeness_phase:
+    description: Completeness validation phase — criteria discovery, parallel
+      element validation, coverage analysis, report synthesis. May launch
+      parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - validate_completeness_phase
+  validate_consistency_phase:
+    description: Consistency validation phase — pattern discovery, parallel
+      consistency validation, cross-reference alignment, report synthesis.
+      May launch parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - validate_consistency_phase
+  validation_objective:
+    description: Verify artifacts against defined criteria producing classified
+      pass/fail findings — completeness, consistency, functional, references,
+      standards, and structural validation.
+    agent_depth: objective
+    skills:
+    - validation_objective
+  validation_procedure:
+    description: 'Step-level validation mechanics — completeness, consistency,
+      references, severity classification, standards, structural, and academic
+      cross-validation and quality-assurance procedures. Runs alone: launches
+      no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - validation_procedure
+  validate_references_phase:
+    description: References validation phase — reference discovery, parallel
+      resolution validation by reference type, report synthesis. May launch
+      parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - validate_references_phase
+  validate_structure_phase:
+    description: Structure validation phase — criteria resolution, parallel
+      structural validation per artifact type, report synthesis. May launch
+      parallel sub-agents.
+    agent_depth: phase
+    skills:
+    - validate_structure_phase

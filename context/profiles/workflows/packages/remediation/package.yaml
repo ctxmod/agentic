@@ -1,0 +1,17 @@
+description: 'Remediation capability: the agents that run the remediation
+  phase and procedure skills.'
+binds_to_depth: main...
+agents:
+  remediation_phase:
+    description: Correct issues identified during validation, addressing findings
+      systematically through variants selected by complexity and scope.
+    agent_depth: phase
+    skills:
+    - remediation_phase
+  remediation_procedure:
+    description: 'Step-level correction mechanics — issue analysis, correction
+      planning, and correction execution procedures, plus academic revision
+      for academic-source remediation. Runs alone: launches no sub-agents.'
+    agent_depth: procedure
+    skills:
+    - remediation_procedure
