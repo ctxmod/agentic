@@ -1,3 +1,4 @@
 description: 'Verification rules: the disposition ledger, lint-behavior pre-flight,
-  validation dispatch, working-behavior smoke, and second-instrument evidence.'
+  validation dispatch, working-behavior smoke, and second-instrument evidence,
+  each with a detail reference holding its full text and incidents.'
 binds_to_depth: main...
