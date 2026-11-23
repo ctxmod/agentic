@@ -1,0 +1,7 @@
+# Working-Behavior Smoke Before Live Claims — Detail
+
+The full working-behavior smoke rule with the incidents behind it, for the [working_behavior_smoke](../rules/working_behavior_smoke.md) rule.
+
+A "live" or "deployed" claim is a working-behavior claim: it is established only by deliberately executing the deployed artifact's primary journey — for the demo incidents, an authenticated API call and the rendered UI's theme tokens, proven in a real or headless browser — never by a green build plus HTTP 200s from the SPA shell and a config endpoint. The 2026-10-04 verdict "live (HTTP/2 200 SPA + /api/config, cert CN verified)" was contradicted by a 401 on the authenticated primary journey 22 minutes later; the next day the published site shipped with the UI provider library never mounted (providerCount=0, computed fontFamily Times New Roman) because the smoke checked structure instead of computed style — and jsdom in fact reads the provider's CSSOM and computed custom properties, so structural-only checks are a chosen weakness, not a necessity. Supporting evidence that a gate genuinely executed rides along: record its duration or equivalent execution proof (a genuine 30.56s formatter leg), because a zero-second pass is a skip wearing a green coat.
+
+- the claim pair, the smoke scope, and the incident walkthrough — <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::evidence/reference/deliberate_verification.md" />
