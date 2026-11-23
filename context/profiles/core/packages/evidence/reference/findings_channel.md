@@ -24,7 +24,7 @@ the prohibition instead of degrading to prose.
   the first write, owns the file's identity.
 - **Work-item append.** When the finding changes the owning work item's
   own state (it blocks an acceptance criterion or adds scope), or the
-  writer cannot reserve an artifact path, append a
+  writer cannot create a record, append a
   `## Findings — <writer> (<date>)` section to the work item carrying
   the same JSON in a fenced block. Appending to work items in place is
   already sanctioned practice; acceptance-criteria checkboxes are ticked

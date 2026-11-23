@@ -42,8 +42,8 @@ the variant-selection reference (model choice, coordination pattern,
 transition criteria, anti-patterns).
 
 Every phase's report path is reserved by the executing sub-agent
-just-in-time — `ctxmod work new report "<phase title>"`(
-parent=<owning work item, if any>)` immediately before writing. The
+just-in-time — `ctxmod work new report "<phase title>"
+--owner <owning work item, if any>` immediately before writing. The
 `- Report:` lines below name the slug convention each reservation uses;
 they are never pre-minted dispatch parameters. Sub-agents return their
 reserved paths, and the main agent passes those returned paths onward,

@@ -240,7 +240,7 @@ Execution quality criteria follow the run workflow specification.
 | Skipping Phase 0 identifier reservation | Phase 4 has no item records or directories; collisions under concurrent sessions | Create the item records via `ctxmod work new` first |
 | Proceeding to execution with failed handoff | Execution fails on malformed items | Halt at handoff gate, fix creation |
 | Duplicating execution phase definitions | Violates SSOT | Reference run workflow for Phases 7-17 |
-| Skipping context transition at Phase 4 | Reports scatter across directories | Pass the new work item as the reservation parent after directory creation |
+| Skipping context transition at Phase 4 | Reports scatter across the store | Pass the new work item as `--owner` once its record exists |
 | Reading intermediate reports into main agent | Context budget exhaustion | Pass report paths only |
 | Concurrent work item creation | Work items are always sequential regardless of posture; each reads the previous items' reports | Create items one at a time with report passing |
 

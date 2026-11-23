@@ -73,6 +73,10 @@ All output records (reports, intents, artifacts) take their owner from the most 
 
 Where `<category>` is the record kind's directory: `reports` for a report, `intents` for an intent source, `plans`, `syntheses`, `summaries`, `handoffs`, … for artifacts (`ctxmod work kinds` lists them).
 
+### Report-path notation in workflow docs
+
+Workflow and skill docs name phase reports symbolically, as `{REPORTS_BASE}/{date}/<DD-HHMM>-<id>-NN-<name>.md` (or under `{WORK_ITEM_PATH}/reports/`). Read it as "the report record titled `NN <name>`, owned by the most specific work item": `{REPORTS_BASE}` is that item's `reports/` directory (the store's top-level `reports/` outside work-item context), and the real file is the `file` its `ctxmod work new report` call printed. Nobody assembles that path; it reaches the next phase in the producing sub-agent's return message.
+
 ### Placeholders
 
 | Placeholder | Filled by | Example | Notes |

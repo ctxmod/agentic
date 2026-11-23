@@ -46,7 +46,7 @@ Delimitations:
 Notes:
 
 Report discovery:
-- Search for recent reports that inform the current task
+- Search for recent reports that inform the current task (`ctxmod work list --kind report`, newest first; `--owner <item>` for one item's)
 - Include only informational reports: execution, analysis, discovery, research reports
 - Exclude process reports: validation reports, remediation reports, verification reports, correction plans, execution plans
 - Report paths follow the pattern {REPORTS_BASE}/<YYYY-MM>/<DD-HHMM>-<id>-{slug}.md
@@ -145,7 +145,7 @@ The agent discovers five categories of files, each with specific inclusion crite
 
 ### Reports
 
-Search for recent reports (within 2-day window) that inform the current workflow. Include only informational reports that contain findings, results, or analysis:
+Search for recent reports (within 2-day window; `ctxmod work list --kind report` lists newest first) that inform the current workflow. Include only informational reports that contain findings, results, or analysis:
 
 | Include | Exclude |
 |---------|---------|
