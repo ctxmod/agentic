@@ -68,8 +68,9 @@ Associate git changes with discovered work items:
    - Extract acceptance criteria and completion descriptions
 
 2. **Keyword matching**:
-   - Search commit subject/body for work item identifiers
    - Match file paths in commits to work item scope descriptions
+   - Commit messages carry no work item ids (committed content never
+     cites work), so never search them for ids or add any
 
 3. **Semantic alignment**:
    - Compare commit keywords to work item summaries
