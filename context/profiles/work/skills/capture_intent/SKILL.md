@@ -91,6 +91,15 @@ with typo and spelling corrections only — no augmentation, no
 reorganization, no inferred content. The raw transcript is the
 baseline for downstream phases.
 
+Before launching it, create the intent's two records, owned by the
+most specific work item when there is one (the Intent section of
+`params` in the agentic `workflows` profile's `framework` package):
+`ctxmod work new intent "<title>" --owner <item> --body-file <the
+user's input>` keeps the user's words as a write-once source, and
+`ctxmod work new criteria "<title> intent" --owner <item>` makes the
+intent document, whose `file` is INTENT_PATH. The document is an
+artifact, so the final write can revise it; the source never changes.
+
 - Output: `{INTENT_PATH}` (raw draft)
 
 **Workflow-specific notes**:

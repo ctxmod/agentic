@@ -70,7 +70,7 @@ Phase 2: Report: sub-agent reserves just-in-time via `ctxmod work new report "02
 
 **Inheritance** -- work context parameters (EPIC_PATH, STORY_PATH, ISSUE_PATH, project conventions, quality standards) remain constant across all sub-agent launches. Main agents include them automatically without sub-agents requesting them.
 
-**Intent context** -- main agent creates the intent source during preflight with `ctxmod work new intent "<title>" --owner <most specific work item, if any>` and passes its `file` as `INTENT_PATH` (the same ownership rule report records follow). Main agents include them automatically without sub-agents requesting them. Passed to all sub-agents needing developer intent. See the Intent Path section of `params` in the agentic `workflows` profile's `framework` package.
+**Intent context** -- main agent creates the intent records during preflight (the developer's instruction as an `intent` source, the intent document as a `criteria` artifact, both owned by the most specific work item, if any — the same ownership rule report records follow) and passes the document's `file` as `INTENT_PATH`. Main agents include them automatically without sub-agents requesting them. Passed to all sub-agents needing developer intent. See the Intent Path section of `params` in the agentic `workflows` profile's `framework` package.
 
 ## Durable Decisions vs Transient Observations
 
