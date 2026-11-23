@@ -18,6 +18,11 @@ or acceptance criterion:
 - test tools — black-box, working-behavior evidence (programs run live
   against the built binary)
 
+Both forms verify one piece of work. Whether an agent setup — its
+model, harness, tools, and loaded context — does the job reliably
+across many runs is a different question, answered by evals:
+<ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::evidence/reference/agent_evals.md" />.
+
 File-stage quality evidence requires armed policy: the check verdict
 record must carry checkable proof that the policy sections were
 enforced for the run — in a gate that records it, a structured

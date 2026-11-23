@@ -1,4 +1,5 @@
 description: 'Verification evidence doctrine: deliberate verification, the
   findings channel, story validation, negative controls, clean-HEAD baselines,
-  end-to-end validation, and evidence integrity.'
+  end-to-end validation, evidence integrity, and agent evals (tasks,
+  trials, graders, pass@k and pass^k, capability and regression suites).'
 binds_to_depth: main...

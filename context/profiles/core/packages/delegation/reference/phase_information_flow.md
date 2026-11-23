@@ -4,15 +4,27 @@ Information moves between workflow phases through three mechanisms: parameter pa
 
 `ctx:github.com/ctxmod/writing_context/context::shared::density@core/reference/two_loads.md`
 
-Main agents launch sub-agents using the Task tool. Sub-agents have no memory of prior phases--all behavior comes from custom context provided in the prompt.
+Main agents launch sub-agents through the harness's agent-launch tool (in Claude Code, the Agent tool). Sub-agents have no memory of prior phases--all behavior comes from custom context provided in the prompt.
+
+### The Brief Contract
+
+A sub-agent cannot ask what its parent meant, so every brief states five things the template components below carry:
+
+1. **Objective** — the question to answer or the change to make, and why it matters to the parent.
+2. **Output format** — what the return holds (a summary plus a report path) and the report's structure.
+3. **Tool and source guidance** — which tools and sources to use first, and which to avoid.
+4. **Boundaries** — what is out of scope (Delimitations below), including files and decisions reserved for the parent.
+5. **Effort bound** — a budget scaled to the task: a fact lookup is one agent and a handful of tool calls; a comparison is a few agents with a bounded call budget each; open-ended research earns more. Without a stated bound, agents both under-invest in hard tasks and over-invest in easy ones.
+
+Briefs missing these produced duplicated work across siblings, coverage gaps, and agents that misread a short task description as a different task.
 
 ### Template Components
 
-**model**: haiku for story-completion validation (the story-completion validator). sonnet for information gathering and straightforward analysis. opus for complex reasoning, implementation requiring judgment, difficult debugging — genuinely complex interpretation, not routine validation; do not promote validation work to a higher tier by default.
+**model**: the small, fast tier for story-completion validation (the story-completion validator); the mid tier for information gathering and straightforward analysis; the strongest tier for complex reasoning, implementation requiring judgment, difficult debugging — genuinely complex interpretation, not routine validation; do not promote validation work to a higher tier by default. (In Claude's model family the tiers are haiku, sonnet, and opus.)
 
 **prompt**: Contains all context the sub-agent needs.
 
-**Compulsory reads**: Files that are relevant for the sub-agent. Use the `@<path>` format (for rendered context, the path of the rendered file) so files are immediately inlined.
+**Compulsory reads**: Files that are relevant for the sub-agent. Use the harness's file-inlining syntax where it has one (Claude Code: `@<path>`; for rendered context, the path of the rendered file) so files are immediately inlined; otherwise list the paths as required first reads.
 
 | File Type | Example |
 |-----------|---------|
@@ -141,6 +153,8 @@ A 500-line report inlined costs 500+ tokens per phase; a reference costs ~10. Th
 
 **Boundary summaries**: Compress long outputs for orchestration awareness while preserving detail through reference. Example: Full `{REPORTS_BASE}/01-discovery.md` (1,500 words) becomes summary: "Found 12 patterns in 4 modules. Key gap: error handling."
 
+Storing sub-agent output on disk and passing a reference is also a fidelity measure, not only a budget one: every relay of content through an intermediate agent's paraphrase loses detail (the game of telephone), while a path hands every downstream reader the authoritative text.
+
 ## Validation Points
 
 <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::patterns/reference/validation_before_execution.md" />
@@ -164,3 +178,8 @@ Story completion is the one mandatory high-level validation boundary, owned by t
 | Main agent reads sub-agent reports | Context bloat | Pass report paths between sub-agents |
 
 REPORTS_BASE (the owning work item of report records) derives from work item context per `ctx:github.com/ctxmod/agentic/context::shared::framework@workflows/reference/params.md`.
+
+## Sources
+
+- https://www.anthropic.com/engineering/multi-agent-research-system — what each delegated agent needs (objective, output format, tool and source guidance, task boundaries), effort scaled to query complexity, sub-agent output stored externally to avoid the game of telephone (Anthropic Engineering, 2025-06-13; accessed 2026-11-22)
+- https://code.claude.com/docs/en/sub-agents — vendor example of an agent-launch tool and per-agent model selection (Claude Code docs; accessed 2026-11-22)
