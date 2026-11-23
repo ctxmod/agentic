@@ -226,7 +226,7 @@ Tasks are intentionally brief. Extensive detail suggests the task scope is too l
 
 ## Validation Checklist
 
-- [ ] Frontmatter includes id, type, status, created, parent
+- [ ] Record fields set (`ctxmod work show`): kind, title, status, parent
 - [ ] Parent references valid issue identifier
 - [ ] Title uses imperative verb phrase
 - [ ] Summary describes contribution to parent issue

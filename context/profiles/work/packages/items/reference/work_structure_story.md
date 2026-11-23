@@ -76,11 +76,11 @@ Work items required to complete this story.
 
 | Issue | Description | Type | Status |
 |-------|-------------|------|--------|
-| I01 | {What this issue addresses} | Enhancement | Pending |
-| I02 | {What this issue addresses} | Task | Pending |
+| I01 | {What this issue addresses} | Enhancement | open |
+| I02 | {What this issue addresses} | Task | open |
 ```
 
-Issues reference their parent story. Story completion requires all issues resolved and acceptance criteria verified.
+Issues reference their parent story through their `parent` field; `ctxmod work list --parent <story>` is authoritative for their status. Story completion requires all issues resolved and acceptance criteria verified.
 
 ## Optional Sections
 
@@ -175,10 +175,10 @@ Contributors verify their content meets standards before submitting for review. 
 
 | Issue | Description | Type | Status |
 |-------|-------------|------|--------|
-| I01 | Define validation rules for required sections | Enhancement | Active |
-| I02 | Define validation rules for style guidelines | Enhancement | Pending |
-| I03 | Create validation report format | Enhancement | Pending |
-| I04 | Document validation usage for contributors | Documentation | Pending |
+| I01 | Define validation rules for required sections | Enhancement | in_progress |
+| I02 | Define validation rules for style guidelines | Enhancement | open |
+| I03 | Create validation report format | Enhancement | open |
+| I04 | Document validation usage for contributors | Documentation | open |
 
 ## Dependencies
 
@@ -209,8 +209,8 @@ Contributors verify their content meets standards before submitting for review. 
 
 ## Validation Checklist
 
-- [ ] Frontmatter includes id, type, status, priority, created
-- [ ] Parent field present if story belongs to epic
+- [ ] Record fields set (`ctxmod work show`): kind, title, status, priority
+- [ ] `parent` set if the story belongs to an epic
 - [ ] Title is outcome-focused from recipient perspective
 - [ ] Summary articulates value and beneficiary
 - [ ] Acceptance criteria are binary and observable

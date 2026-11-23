@@ -127,8 +127,8 @@ For complex issues, granular work items:
 
 | Task | Description | Status |
 |------|-------------|--------|
-| T01 | {Specific activity} | Pending |
-| T02 | {Specific activity} | Pending |
+| T01 | {Specific activity} | open |
+| T02 | {Specific activity} | open |
 ```
 
 Tasks are optional. Use when an issue requires progress tracking at finer granularity.
@@ -228,9 +228,9 @@ Validation does not currently check for required sections. Contributors submit c
 
 | Task | Description | Status |
 |------|-------------|--------|
-| T01 | Define required sections per artifact type | Pending |
-| T02 | Implement section presence checking | Pending |
-| T03 | Format missing section reports | Pending |
+| T01 | Define required sections per artifact type | open |
+| T02 | Implement section presence checking | open |
+| T03 | Format missing section reports | open |
 
 ## Notes
 
@@ -248,8 +248,8 @@ Consider whether section order should be validated alongside presence.
 
 ## Validation Checklist
 
-- [ ] Frontmatter includes id, type, issue-type, status, priority, created
-- [ ] Parent field present if issue belongs to story
+- [ ] Record fields set (`ctxmod work show`): kind, title, status, priority, issue_type
+- [ ] `parent` set if the issue belongs to a story
 - [ ] Title is specific and descriptive
 - [ ] Summary describes problem or capability gap
 - [ ] Completion criteria are binary and scoped

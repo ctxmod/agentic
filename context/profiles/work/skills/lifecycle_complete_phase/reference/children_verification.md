@@ -1,6 +1,6 @@
 # Children Verification
 
-Use when verifying that all child items are resolved (completed or cancelled) before completing a parent work item. Paired with criteria verification for parallel completion assessment.
+Use when verifying that all child items are resolved (done or cancelled) before completing a parent work item. Paired with criteria verification for parallel completion assessment.
 
 Preferred: `ctxmod work list --parent <id>` for initial child enumeration (kind, status, title, file). Full file read still needed for criteria verification. See `work_store_first` in the ctxmod builtin `work_discipline` profile.
 
@@ -19,9 +19,8 @@ Delimitations:
 - Do not verify acceptance criteria
 
 Notes:
-- Read work item at {WORK_ITEM_PATH}/{TYPE}.md
-- List all referenced child items
-- Check status of each (completed or cancelled)
+- List the child items with `ctxmod work list --parent {WORK_ITEM_PATH} --archive-state all`, plus any the body of {WORK_ITEM_PATH}/ITEM.md references
+- Check status of each (done or cancelled)
 - Document any unresolved children
 ```
 

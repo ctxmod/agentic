@@ -77,9 +77,9 @@ This phase produces parameters for subsequent phases:
 | Context Level | Parameters Available |
 |---------------|----------------------|
 | Epic | EPIC_PATH |
-| Story | STORY_PATH (may include EPIC_PATH if nested) |
-| Issue | ISSUE_PATH (may include STORY_PATH, EPIC_PATH if nested) |
-| Task | TASK_PATH (may include all parent paths) |
+| Story | STORY_PATH (and EPIC_PATH when it has a parent epic) |
+| Issue | ISSUE_PATH (and its ancestors' paths, from the `parent` chain) |
+| Task | TASK_PATH (and its ancestors' paths) |
 
 Main agent provides only the parameters for active context levels.
 

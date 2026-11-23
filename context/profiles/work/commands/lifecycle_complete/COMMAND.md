@@ -1,11 +1,11 @@
 ---
-description: "Verify completion criteria and mark work item as completed"
+description: "Verify completion criteria and mark work item as done"
 binds_to_depth: main
 ---
 
 # lifecycle_complete
 
-Verify completion criteria and mark work item as completed.
+Verify completion criteria and mark work item as done.
 
 Usage:
 

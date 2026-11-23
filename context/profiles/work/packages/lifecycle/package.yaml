@@ -10,7 +10,7 @@ agents:
     - lifecycle_block_phase
   lifecycle_complete_phase:
     description: Lifecycle complete phase — verify acceptance criteria and
-      transition work item to terminal completed state through context resolution,
+      transition work item to terminal done state through context resolution,
       parallel completion verification, synthesis analysis, and status transition.
       May launch parallel sub-agents.
     agent_depth: phase
@@ -19,7 +19,7 @@ agents:
   lifecycle_start_phase:
     description: Lifecycle start phase — begin work on a work item through
       context resolution, transition verification, and status transition to
-      active.
+      in_progress.
     agent_depth: phase
     skills:
     - lifecycle_start_phase

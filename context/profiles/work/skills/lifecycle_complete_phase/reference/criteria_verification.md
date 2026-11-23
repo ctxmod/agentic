@@ -19,7 +19,7 @@ Delimitations:
 - Do not verify child item status
 
 Notes:
-- Read work item at {WORK_ITEM_PATH}/{TYPE}.md
+- Read work item at {WORK_ITEM_PATH}/ITEM.md (status from `ctxmod work show`)
 - Check each criterion in Success Criteria section
 - Determine verification status for each
 - Document any unmet criteria

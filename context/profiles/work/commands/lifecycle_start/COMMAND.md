@@ -1,11 +1,11 @@
 ---
-description: "Begin work on a work item and transition status to active"
+description: "Begin work on a work item and transition status to in_progress"
 binds_to_depth: main
 ---
 
 # lifecycle_start
 
-Begin work on a work item and transition status to active.
+Begin work on a work item and transition status to in_progress.
 
 Usage:
 
