@@ -24,7 +24,7 @@ Parameters:
 - Report: sub-agent reserves just-in-time via `ctxmod work new report "{transition}-impact" --owner <work item, if any>` immediately before writing; returns the path
 - WORK_ITEM_PATH={work item directory}
 - WORK_ITEM_TYPE={epic|story|issue|task}
-- TRANSITION_TYPE={active-to-blocked|active-to-completed|any-to-cancelled}
+- TRANSITION_TYPE={in_progress-to-blocked|in_progress-to-done|any-to-cancelled}
 - VERIFICATION_REPORT={verification report path}
 
 Additional context:
@@ -85,7 +85,7 @@ Notes:
 **Assessment**:
 - List all child items
 - Determine cancellation strategy for children (cascade vs orphan)
-- Check if parent has other active children
+- Check if parent has other in-progress children (`ctxmod work list --parent <parent>`)
 - Assess whether parent can proceed without this child
 
 ### Draft to Active, Blocked to Active (Start)

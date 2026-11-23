@@ -93,11 +93,11 @@ List of stories comprising this epic.
 
 | Story | Description | Status |
 |-------|-------------|--------|
-| S01 | {What this story delivers} | Pending |
-| S02 | {What this story delivers} | Pending |
+| S01 | {What this story delivers} | open |
+| S02 | {What this story delivers} | open |
 ```
 
-Stories reference their parent epic. Epic completion requires all stories resolved or explicitly descoped.
+Stories reference their parent epic through their `parent` field; `ctxmod work list --parent <epic>` is authoritative for their status. Epic completion requires all stories resolved or explicitly descoped.
 
 ## Optional Sections
 
@@ -208,10 +208,10 @@ Create consistent documentation standards across all project artifacts. Contribu
 
 | Story | Description | Status |
 |-------|-------------|--------|
-| S01 | Define core templates for primary artifact types | Active |
-| S02 | Establish style guidelines for written content | Pending |
-| S03 | Create validation criteria for compliance checking | Pending |
-| S04 | Produce reference examples for each template | Pending |
+| S01 | Define core templates for primary artifact types | in_progress |
+| S02 | Establish style guidelines for written content | open |
+| S03 | Create validation criteria for compliance checking | open |
+| S04 | Produce reference examples for each template | open |
 
 ## Dependencies
 
@@ -244,7 +244,7 @@ S01 must complete before S03 can begin. S02 and S03 can proceed in parallel once
 
 ## Validation Checklist
 
-- [ ] Frontmatter includes id, type, status, priority, created
+- [ ] Record fields set (`ctxmod work show`): kind, title, status, priority
 - [ ] Title is outcome-focused
 - [ ] Summary establishes strategic value
 - [ ] Scope includes both inclusions and exclusions

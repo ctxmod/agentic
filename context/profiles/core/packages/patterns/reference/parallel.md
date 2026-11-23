@@ -76,7 +76,7 @@ REPORTS_BASE derives from work item context per `ctx:github.com/ctxmod/agentic/c
 
 ### Output Structure
 
-Organize outputs within work item context. Agent names or slugs distinguish parallel outputs; shared timestamps indicate parallel launch.
+Organize outputs within work item context. Agent names in the titles distinguish parallel outputs; shared creation times indicate parallel launch.
 
 ```
 items/<YYYY-MM>/<DD-HHMM>-<issue id>-<slug>/   # the issue's item directory (ctxmod work store)

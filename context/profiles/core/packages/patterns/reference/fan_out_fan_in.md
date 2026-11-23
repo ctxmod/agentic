@@ -88,7 +88,7 @@ Synthesis agent receives paths to all fan-out outputs. REPORTS_BASE derives from
 
 ### Output Structure
 
-Organize outputs within work item context. Slug prefixes distinguish fan-out outputs from synthesis.
+Organize outputs within work item context. Titles distinguish fan-out outputs from synthesis.
 
 ```
 items/<YYYY-MM>/<DD-HHMM>-<issue id>-<slug>/   # the issue's item directory (ctxmod work store)

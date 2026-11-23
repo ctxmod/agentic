@@ -1,12 +1,12 @@
 ---
-description: "Lifecycle start phase — begin work on a work item through context resolution, transition verification, and status transition to active."
+description: "Lifecycle start phase — begin work on a work item through context resolution, transition verification, and status transition to in_progress."
 binds_to_depth: phase
 ---
 
 # Lifecycle Start Phase
 
-Lifecycle start phase — begin work on a draft or blocked work item,
-verifying readiness and transitioning status to active. This is one of
+Lifecycle start phase — begin work on an open or blocked work item,
+verifying readiness and claiming it in status in_progress. This is one of
 four sibling leaf phase skills in the lifecycle capability (start,
 block, status, complete); it dispatches bare per the only-where-content-exists
 decision — no objective/procedure layer.
@@ -26,10 +26,10 @@ workflow agent references this phase as a "lifecycle start" sub-step.
 
 Use this phase when:
 
-- Beginning work on a draft work item
+- Beginning work on an open work item
 - Resuming work after resolving a blocker
-- Transitioning work items from inactive to active states
-- Enabling child work items to proceed (parent must be active)
+- Transitioning work items from open or blocked to in_progress
+- Enabling child work items to proceed (parent must be in progress)
 
 The start phase applies to all work item types with consistent
 verification criteria.
@@ -66,10 +66,10 @@ Phase 4: Notification (main agent)
 - Report: `<work item dir>/reports/<YYYY-MM>/<DD-HHMM>-<id>-start-verification.md`
 
 **Workflow-specific notes**:
-- Haiku sub-agent verifies work item can transition to active
+- Haiku sub-agent verifies work item can transition to in_progress
 - Checks transition-specific criteria based on current status:
-  - **draft → active**: Required sections present, parent active/completed
-  - **blocked → active**: Blocker resolved, resolution documented
+  - **open → in_progress**: Required sections present, parent in progress or done
+  - **blocked → in_progress**: Blocker resolved, resolution documented
 - Produces verification report with eligibility determination
 
 ### Phase 3: Status Transition (conditional)
@@ -91,7 +91,7 @@ Main agent returns result to developer. No sub-agent needed.
 **Success notification includes**:
 - Work item identifier
 - Previous status
-- New status (active)
+- New status (in_progress)
 - Any warnings from verification
 
 **Failure notification includes**:
@@ -108,12 +108,12 @@ Phase 1: Context Resolution
 - Produces: WORK_ITEM_PATH, WORK_ITEM_TYPE, WORK_ITEM_ID
 
 Phase 2: Transition Verification
-- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=draft-to-active|blocked-to-active
+- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=open-to-in_progress|blocked-to-in_progress
 - Produces: <work item dir>/reports/<YYYY-MM>/<DD-HHMM>-<id>-start-verification.md
 
 Phase 3: Status Transition
-- Receives: WORK_ITEM_PATH, VERIFICATION_REPORT, TARGET_STATUS=active
-- Produces: Modified {WORK_ITEM_PATH}/{TYPE}.md
+- Receives: WORK_ITEM_PATH, VERIFICATION_REPORT, TARGET_STATUS=in_progress
+- Produces: The item claimed in status in_progress (`ctxmod work claim --status`)
 
 Phase 4: Notification
 - Receives: Transition result, verification report
@@ -155,7 +155,7 @@ Main agent uses provided identifier directly.
 
 ### Parent Cascade Start
 
-Starting a child item whose parent is in draft status:
+Starting a child item whose parent is still open:
 
 ```
 /lifecycle_start kpqrstbcdf  # a story whose parent epic vdwgsgzfrs is open (draft)
@@ -172,10 +172,10 @@ Main agent:
 
 | From | To | Criteria |
 |------|-----|----------|
-| draft | active | Required sections present, parent active/completed |
-| blocked | active | Blocker resolved, resolution documented |
+| open | in_progress | Required sections present, parent in progress or done |
+| blocked | in_progress | Blocker resolved, resolution documented |
 
-Starting from other states (active, completed, cancelled) is invalid.
+Starting from other states (in_progress, done, cancelled) is invalid.
 Return error with current state.
 
 ## Error Handling

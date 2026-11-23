@@ -6,7 +6,7 @@ Information moves between workflow phases through three mechanisms: parameter pa
 
 Main agents launch sub-agents through the harness's agent-launch tool (in Claude Code, the Agent tool). Sub-agents have no memory of prior phases--all behavior comes from custom context provided in the prompt.
 
-### The Brief Contract
+## The Brief Contract
 
 A sub-agent cannot ask what its parent meant, so every brief states five things the template components below carry:
 
@@ -18,7 +18,7 @@ A sub-agent cannot ask what its parent meant, so every brief states five things 
 
 Briefs missing these produced duplicated work across siblings, coverage gaps, and agents that misread a short task description as a different task.
 
-### Template Components
+## Template Components
 
 **model**: the small, fast tier for story-completion validation (the story-completion validator); the mid tier for information gathering and straightforward analysis; the strongest tier for complex reasoning, implementation requiring judgment, difficult debugging — genuinely complex interpretation, not routine validation; do not promote validation work to a higher tier by default. (In Claude's model family the tiers are haiku, sonnet, and opus.)
 
@@ -70,7 +70,7 @@ Phase 2: Report: sub-agent reserves just-in-time via `ctxmod work new report "02
 
 **Inheritance** -- work context parameters (EPIC_PATH, STORY_PATH, ISSUE_PATH, project conventions, quality standards) remain constant across all sub-agent launches. Main agents include them automatically without sub-agents requesting them.
 
-**Intent context** -- main agent creates the intent source during preflight with `ctxmod work new intent "<title>" --owner <most specific work item, if any>` and passes its `file` as `INTENT_PATH` (the same ownership rule report records follow). Main agents include them automatically without sub-agents requesting them. Passed to all sub-agents needing developer intent. See the Intent Path section of `params` in the agentic `workflows` profile's `framework` package.
+**Intent context** -- main agent creates the intent records during preflight (the developer's instruction as an `intent` source, the intent document as a `criteria` artifact, both owned by the most specific work item, if any — the same ownership rule report records follow) and passes the document's `file` as `INTENT_PATH`. Main agents include them automatically without sub-agents requesting them. Passed to all sub-agents needing developer intent. See the Intent Path section of `params` in the agentic `workflows` profile's `framework` package.
 
 ## Durable Decisions vs Transient Observations
 

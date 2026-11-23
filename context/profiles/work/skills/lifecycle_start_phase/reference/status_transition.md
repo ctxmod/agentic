@@ -8,7 +8,7 @@ Use status transition phase when:
 
 - Work item lifecycle status changes (`open` → `in_progress` → `done`, `in_progress` → `blocked`, etc.)
 - Status transition has been verified as eligible
-- Only the status field requires modification
+- Only the status requires changing
 - Transition is part of a lifecycle command workflow
 
 Status transition follows verification phases and precedes notification.
@@ -42,13 +42,13 @@ Notes:
 
 | Transition | From | To | Verification Required |
 |------------|------|-----|-----------------------|
-| Start (draft) | `open` | `in_progress` | Required sections present, parent `in_progress`/`done` |
+| Start | `open` | `in_progress` | Required sections present, parent `in_progress`/`done` |
 | Start (unblock) | `blocked` | `in_progress` | Blocker resolved, resolution documented |
 | Block | `in_progress` | `blocked` | Blocker reason documented |
 | Complete | `in_progress` | `done` | Criteria met, children resolved |
 | Cancel | any | `cancelled` | Cancellation reason documented |
 
-Each transition type requires prior verification of transition-specific criteria.
+Each transition type requires prior verification of transition-specific criteria. A start takes the item with `ctxmod work claim <item> --status in_progress`, one change that refuses while another session holds the item; a completion or cancellation sets the status, then releases the claim (`ctxmod work release <item>`). A blocked item keeps its claim unless its holder releases it; release it when someone else will pick it up.
 
 ## Context Requirements
 
@@ -105,4 +105,4 @@ If transition fails, report the issue with failure context.
 | Modifying content sections | Exceeds phase scope | Change the record's status only |
 | Skipping parent automation | Hierarchy inconsistencies | Check and transition parents first |
 | Using Sonnet/Opus | Wastes capability on simple task | Use Haiku for field updates |
-| Transitioning to invalid states | Breaks lifecycle semantics | Use only defined transition types |
+| Setting a status outside the vocabulary | Refused (CTX-WRK006) | Use only defined transition types |

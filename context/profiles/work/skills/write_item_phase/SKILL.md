@@ -6,7 +6,8 @@ binds_to_depth: phase
 # Write Work Item Phase
 
 Work item writing phase — produce tracked work units in the work item
-hierarchy (epics, stories, issues, tasks). This is one of four sibling
+hierarchy (epics, stories, issues, tasks), each an item record in the
+work store (`ctxmod work`). This is one of four sibling
 phase skills in the writing capability (report, work-item, context,
 intent); they share the same methodology layer (`writing_phase`) and
 the shared objective (`writing_objective`) and procedure
@@ -58,7 +59,7 @@ work_item_context: optional
 | Argument | Required | Description |
 |----------|----------|-------------|
 | `description` | Yes | Feature description |
-| `--epic` | No | Parent epic identifier |
+| `--epic` | No | Parent epic: its id, a prefix, or its directory |
 
 Output: the story's `ITEM.md` — created standalone, or with
 `--parent <epic id>` (epic-nested).
@@ -79,7 +80,7 @@ work_item_context: optional
 | Argument | Required | Description |
 |----------|----------|-------------|
 | `description` | Yes | Issue description |
-| `--story` | No | Parent story identifier |
+| `--story` | No | Parent story: its id, a prefix, or its directory |
 
 Output: the issue's `ITEM.md` — created with `--parent <story id>`
 (story-scoped) or standalone.
@@ -100,7 +101,7 @@ work_item_context: required
 | Argument | Required | Description |
 |----------|----------|-------------|
 | `description` | Yes | Task description |
-| `--issue` | Yes | Parent issue identifier |
+| `--issue` | Yes | Parent issue: its id, a prefix, or its directory |
 
 Output: the task's `ITEM.md`, created with `--parent <issue id>`.
 
@@ -122,9 +123,9 @@ Use this phase when:
 
 ## Variant Dispatch
 
-The variant determines identifier reservation, parent context, and
-output location. All variants share the same phase structure below;
-variant-specific differences are noted per phase.
+The variant determines the record's kind and parent (identifier
+reservation through `ctxmod work new`). All variants share the same
+phase structure below; variant-specific differences are noted per phase.
 
 | Variant | Parent context | Reserve tool |
 |---------|----------------|-------------|
@@ -143,8 +144,8 @@ transition criteria, anti-patterns).
 
 Phase 0 reserves the work-item ID itself; phase report paths are
 different — they are reserved by the executing sub-agent just-in-time
-(`ctxmod work new report "<phase title>"`(
-parent=<reserved work item ID>)`) immediately before writing. The
+(`ctxmod work new report "<phase title>" --owner <reserved work item
+ID>`) immediately before writing. The
 `- Report:` lines below name the slug convention each reservation uses;
 they are never pre-minted dispatch parameters. Sub-agents return their
 reserved paths, and the main agent passes those returned paths onward,
@@ -262,7 +263,7 @@ Phase 2: Analysis (optional)
 
 Phase 3: Writing
 - Receives: WORK_ITEM_PATH, Phase 1 output, Phase 2 output (if run)
-- Produces: {WORK_ITEM_PATH}/{TYPE}.md
+- Produces: {WORK_ITEM_PATH}/ITEM.md
 
 Phase 4: Validation (conditional)
 - Receives: Work item path
@@ -309,7 +310,7 @@ context; Phase 3 writes new issue referencing parent story.
 
 | Situation | Response |
 |-----------|----------|
-| Identifier reservation fails | Report reservation error, await decision |
+| Identifier reservation fails | Report the `ctxmod work new` error, await decision |
 | Parent context missing (required) | Report missing parent, await decision |
 | Validation exceeds iterations | Report persistent issues, await decision |
 | Writing fails | Check planning output, await decision |

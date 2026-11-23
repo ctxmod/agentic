@@ -69,7 +69,7 @@ Detect structural patterns and validate parent-child relationships across the wo
 `ctx:github.com/ctxmod/agentic/context::shared::discovery_procedure@workflows/reference/pattern_detection.md`
 ```
 
-**Application**: Validate every parent reference resolves to an existing item. Map dependency chains: epic to stories, story to issues, issue to tasks. Detect orphans (parent references non-existent paths), dangling references (content mentions absent identifiers), and circular parent chains.
+**Application**: Validate every parent reference resolves to an existing item. Map dependency chains: epic to stories, story to issues, issue to tasks. Detect orphans (a parent that is archived while its child is active), dangling references (a body citing an id no record carries: `ctxmod work show <id>` refuses it), and missing parents. ctxmod refuses a parent that does not exist or ranks after its child and never lets the chain loop, and `ctxmod work vet` reports a record that breaks either rule.
 
 ### Phase 4: Pattern Extraction
 
@@ -95,7 +95,7 @@ Work-item discovery reports include these objective-specific sections:
 
 | Section | Content |
 |---------|---------|
-| Inventory Summary | Counts by type, identifier ranges, path locations |
+| Inventory Summary | Counts by kind and status, path locations |
 | Hierarchy Analysis | Parent-child map, orphaned items with IDs, standalone vs story-scoped issues |
 | Status Distribution | Breakdown by type, stale items with creation dates, completion rates |
 | Dependency Map | Cross-references between items, parent validation results, blocking chains |
@@ -108,7 +108,7 @@ Each finding includes `file:line` references to specific work-item locations.
 
 | Avoid | Why | Instead |
 |-------|-----|---------|
-| Scanning all markdown files | Noise from non-work-item content | Restrict Glob to work-item directories |
+| Scanning all markdown files | Noise from non-work-item content | List items with `ctxmod work list` |
 | Skipping parent validation | Orphaned items go undetected | Verify every parent reference resolves |
 | Ignoring identifier format | Miss numbering gaps and conventions | Check identifier format consistency (`{TYPE}{NN}` schemes, ten-letter store ids) |
 | Flat status listing | No actionable prioritization | Categorize stale items by duration and severity |

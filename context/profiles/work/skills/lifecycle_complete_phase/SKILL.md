@@ -1,12 +1,12 @@
 ---
-description: "Lifecycle complete phase — verify acceptance criteria and transition work item to terminal completed state through context resolution, parallel completion verification, synthesis analysis, and status transition."
+description: "Lifecycle complete phase — verify acceptance criteria and transition work item to terminal done state through context resolution, parallel completion verification, synthesis analysis, and status transition."
 binds_to_depth: phase
 ---
 
 # Lifecycle Complete Phase
 
 Lifecycle complete phase — verify acceptance criteria and children are
-resolved, then transition the work item to the terminal completed
+resolved, then transition the work item to the terminal done
 state. This is one of four sibling leaf phase skills in the lifecycle
 capability (start, block, status, complete); it dispatches bare per
 The only-where-content-exists decision — no objective/procedure
@@ -30,8 +30,8 @@ Use this phase when:
 
 - Work item execution is finished
 - All acceptance/success criteria are satisfied
-- Child items are resolved (completed or cancelled)
-- Transitioning work items to terminal completed state
+- Child items are resolved (done or cancelled)
+- Transitioning work items to terminal done state
 
 The complete phase applies to all work item types with type-specific
 criteria verification.
@@ -149,7 +149,7 @@ Main agent returns result to developer. No sub-agent needed.
 **Success notification includes**:
 - Work item identifier
 - Verification summary (criteria met, children resolved)
-- New status (completed)
+- New status (done)
 - Impact on parent completion eligibility (if applicable)
 
 **Failure notification includes**:
@@ -180,8 +180,8 @@ Phase 3: Completion Analysis — skipped if 2a fails
 - Produces: <work item dir>/reports/<YYYY-MM>/<DD-HHMM>-<id>-completion-analysis.md
 
 Phase 4: Status Transition
-- Receives: WORK_ITEM_PATH, COMPLETION_ANALYSIS_REPORT, TARGET_STATUS=completed
-- Produces: Modified {WORK_ITEM_PATH}/{TYPE}.md
+- Receives: WORK_ITEM_PATH, COMPLETION_ANALYSIS_REPORT, TARGET_STATUS=done
+- Produces: The item's status set to done and its claim released (`ctxmod work set`, `ctxmod work release`)
 
 Phase 5: Notification
 - Receives: Transition result, completion analysis report (or build-smoke failure report)
@@ -238,9 +238,9 @@ completion.
 
 | From | To | Criteria |
 |------|-----|----------|
-| active | completed | All acceptance criteria met, all children resolved |
+| in_progress | done | All acceptance criteria met, all children resolved |
 
-Completing from other states (draft, blocked, completed, cancelled) is
+Completing from other states (open, blocked, done, cancelled) is
 invalid. Return error with current state.
 
 ## Error Handling
@@ -265,7 +265,7 @@ Error handling follows stop-report-propose-await pattern.
 | Proceeding after verification failure | Invalid transition | Skip Phase 4, report failures |
 | Sequential verification | Wastes turns | Launch Phase 2b agents in parallel |
 | Reading intermediate reports | Context bloat | Pass report paths only |
-| Completing with active children | Hierarchy inconsistency | Verify children resolved first |
+| Completing with unresolved children | Hierarchy inconsistency | Verify children resolved first |
 
 ## Cross-Cutting Reference
 

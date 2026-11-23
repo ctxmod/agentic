@@ -22,7 +22,7 @@ Parameters:
 - Report: sub-agent reserves just-in-time via `ctxmod work new report "{transition}-verification" --owner <work item, if any>` immediately before writing; returns the path
 - WORK_ITEM_PATH={work item directory}
 - WORK_ITEM_TYPE={epic|story|issue|task}
-- TRANSITION_TYPE={draft-to-active|blocked-to-active|active-to-blocked|active-to-completed|any-to-cancelled}
+- TRANSITION_TYPE={open-to-in_progress|blocked-to-in_progress|in_progress-to-blocked|in_progress-to-done|any-to-cancelled}
 
 Additional context:
 - {transition-specific criteria reference}
@@ -33,7 +33,7 @@ Delimitations:
 - Report clear eligibility determination
 
 Notes:
-- Read work item file at {WORK_ITEM_PATH}/{TYPE}.md
+- Read work item file at {WORK_ITEM_PATH}/ITEM.md (status from `ctxmod work show`)
 - Check current status matches expected from-state
 - Validate transition-specific criteria
 - Document any blocking issues
@@ -43,27 +43,27 @@ Notes:
 
 ### Draft to Active (Start)
 
-**Current status**: draft
-**Target status**: active
+**Current status**: open
+**Target status**: in_progress
 
 **Criteria**:
 - Required sections present (varies by type: Summary, Success Criteria, etc.)
-- Parent item status is active or completed (if parent exists)
+- Parent item status is in_progress or done (if parent exists)
 - No unresolved blockers
 
 ### Blocked to Active (Unblock)
 
 **Current status**: blocked
-**Target status**: active
+**Target status**: in_progress
 
 **Criteria**:
 - Blocker marked as resolved in Blockers section
 - Resolution path documented
-- No remaining active blockers
+- No remaining unresolved blockers
 
 ### Active to Blocked (Block)
 
-**Current status**: active
+**Current status**: in_progress
 **Target status**: blocked
 
 **Criteria**:
@@ -72,12 +72,12 @@ Notes:
 
 ### Active to Completed (Complete)
 
-**Current status**: active
-**Target status**: completed
+**Current status**: in_progress
+**Target status**: done
 
 **Criteria**:
 - All acceptance/success criteria met
-- All child items resolved (completed or cancelled)
+- All child items resolved (done or cancelled)
 - No unresolved blockers
 
 ### Any to Cancelled (Cancel)

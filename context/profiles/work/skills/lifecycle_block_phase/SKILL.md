@@ -5,7 +5,7 @@ binds_to_depth: phase
 
 # Lifecycle Block Phase
 
-Lifecycle block phase — mark an active work item as blocked, documenting
+Lifecycle block phase — mark an in-progress work item as blocked, documenting
 the impediment and assessing impact on related work. This is one of
 four sibling leaf phase skills in the lifecycle capability (start,
 block, status, complete); it dispatches bare per the only-where-content-exists
@@ -29,7 +29,7 @@ Use this phase when:
 - Work item progress is impeded by external factors
 - Documenting blockers for visibility and tracking
 - Assessing impact on child and dependent items
-- Transitioning active items to blocked state
+- Transitioning in-progress items to blocked state
 
 The block phase applies to all work item types with consistent
 documentation requirements.
@@ -108,7 +108,7 @@ Main agent returns result to developer. No sub-agent needed.
 
 **Failure notification includes**:
 - Work item identifier
-- Current status (if not active)
+- Current status (if not in_progress)
 - Reason blocking cannot proceed
 
 ## Information Flow
@@ -119,15 +119,15 @@ Phase 1: Context Resolution
 - Produces: WORK_ITEM_PATH, WORK_ITEM_TYPE, WORK_ITEM_ID, BLOCKER_REASON
 
 Phase 2: Transition Verification
-- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=active-to-blocked
+- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=in_progress-to-blocked
 - Produces: <work item dir>/reports/<YYYY-MM>/<DD-HHMM>-<id>-block-verification.md
 
 Phase 3: Status Transition + Blocker Documentation
 - Receives: WORK_ITEM_PATH, BLOCKER_REASON, BLOCK_DATE, VERIFICATION_REPORT
-- Produces: Modified {WORK_ITEM_PATH}/{TYPE}.md
+- Produces: Status set to blocked (`ctxmod work set`), Blockers section appended to {WORK_ITEM_PATH}/ITEM.md
 
 Phase 4: Impact Analysis
-- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=active-to-blocked
+- Receives: WORK_ITEM_PATH, TRANSITION_TYPE=in_progress-to-blocked
 - Produces: <work item dir>/reports/<YYYY-MM>/<DD-HHMM>-<id>-block-impact.md
 
 Phase 5: Notification
@@ -203,9 +203,9 @@ Each invocation adds a new blocker entry while preserving existing blockers.
 
 | From | To | Criteria |
 |------|-----|----------|
-| active | blocked | Blocker reason documented |
+| in_progress | blocked | Blocker reason documented |
 
-Blocking from other states (draft, blocked, completed, cancelled) is
+Blocking from other states (open, blocked, done, cancelled) is
 invalid. Return error with current state.
 
 ## Error Handling
@@ -214,7 +214,7 @@ invalid. Return error with current state.
 |-----------|----------|----------|
 | Context resolution fails | Halt, report ambiguity | Specify work item explicitly |
 | Missing --reason flag | Halt, report required flag | Provide blocking reason |
-| Verification fails (not active) | Skip Phase 3-4, report state | Transition to active first |
+| Verification fails (not in_progress) | Skip Phase 3-4, report state | Start the item first |
 | Blocker documentation fails | Halt, report failure | Manual correction, re-invoke |
 | Impact analysis fails | Continue, report partial results | Optional analysis phase |
 
@@ -225,7 +225,7 @@ Error handling follows stop-report-propose-await pattern.
 | Avoid | Why | Instead |
 |-------|-----|---------|
 | Blocking without reason | Undocumented impediment | Always require --reason flag |
-| Blocking non-active items | Invalid state transition | Verify current status first |
+| Blocking items not in progress | Invalid state transition | Verify current status first |
 | Skipping impact analysis | Incomplete picture of effects | Analyze affected children/dependents |
 | Overwriting existing blockers | Lost historical context | Preserve and accumulate blockers |
 | Reading intermediate reports | Context bloat | Pass report paths only |

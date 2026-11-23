@@ -30,7 +30,7 @@ Use this phase when:
 
 - Establishing work context before starting work
 - Re-establishing context after returning to a project
-- Surveying active work items across project
+- Surveying open and in-progress work items across project
 - Checking work item hierarchy and relationships
 - Understanding blocker scope and affected items
 
@@ -91,7 +91,7 @@ Phase 4: Status Display (main agent)
 **Workflow-specific notes**:
 - Conditional on context mode from Phase 1
 - Specific item mode gathers detailed status for resolved work item
-- General mode surveys all active and blocked items across project
+- General mode surveys all in-progress and blocked items across project
 
 ### Phase 3: Hierarchy Mapping (specific-item only, conditional)
 
@@ -135,17 +135,17 @@ Recent Reports:
 Active Work Items:
 
 Epics:
-- E01: {title} ({status})
+- {epic id}: {title} ({status})
 
 Stories:
-- S03: {title} ({status})
+- {story id}: {title} ({status})
 
 Issues:
-- I07: {title} ({status})
-- I12: {title} ({status}) [BLOCKED]
+- {issue id}: {title} ({status})
+- {issue id}: {title} ({status}) [BLOCKED]
 
 Tasks:
-- T02: {title} ({status})
+- {task id}: {title} ({status})
 ```
 
 ## Information Flow
@@ -206,14 +206,14 @@ Shows that story's status and hierarchy.
 
 ### General Project Survey
 
-Status for all active work items:
+Status for all open and in-progress work items:
 
 ```
 /lifecycle_status
 # No specific context
 ```
 
-Shows all active and blocked items across the project.
+Shows all in-progress and blocked items across the project.
 
 ## Output Characteristics
 

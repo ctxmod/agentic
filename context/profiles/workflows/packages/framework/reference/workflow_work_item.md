@@ -112,7 +112,7 @@ Work items complete after Phase 3. Writers receive objectives, reports, procedur
 ```
 Phase 0: Identifier Reservation (main agent)
 - Receives: User request, optional identifier
-- Produces: Reserved {TYPE}_ID and write-to path
+- Produces: The item's record (`ctxmod work new`) and {TYPE}_PATH, its directory
 
 Phase 1: Context Discovery
 - Receives: {TYPE}_PATH, PARENT_PATH
@@ -124,17 +124,17 @@ Phase 2: Analysis (optional)
 
 Phase 3: Work Item Writing
 - Receives: {TYPE}_PATH, Phase 1 output, Phase 2 output (if applicable)
-- Produces: {TYPE}_PATH/{TYPE}.md
+- Produces: {TYPE}_PATH/ITEM.md
 ```
 
-Phase report paths are reserved just-in-time by the executing sub-agent (``ctxmod work new report "<title>"``, parent = this work item) — the names above describe the slug convention, not pre-minted dispatch parameters. See params.md's Report Parameters.
+Phase report paths are reserved just-in-time by the executing sub-agent (`ctxmod work new report "<title>" --owner <this work item>`) — the names above describe the slug convention, not pre-minted dispatch parameters. See params.md's Report Parameters.
 
 ## Execution Strategy
 
 ### Main Agent Behavior
 
-1. **Reserve identifier**: Call `ctxmod work new` to obtain the work item ID and write-to path
-2. **Create directory**: `mkdir -p {resolved path}` (path from Work Item Types table)
+1. **Reserve identifier**: `ctxmod work new <kind> "<title>" [--parent <item>]` creates the item record and prints its id and `ITEM.md`; the store creates the directory, so nothing is made by hand
+2. **Claim it** while the workflow runs: `ctxmod work claim <item>`; release it at completion (`ctxmod work release <item>`)
 3. **Discovery**: Launch discovery sub-agent with parent context
 4. **Analysis** (if needed): Launch analysis sub-agent
 5. **Writing**: Launch writing sub-agent (Opus) with all context

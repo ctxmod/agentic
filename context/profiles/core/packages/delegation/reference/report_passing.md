@@ -94,7 +94,8 @@ mints report paths.
 
 Consequences, observed across a ~21h-delayed child:
 
-- Expect a child's report by listing the reports tree, not by trusting
+- Expect a child's report by listing the item's reports
+  (`ctxmod work list --kind report --owner <item>`), not by trusting
   the announced path — and a "missing at announced path" observation
   does not mean the child failed.
 - A child completing after its section closed should SendMessage its

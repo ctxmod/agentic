@@ -73,6 +73,10 @@ All output records (reports, intents, artifacts) take their owner from the most 
 
 Where `<category>` is the record kind's directory: `reports` for a report, `intents` for an intent source, `plans`, `syntheses`, `summaries`, `handoffs`, … for artifacts (`ctxmod work kinds` lists them).
 
+### Report-path notation in workflow docs
+
+Workflow and skill docs name phase reports symbolically, as `{REPORTS_BASE}/{date}/<DD-HHMM>-<id>-NN-<name>.md` (or under `{WORK_ITEM_PATH}/reports/`). Read it as "the report record titled `NN <name>`, owned by the most specific work item": `{REPORTS_BASE}` is that item's `reports/` directory (the store's top-level `reports/` outside work-item context), and the real file is the `file` its `ctxmod work new report` call printed. Nobody assembles that path; it reaches the next phase in the producing sub-agent's return message.
+
 ### Placeholders
 
 | Placeholder | Filled by | Example | Notes |
@@ -82,7 +86,7 @@ Where `<category>` is the record kind's directory: `reports` for a report, `inte
 | `{type}` | Varies | `discovery`, `validation`, `analysis` | Report classification; determined by sub-agent from objective type and carried in the report title (and an optional `--set type=<type>` field) |
 | `{slug}` | Derived | `source`, `edge-cases`, `api-review` | Derived by the store from the record title at creation. Report titles: sub-agent (in its creation call). Intent titles: main agent (descriptive) |
 
-**Mandatory pre-resolution**: Main agents MUST resolve the descriptive parts of anything the dispatch itself creates (the intent record's title) before launch. Report records carry nothing to resolve at launch — the sub-agent's just-in-time `ctxmod work new report` stamps date and time at creation. The report title (hence slug) is chosen by the sub-agent; intent titles are determined by the main agent. The slug is derived from the title, never appended by hand.
+**Mandatory pre-resolution**: Main agents MUST resolve the descriptive parts of anything the dispatch itself creates (the intent records' title) before launch. Report records carry nothing to resolve at launch — the sub-agent's just-in-time `ctxmod work new report` stamps date and time at creation. The report title (hence slug) is chosen by the sub-agent; intent titles are determined by the main agent. The slug is derived from the title, never appended by hand.
 
 ## Report Parameters
 
@@ -122,27 +126,41 @@ After sub-agents write reports, they return the report path. Main agents may use
 
 **Parameter**: `INTENT_PATH`
 
-**Creation**: `ctxmod work new intent "<descriptive title>" --owner <most specific work item id>` — prints the payload `file`; the main agent writes the intent there.
+An intent is two records, because the store keeps a supplied instruction apart from any reading of it:
 
-Ownership follows the chain above, substituting the `intents` category for `reports`. Intent titles are descriptive (e.g., `auth-edge-cases`) rather than type-based--the main agent always determines the title during preflight.
+| Record | Kind | Holds | Written |
+|--------|------|-------|---------|
+| The instruction | `intent` (a source) | The developer's own words, verbatim | Once: sealed at creation with `--body-file`, or at the first `ctxmod work touch` after it is written; a later change of its bytes refuses |
+| The intent document | `criteria` (an artifact) | Intent, requirements, constraints, specifications, acceptance criteria composed from the instruction and research | By the main agent and the intent-writing phases, revised through validation; `status=final` when settled |
+
+INTENT_PATH is the intent document's `file`. The store has no kind named for an authored intent document; `criteria` is the closest of its artifact kinds, and the document's title says it is the intent.
+
+**Creation**:
+
+```sh
+ctxmod work new intent "<descriptive title>" --owner <work item> --body-file <the user's words>
+ctxmod work new criteria "<descriptive title> intent" --owner <work item>   # its file is INTENT_PATH
+```
+
+Ownership follows the chain above (no `--owner` in general context); the records land in the owner's `intents/` and `criteria/`. Intent titles are descriptive (e.g., `auth-edge-cases`) rather than type-based--the main agent always determines the title during preflight. The intent document cites the instruction by record id; `ctxmod work list --kind criteria --owner <item>` lists an item's intent documents and `--kind intent` its instructions, newest first. A revised instruction is a new `intent` record.
 
 **Examples**:
 
 ```
-# Epic-level intent
-context.local/work/items/2026-02/22-0800-vdwgsgzfrs-platform-architecture/intents/2026-02/22-0800-hgfdsqwrtz-platform-architecture.md
+# Epic-level intent document
+context.local/work/items/2026-02/22-0800-vdwgsgzfrs-platform-architecture/criteria/2026-02/22-0800-hgfdsqwrtz-platform-architecture-intent.md
 
-# Task-level intent
-context.local/work/items/2026-02/22-0900-zxcvbnmpqr-input-validation/intents/2026-02/22-1506-bcdfghjkmn-auth-edge-cases.md
+# Task-level intent document
+context.local/work/items/2026-02/22-0900-zxcvbnmpqr-input-validation/criteria/2026-02/22-1506-bcdfghjkmn-auth-edge-cases-intent.md
 ```
 
-**Purpose**: Persistent intent specification written by main agent during preflight, scoped to work item context. An intent is a `sources` record: its payload is written once and sealed (the first `ctxmod work touch` after writing records its digest and makes it read-only), so a corrected intent is a new intent record. Sub-agents read as compulsory context but never modify. Multiple work items can have different intents. Work items reference intent records from their body's related list (by id or `file`).
+**Purpose**: Persistent intent specification written by main agent during preflight, scoped to work item context. Sub-agents read as compulsory context but never modify. Multiple work items can have different intents. Work items reference intent records from their body's related list (by id or `file`).
 
-**Main agent**: Create the intent record owned by the most specific work item, write the payload during preflight, seal it (`ctxmod work touch <id>`), pass INTENT_PATH to sub-agents.
+**Main agent**: Create both records owned by the most specific work item during preflight, write the intent document, pass INTENT_PATH to sub-agents.
 
 **Sub-agent**: Read as compulsory context, reference throughout execution, do not modify.
 
-**Directional responsibility**: Main agents WRITE intent records during preflight; sub-agents READ intent records during execution. This unidirectional flow ensures intent remains stable throughout workflow execution.
+**Directional responsibility**: Main agents WRITE intent records during preflight; sub-agents READ them during execution. This unidirectional flow ensures intent remains stable throughout workflow execution, and the instruction's write-once seal keeps the developer's words unchanged.
 
 ### Artifacts
 
@@ -157,6 +175,7 @@ Artifacts are final products synthesized from multiple reports and informed by i
 | Runbooks, automation, utilities | an artifact record created with `--ext sh` (or the script's extension) | `deploy-production.sh`, `migrate-users.sh` |
 | Synthesis, evaluations, analyses | `synthesis` | `auth-providers-evaluation.md` |
 | Plans | `plan` | `architecture-proposal.md` |
+| Acceptance or quality criteria; the intent document (Intent, above) | `criteria` | `auth-edge-cases-intent.md` |
 | Work-in-progress, drafts | any artifact kind left at status `draft` | `api-spec-v2.yaml`, `architecture-proposal.md` |
 | Handoffs and summaries | `handoff` (to siblings or successors), `summary` (to a parent) | `session-handoff.md` |
 
@@ -190,7 +209,7 @@ Main agents pass parameters in order: work item context first, then intent, then
 ## Parameters
 
 ISSUE_PATH="mnbvcxzqwr (context.local/work/items/2026-02/22-0830-mnbvcxzqwr-token-refresh/)"
-INTENT_PATH="context.local/work/items/2026-02/22-0830-mnbvcxzqwr-token-refresh/intents/2026-02/22-0915-tqwrtzpsdf-api-redesign.md"
+INTENT_PATH="context.local/work/items/2026-02/22-0830-mnbvcxzqwr-token-refresh/criteria/2026-02/22-0915-tqwrtzpsdf-api-redesign-intent.md"
 ```
 
 **Task-level example** (full hierarchy):
@@ -201,7 +220,7 @@ INTENT_PATH="context.local/work/items/2026-02/22-0830-mnbvcxzqwr-token-refresh/i
 STORY_PATH="kpqrstbcdf (context.local/work/items/2026-02/22-0815-kpqrstbcdf-auth-overhaul/)"
 ISSUE_PATH="mnbvcxzqwr (context.local/work/items/2026-02/22-0830-mnbvcxzqwr-token-refresh/)"
 TASK_PATH="zxcvbnmpqr (context.local/work/items/2026-02/22-0900-zxcvbnmpqr-input-validation/)"
-INTENT_PATH="context.local/work/items/2026-02/22-0900-zxcvbnmpqr-input-validation/intents/2026-02/22-0915-wxzqrtpsdf-input-validation.md"
+INTENT_PATH="context.local/work/items/2026-02/22-0900-zxcvbnmpqr-input-validation/criteria/2026-02/22-0915-wxzqrtpsdf-input-validation-intent.md"
 ```
 
 There is no REPORT_PATH parameter: the sub-agent reserves its report path just-in-time, using the most specific work item parameter as the `--owner`. All output records take their owner from the most specific work item parameter.
@@ -210,7 +229,7 @@ There is no REPORT_PATH parameter: the sub-agent reserves its report path just-i
 
 **Main agent** (before launch):
 1. Determine active work context and include relevant work item parameters
-2. Create anything the dispatch itself owns (the intent record) and resolve its descriptive title; pass `{date}`/`{time}` only when a brief needs them
+2. Create anything the dispatch itself owns (the intent records) and resolve its descriptive title, passing the intent document's `file` as INTENT_PATH; pass `{date}`/`{time}` only when a brief needs them
 3. Include REPORT_SLUGS if multiple reports expected
 4. Never pre-assign report paths — no REPORT_PATH parameter in briefs
 
@@ -231,7 +250,8 @@ context.local/work/
 │   ├── ITEM.md                              # the item body
 │   ├── reports/<YYYY-MM>/                   # owned reports
 │   │   └── <DD-HHMM>-<id>-<slug>.md
-│   ├── intents/<YYYY-MM>/                   # owned intent sources
+│   ├── intents/<YYYY-MM>/                   # owned intent sources (the instructions)
+│   ├── criteria/<YYYY-MM>/                  # owned criteria, intent documents among them
 │   ├── plans/, syntheses/, summaries/, handoffs/, …   # owned artifacts
 ├── reports/<YYYY-MM>/                       # reports with no owner
 ├── intents/<YYYY-MM>/                       # intents with no owner

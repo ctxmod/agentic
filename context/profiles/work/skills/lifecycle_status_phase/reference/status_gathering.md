@@ -19,7 +19,7 @@ Delimitations:
 - Focus on status-relevant information
 
 Notes:
-- Read work item at {WORK_ITEM_PATH}/{TYPE}.md
+- Read work item at {WORK_ITEM_PATH}/ITEM.md (status, parent and blocker fields from `ctxmod work show`)
 - Extract current status from the record (`ctxmod work show`)
 - List child items with their statuses
 - Note any blockers

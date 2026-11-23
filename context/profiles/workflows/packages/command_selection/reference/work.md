@@ -79,8 +79,10 @@ work item status and validation results.
 Main agent performs preflight analysis in Phase 0:
 
 1. **Determine paths**: REPORT_BASE (the owning work item, if any), {date}/{time}, INTENT_PATH
-2. **Create intent file**: `ctxmod work new intent "<title>" --owner <work item>`
-   and write developer intent to the printed `<DD-HHMM>-<id>-<slug>.md`
+2. **Create intent records**: `ctxmod work new intent "<title>" --owner <work item>
+   --body-file <the developer's words>`, then `ctxmod work new criteria
+   "<title> intent" --owner <work item>`, and write the developer intent to
+   the document's printed `file` (INTENT_PATH)
 3. **Discover context**: Invoke workflow reference discovery agent
 4. **Prepare parameters**: Assemble parameters for all phases
 

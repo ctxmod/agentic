@@ -17,17 +17,17 @@ Intent writing is a **phase, not a workflow**. The main agent invokes
 it directly via the absorbed `/write_intent` slash-command, the
 `/write` router, or the `capture_intent` orchestrator skill.
 
-Intent path construction: `ctxmod work new intent "<title>" [--owner <most specific work item>]` prints INTENT_PATH (`<owner item dir>/intents/<YYYY-MM>/<DD-HHMM>-<id>-<slug>.md`). An intent is a source: its payload is written once and sealed (`ctxmod work touch <id>`).
+Intent path construction: an intent is two work-store records, both owned by the most specific work item (see the Intent section of `params` in the agentic `workflows` profile's `framework` package): the developer's instruction as an `intent` source, written once and sealed, and the intent document as a `criteria` artifact, which the writing phases revise. `ctxmod work new criteria "<title> intent" [--owner <most specific work item>]` prints INTENT_PATH (`<owner item dir>/criteria/<YYYY-MM>/<DD-HHMM>-<id>-<slug>.md`).
 
 **Base path derivation**:
 
-| Most specific context | INTENT_BASE | REPORTS_BASE |
-|-----------------------|-------------|--------------|
-| TASK_PATH provided | the task's `intents/` (`--owner <task id>`) | the task's `reports/` |
-| ISSUE_PATH provided (no task) | the issue's `intents/` | the issue's `reports/` |
-| STORY_PATH provided (no issue) | the story's `intents/` | the story's `reports/` |
-| EPIC_PATH provided (no story) | the epic's `intents/` | the epic's `reports/` |
-| No work item context | the store's top-level `intents/` | the store's top-level `reports/` |
+| Most specific context | Intent records | REPORTS_BASE |
+|-----------------------|----------------|--------------|
+| TASK_PATH provided | the task's `intents/` and `criteria/` (`--owner <task id>`) | the task's `reports/` |
+| ISSUE_PATH provided (no task) | the issue's `intents/` and `criteria/` | the issue's `reports/` |
+| STORY_PATH provided (no issue) | the story's `intents/` and `criteria/` | the story's `reports/` |
+| EPIC_PATH provided (no story) | the epic's `intents/` and `criteria/` | the epic's `reports/` |
+| No work item context | the store's top-level `intents/` and `criteria/` | the store's top-level `reports/` |
 
 <ctxmod_inline path="ctx:github.com/ctxmod/agentic/context::shared::delegation/reference/main_agent_mantra.md" />
 
@@ -85,14 +85,14 @@ alone in raw-write mode.
 Main agent performs directly (no sub-agent):
 
 1. Capture current date/time
-2. Derive the owner (INTENT_BASE and REPORTS_BASE) from work item context hierarchy
+2. Derive the owner (of the intent records and REPORTS_BASE) from work item context hierarchy
 3. Generate the title (and so the slug) from user input description
-4. Create the intent record: `ctxmod work new intent "<title>" [--owner <owner id>]` — its printed `file` is INTENT_PATH
-5. If `--edit` provided: set EDIT_MODE=true, EXISTING_INTENT={path or id}; otherwise EDIT_MODE=false. Because an intent payload is sealed once written, an edit produces a NEW intent record that supersedes the existing one and cites its id
+4. If `--edit` provided: set EDIT_MODE=true, EXISTING_INTENT={the intent document's `file`, from `ctxmod work show <record>`}, and keep INTENT_PATH=EXISTING_INTENT; record any new words of the developer as a new `intent` source. Otherwise EDIT_MODE=false
+5. Otherwise create the records: `ctxmod work new intent "<title>" [--owner <owner id>] --body-file <USER_INPUT>` for the instruction, then `ctxmod work new criteria "<title> intent" [--owner <owner id>]`, whose printed `file` is INTENT_PATH
 6. No directories to create: the store creates them with each record
 
 **Output parameters**: INTENT_PATH, REPORTS_BASE, EDIT_MODE,
-EXISTING_INTENT (if editing), USER_INPUT, date, time, slug.
+EXISTING_INTENT (if editing), USER_INPUT, the instruction's record id, title.
 
 ### Phase 1: Clarification Discovery
 
@@ -212,7 +212,11 @@ executes only a transcription step:
 - Apply typo and spelling corrections only
 - Preserve user ordering and emphasis
 - Flag (do not resolve) obvious ambiguities inline as `[CLARIFY: ...]`
-- Write to `{INTENT_PATH}` and return the path
+- Write to `{INTENT_PATH}` (the intent document, which the final write
+  later revises) in one write and return the path
+
+The verbatim words themselves are the `intent` source the main agent
+created with `--body-file`; raw-write never touches it.
 
 Raw-write does NOT run Phases 1-6. It is the baseline for downstream
 capture phases (discovery, gap analysis, clarification, final write).
@@ -222,7 +226,7 @@ capture phases (discovery, gap analysis, clarification, final write).
 ```
 Phase 0: Preflight
 - Receives: USER_INPUT, work item context
-- Produces: INTENT_PATH, REPORTS_BASE, EDIT_MODE, slug
+- Produces: INTENT_PATH, REPORTS_BASE, EDIT_MODE, the instruction record
 
 Phase 1: Clarification Discovery
 - Receives: USER_INPUT, EDIT_MODE, EXISTING_INTENT
@@ -257,7 +261,7 @@ Main agent passes report **paths** between phases, never report content.
 
 ## Execution Strategy
 
-1. **Preflight**: Main agent derives paths, slug, mode
+1. **Preflight**: Main agent resolves the owner, creates the intent records, sets the mode
 2. **Clarification**: Launch discovery sub-agent; wait
 3. **Research**: Launch 2-3 research sub-agents, one at a time by default; wait
 4. **Synthesis**: Launch synthesis sub-agent with research outputs; wait
@@ -274,9 +278,9 @@ Main agent passes report **paths** between phases, never report content.
 When `--edit` flag provided:
 - Phase 1 compares new input against existing intent
 - Phase 3 identifies conflicts, proposes resolution strategy
-- Phase 4 merges changes, preserving valid existing content, into a new
-  intent record that cites the superseded one (the existing payload is
-  sealed and never rewritten)
+- Phase 4 merges changes into the existing intent document, preserving
+  valid existing content (the document is an artifact and is revised in
+  place; the instruction sources are sealed and never rewritten)
 
 ### Lightweight Intent
 
