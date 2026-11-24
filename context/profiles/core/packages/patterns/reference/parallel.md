@@ -48,7 +48,7 @@ Before launching, enumerate planned agents and check pairwise for: output depend
 
 ### Isolation
 
-Parallel agents require: separate output paths (each agent reserves its own report path just-in-time), non-overlapping scopes over disjoint artifact sets, no shared state, and — when agents write artifacts — isolated clean-HEAD checkouts (clone or archive+init snapshot); worktrees are banned.
+Parallel agents require: separate output paths (each agent reserves its own report path just-in-time), non-overlapping scopes over disjoint artifact sets, no shared state, and — when agents write artifacts — an isolated checkout per agent (a linked worktree, or a clean-HEAD clone or archive+init snapshot where the repository bans worktrees).
 
 ## Execution
 

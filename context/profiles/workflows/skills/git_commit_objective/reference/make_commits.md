@@ -117,7 +117,7 @@ Write completion report documenting what was committed:
 
 **Recommendation asks for selection**: If the report presents 2-3 strategies without a clear recommendation, use the first strategy marked as "recommended" or the first strategy if none marked.
 
-**Isolation**: Worktrees are banned in this repo. If the commit work needs isolation from concurrent writers, it happens in a clean-HEAD clone or archive+init snapshot (see `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile); commits inside it affect only that checkout's branch, and merge-back is a separate, operator-visible step.
+**Isolation**: If the commit work needs isolation from concurrent writers, it happens in a separate checkout: a linked worktree, or, where the repository selects the ctxmod builtin `no_worktrees` profile, a clean-HEAD clone or archive+init snapshot (see its `isolation_by_checkout`); commits inside it affect only that checkout's branch, and merge-back is a separate, operator-visible step.
 
 **Unexpected state**: If repository state differs from recommendation (e.g., files changed, conflicts found), document deviation in completion report and stop. Do not commit in unexpected states.
 
@@ -144,7 +144,6 @@ Completion report: <reserved report path>
 | Committing out of order | Breaks dependencies | Follow recommendation order |
 | Modifying commit messages | Defeats recommendation purpose | Use messages from report |
 | Skipping validation | Hooks fail later | Always validate first |
-| Creating worktree | Banned in this repo — harness isolation params included | Clean-HEAD clone or archive+init snapshot |
 
 ## Examples
 

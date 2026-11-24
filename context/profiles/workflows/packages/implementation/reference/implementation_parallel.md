@@ -2,7 +2,7 @@
 
 **Applicability gate.** Implementation agents modify files, so they are **not** granted `allow-parallel-agents: true` — concurrent writes to overlapping scopes are the documented failure mode this default guards against. Unless the concurrency instruction in your own agent-depth instructions explicitly permits concurrent dispatch, launch these execution agents **one at a time, in the listed order**, waiting for each to complete. That instruction is authoritative and overrides this file.
 
-This template covers the case where multiple genuinely independent scopes require execution — disjoint packages, no shared files, no cross-scope references. Launch one agent per scope to maintain scope isolation; under the default posture that launch is sequential, and the isolation, not the concurrency, is what the template buys you. Concurrent launch additionally requires isolated clean-HEAD checkouts per scope (clone or archive+init snapshot) — worktrees are banned.
+This template covers the case where multiple genuinely independent scopes require execution — disjoint packages, no shared files, no cross-scope references. Launch one agent per scope to maintain scope isolation; under the default posture that launch is sequential, and the isolation, not the concurrency, is what the template buys you. Concurrent launch additionally requires an isolated checkout per scope: a linked worktree, or a clean-HEAD clone or archive+init snapshot where the repository bans worktrees.
 
 Launch one execution agent per independent scope:
 

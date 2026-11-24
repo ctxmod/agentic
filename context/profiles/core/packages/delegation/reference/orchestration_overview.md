@@ -17,7 +17,7 @@ Entry point for the orchestration reference corpus in this module: the operating
 | `pull_request_design` in the ctxmod builtin `commit_discipline` profile | Body design for pull requests and pushed commit rounds: summary visual, before/after evidence, merge danger |
 | `shared_git_index_hazards` in the ctxmod builtin `commit_discipline` profile | Concurrent agents sharing one git index |
 | `ctx:github.com/ctxmod/agentic/context::shared::git_mechanics@shared_tree/reference/shared_tree_git_mechanics.md` | Host git mechanics in the shared tree |
-| `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile | The agent worktree ban (shell and harness isolation) and the sanctioned clean-HEAD checkout vehicles |
+| `isolation_by_checkout` in the ctxmod builtin `no_worktrees` profile | Where a repository selects it: the agent worktree ban (shell and harness isolation) and the clean-HEAD checkout vehicles that replace worktrees |
 | <ctxmod_path path="ctx:github.com/ctxmod/agentic/context::shared::delegation/reference/lesson_capture.md" /> | The delegated lesson-capture pipeline: commission, authorship, nested validation, render, local excludes |
 
 ## Reading order
